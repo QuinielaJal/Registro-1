@@ -76,6 +76,7 @@ function number(){
 function result(){
     results = localStorage.getItem("results");
     name = document.getElementById("nombre").value;
+    name  = name.split('*').join('');
     if (results){
         /*localStorage.setItem('results', results + "%0D" + res.join("%20%20"));*/
         if (aux > 1)
