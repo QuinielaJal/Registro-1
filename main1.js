@@ -27,9 +27,9 @@ function start(){
 }  }
 
 function selection(element){
+    let index = parseInt(element.id.slice(1)) - 1;
+    let container = document.getElementById("text");
     if (!element.style.backgroundColor){
-        let index = parseInt(element.id.slice(1)) - 1;
-        let container = document.getElementById("text");
         if (!combinations){
             validation(element);
             res[index] = element.id.slice(0,1);
@@ -39,8 +39,19 @@ function selection(element){
             res[index] = res[index].split('_').join('');
         }
         element.style.backgroundColor = "rgb(168, 32, 22)";
-        container.innerHTML = res.join("\xa0\xa0");}
+    }
+    else{
+        if(combinations){
+        element.style.backgroundColor = "";
+        console.log(res[index].length);
+        if (res[index] != "_" && res[index].length>1)
+            res[index] = res[index].split(element.id.slice(0,1)).join('');
+        else    
+            res[index] = "_";
+        }
+    }
     costoactual();
+    container.innerHTML = res.join("\xa0\xa0");
 }
 
 function validation(element){
@@ -79,7 +90,6 @@ function send(){
     let whatsapptext = res.join("%20%20")
     whatsapptext = encodeURI(localStorage.getItem("results"));
     whatsapptext = whatsapptext.split('*').join('%0D');
-    console.log(whatsapptext);
     window.location.href = "https://wa.me/523317816346?text="+whatsapptext;}
 }
 
