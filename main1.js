@@ -2,6 +2,7 @@ let res = ['_','_','_','_','_','_','_','_','_'];
 let quantity = localStorage.getItem('quantity');
 let name;
 let combinations = false;
+var aux;
 
 function start(){
     recovername();
@@ -77,10 +78,17 @@ function result(){
     name = document.getElementById("nombre").value;
     if (results){
         /*localStorage.setItem('results', results + "%0D" + res.join("%20%20"));*/
-        localStorage.setItem('results', results + "\n" + res.join("\xa0\xa0") + "\xa0\xa0" + name + "*");
+        if (aux > 1)
+        localStorage.setItem('results', results + "\n" + res.join("\xa0\xa0") + "\xa0\xa0" + name + " (" + aux + ")" + "*");
+        else
+            localStorage.setItem('results', results + "\n" + res.join("\xa0\xa0") + "\xa0\xa0" + name + "*");
         }
         else
-            localStorage.setItem('results',res.join("\xa0\xa0") + "\xa0\xa0" + name+ "*");
+        {
+            if (aux > 1)
+            localStorage.setItem('results',res.join("\xa0\xa0") + "\xa0\xa0" + name + " (" + aux + ")" +  "*");
+            else    
+                localStorage.setItem('results',res.join("\xa0\xa0") + "\xa0\xa0" + name+ "*");}       
 }
 
 function send(){
@@ -123,8 +131,12 @@ function clean(){
 }
 
 function updatedisplay(){
+    if (aux > 1)
+        document.getElementById("display").innerHTML += `<div>` +  res.join("\xa0\xa0") + "\xa0\xa0" + name + " (" + aux + ")" + "*\xa0\xa0" + `</div>`;
+    else
     document.getElementById("display").innerHTML += `<div>` +  res.join("\xa0\xa0") + "\xa0\xa0" + name + "*\xa0\xa0" + `</div>`;
     document.getElementById("total").innerHTML = "Total: $" + quantity*25;
+    aux = 1;
 }
 
 function recovername(){
@@ -144,7 +156,7 @@ function allowcombination(){
 }
 
 function calculate(){
-    let aux = 1;
+    aux = 1;
     for (var i=0;i<9;i++){
         aux*= res[i].length;
     }
@@ -180,11 +192,11 @@ function getRandomInt(min, max) {
 
 function costoactual(){
     if (!res.join("\xa0\xa0").includes("_")){
-        let aux = 1;
+        let aux2 = 1;
         for (var i=0;i<9;i++){
-             aux*= res[i].length;
+             aux2*= res[i].length;
         }
-        document.getElementById("costo").innerHTML = "Costo: $" + aux*25;
+        document.getElementById("costo").innerHTML = "Costo: $" + aux2*25;
     }
 }
 
