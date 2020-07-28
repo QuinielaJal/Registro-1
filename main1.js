@@ -153,7 +153,7 @@ function clearname(){
 
 function allowcombination(){
     if (!combinations) 
-        combinations = confirm("¿Desea registras quinielas multiples?");
+        combinations = confirm("¿Desea registrar quinielas multiples?");
     else
         combinations= false;
     document.getElementById("checkcombinaciones").checked = combinations;
