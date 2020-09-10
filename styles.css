@@ -94,7 +94,7 @@ h2,h3, #nombre{
     border: 2px black solid;
     border: none;
     float: left;
-    box-shadow: 2px 2px black;
+    box-shadow: 2px 2px 5px black;
 }
 
 #botonlisto{
