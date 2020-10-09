@@ -7,7 +7,7 @@
 
 .quiniela{
     margin: auto;
-    background-image: url("https://scontent.fgdl5-2.fna.fbcdn.net/v/t1.15752-9/120424610_380304602979941_5230274326983081295_n.png?_nc_cat=101&_nc_sid=ae9488&_nc_ohc=bwdldxGyV84AX-VXE_X&_nc_ht=scontent.fgdl5-2.fna&oh=5affff4bfbf4711e3adff6fe15fcb436&oe=5FA011BB");
+    background-image: url("https://scontent.fgdl5-3.fna.fbcdn.net/v/t1.15752-9/121153689_375419533823671_7349100825748510268_n.png?_nc_cat=105&_nc_sid=ae9488&_nc_ohc=iYCNOXwLrUsAX8hEpkL&_nc_ht=scontent.fgdl5-3.fna&oh=504abd8bf4b8dfabb688a046581c38e7&oe=5FA354F0");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
@@ -79,8 +79,8 @@ h1{
     margin-top: 8%;
     border: solid 1px black;
     border-radius: 0 0 20px 20px;
-    background: -webkit-linear-gradient(0, black,rgb(0,52,102) 30%);
-    background: linear-gradient(0, black,rgb(0,52,102) 30%);
+    background: -webkit-linear-gradient(0, black,rgb(0,0,0) 30%);
+    background: linear-gradient(0, black,rgb(0,0,0) 30%);
 }
 
 h2,h3, #nombre{
