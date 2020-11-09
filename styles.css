@@ -7,7 +7,7 @@
 
 .quiniela{
     margin: auto;
-    background-image: url("https://scontent-qro1-1.xx.fbcdn.net/v/t1.15752-9/123548783_709487822998142_1349923028048863647_n.png?_nc_cat=103&ccb=2&_nc_sid=ae9488&_nc_eui2=AeErSW3yyrgg3eZsmH5XCEuNemOJg2J4soJ6Y4mDYniygisIpT2hk9KGO-0DLEKJVK7FDIrNf5obkUAo3c9I0QBc&_nc_ohc=Lg5pXx9NSKUAX9Kz3uk&_nc_ht=scontent-qro1-1.xx&oh=1ec7bcfd192775ce0fbbb07682028ed4&oe=5FC64CE9");
+    background-image: url("https://scontent.fgdl9-1.fna.fbcdn.net/v/t1.15752-9/124669950_3629426653762757_8841174880892046647_n.png?_nc_cat=111&ccb=2&_nc_sid=ae9488&_nc_eui2=AeE6jXpIKQB8JnzvvAEzzU5WVkEnw8Q44ANWQSfDxDjgA9vON_zuDlzgE-0Zup6YmYMVlrcTyhKVC7wdquvEFqS5&_nc_ohc=Pd9YEKIeZUcAX81jgKT&_nc_ht=scontent.fgdl9-1.fna&oh=0cebb3c071366507b46c6a1e539d00df&oe=5FD027A5");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
@@ -63,8 +63,8 @@
 body{
     max-width: 400px;
     margin: auto;
-    background-color: rgb(125,172,218);
-    background-image: url("https://scontent.fgdl5-1.fna.fbcdn.net/v/t1.15752-9/116370734_2727969444157025_6448981862338063132_n.png?_nc_cat=108&_nc_sid=ae9488&_nc_ohc=3PKgLtTgoD8AX-na6aL&_nc_ht=scontent.fgdl5-1.fna&oh=e76bd263ccee73d61a7cfc013dcd9a53&oe=5FA1D8F5");
+    background-color: rgb(6,12,37);
+    background-image: url("https://scontent.fgdl9-1.fna.fbcdn.net/v/t1.15752-9/124119451_1825341780954367_1402491912504904499_n.png?_nc_cat=100&ccb=2&_nc_sid=ae9488&_nc_eui2=AeFPthcZhkw5Dpfv7FHYkidUECeGoGt38WQQJ4aga3fxZPNDdOD0F4Q14OQAh-Ekv_enzw8kA_becbhTN4jcbwqc&_nc_ohc=jl1DZbCv1poAX-Xo7ie&_nc_ht=scontent.fgdl9-1.fna&oh=f9e5b8c6835c89b5c50af8d6cfef1cc8&oe=5FCDAA58");
     background-repeat: repeat-y;
     background-position: top;
 }
@@ -79,8 +79,8 @@ h1{
     margin-top: 8%;
     border: solid 1px black;
     border-radius: 0 0 20px 20px;
-    background: -webkit-linear-gradient(0, black ,rgb(0,0,0) 80%);
-    background: linear-gradient(0, black,rgb(0,0,0) 80%);
+    background: -webkit-linear-gradient(0, black ,rgb(0,92,1) 80%);
+    background: linear-gradient(0, black,rgb(0,92,1) 80%);
 }
 
 h2,h3, #nombre{
@@ -138,11 +138,11 @@ p{
     background-color: rgba(255, 255, 240, 0.356);
     border-radius: 5px;
     text-align: left;
+    margin-top: 10px;
 }
 
 h4{
     float: left;
-    margin-top: 10px;
     display: contents;
     text-align: center;
 }
@@ -155,8 +155,15 @@ h6{
     display: inline-block;
     float: right;
     margin-top: 0;
+    background-color: rgb(200,200,200,0.5);
+    padding: 0 2px;
+    border-radius: 3px;
 }
 
 #costo, #numquinielas{
     color: rgba(11, 15, 0, 0.753);
+    background-color: rgb(200,200,200,0.5);
+    display:inline;
+    padding: 0 2px;
+    border-radius: 3px;
 }
