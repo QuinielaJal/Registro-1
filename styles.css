@@ -7,18 +7,23 @@
 
 .quiniela{
     margin: auto;
-    background-image: url("https://scontent.fgdl9-1.fna.fbcdn.net/v/t1.15752-9/130269258_148690739927063_7082112588152982127_n.png?_nc_cat=104&ccb=2&_nc_sid=ae9488&_nc_ohc=j1dTeFsR1KsAX9bWUEc&_nc_ht=scontent.fgdl9-1.fna&oh=dff63cd9b0a630cc087cbe319184c51f&oe=5FF2A06C");
+    background-image: url("quiniela.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
-    height: 375px;
     border-radius: 20px;
 
 }
 
 
 .botonera{
-    margin-top: 5%;
+    margin-top: 2%;
+}
+
+@media (max-width: 400px){
+    .botonera {
+        margin-top: 2vh;
+    }
 }
 
 .aux{
@@ -64,7 +69,7 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: url("https://scontent.fgdl9-1.fna.fbcdn.net/v/t1.15752-9/124119451_1825341780954367_1402491912504904499_n.png?_nc_cat=100&ccb=2&_nc_sid=ae9488&_nc_eui2=AeFPthcZhkw5Dpfv7FHYkidUECeGoGt38WQQJ4aga3fxZPNDdOD0F4Q14OQAh-Ekv_enzw8kA_becbhTN4jcbwqc&_nc_ohc=jl1DZbCv1poAX-Xo7ie&_nc_ht=scontent.fgdl9-1.fna&oh=f9e5b8c6835c89b5c50af8d6cfef1cc8&oe=5FCDAA58");
+    background-image: url("fondo.jpg");
     background-repeat: repeat-y;
     background-position: top;
 }
@@ -74,20 +79,21 @@ body{
 h1{
     background-color: teal;
     text-align: center;
-    padding: 14px;
+    padding: 18px;
     color: whitesmoke;
     margin-top: 8%;
     border: solid 1px black;
     border-radius: 0 0 20px 20px;
     background: -webkit-linear-gradient(0, black ,rgb(0,27,80) 80%);
     background: linear-gradient(0, black,rgb(0,27,80) 80%);
+    font-size: x-large;
 }
 
-h2,h3, #nombre{
+h2,h3{
     background:  linear-gradient(0,  rgb(0, 175, 0) 20%, #4ac959 90%);
     text-align: center;
-    padding: 8px;
-    width: 35%;
+    padding: 12px;
+    width: 34%;
     margin-right: 6px;
     margin-top: 10px;
     border-radius: 6px;
@@ -95,13 +101,23 @@ h2,h3, #nombre{
     border: none;
     float: left;
     box-shadow: 2px 2px 5px black;
+    font-size: larger;
+}
+
+#nombretext{
+    color: gray;
+    font-size: 9px;
+    text-align: left;
+    padding: 2px 0 0 2px;
 }
 
 #botonlisto{
     background: linear-gradient(0,  rgb(0, 134, 175) 20%, rgb(15, 163, 201)); 
     width: 12.3%;
+    padding: 8px;
     border-radius: 15px;
     padding-top: 10px;
+    font-size: x-large;
 }
 
 #botonborrar{
@@ -109,13 +125,34 @@ h2,h3, #nombre{
     border-radius: 15px;
     padding-top: 10px;
     width: 12.3%;
+    padding: 8px;
+    font-size: x-large;
+}
+
+#nombrebox{
+    border-collapse: collapse;
+    width: 34%;
+    background:  linear-gradient(0,  rgb(220, 220, 220) 20%, rgb(255, 255, 255) 90%);
+    text-align: center;
+    margin-top: 1.1vh;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 2px 2px 5px black;
+    max-width: 135px;
+    float: left;
+
 }
 
 #nombre{
-    width: 30%;
-    background-color: white;
-    background: white;
+    background:transparent;
+    display: inline-block;
+    width: 100%;
+    border: none;
+    text-align: center;
+    padding-bottom: 13px;
+    margin: 0 0 2px 2px;
 }
+
 
 #ultimonombre{
     margin-left: 11%;
@@ -123,8 +160,18 @@ h2,h3, #nombre{
     box-shadow: 1px 1px black;
 }
 
+#random{
+    background:  linear-gradient(0,  rgb(250, 250, 200) 20%, rgb(255, 255, 255) 90%);
+    border-radius: 4px;
+    padding: 2px;
+    font-size: small;
+}
+
 #undo{
     float: right;
+    background:  linear-gradient(0,  rgb(250, 200, 200) 20%, rgb(255, 255, 255) 90%);
+    border-radius: 4px;
+    padding: 2px;
 }
 
 
