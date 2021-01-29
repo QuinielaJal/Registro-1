@@ -69,7 +69,7 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: url("https://scontent.fgdl9-1.fna.fbcdn.net/v/t1.15752-9/134130211_145184797408638_5884476686199978814_n.png?_nc_cat=101&ccb=2&_nc_sid=ae9488&_nc_eui2=AeHacUsJcxc2dLEjyN6yRNFnewGJ9Yr5QNZ7AYn1ivlA1mEOk9gwRHq5Tj3AKrDSpGr-c04zas5Q9__A6xiP6NG1&_nc_ohc=r1dXCQ2jaTwAX878pIe&_nc_ht=scontent.fgdl9-1.fna&oh=82b45ff3214b5e425f2644eeb9bee676&oe=601417B7");
+    background-image: url("https://scontent.fgdl9-1.fna.fbcdn.net/v/t1.15752-9/134130211_145184797408638_5884476686199978814_n.png?_nc_cat=101&ccb=2&_nc_sid=ae9488&_nc_eui2=AeHacUsJcxc2dLEjyN6yRNFnewGJ9Yr5QNZ7AYn1ivlA1mEOk9gwRHq5Tj3AKrDSpGr-c04zas5Q9__A6xiP6NG1&_nc_ohc=Tc3pM-vFbfgAX98cHjW&_nc_ht=scontent.fgdl9-1.fna&oh=88eaeeedbafca9e8bc75acc21aae2985&oe=603BA4B7");
     background-repeat: repeat-y;
     background-position: top;
 }
@@ -80,7 +80,7 @@ h1{
     background-color: teal;
     text-align: center;
     padding: 18px;
-    color: yellow;
+    color: whitesmoke;
     margin-top: 8%;
     border: solid 1px black;
     border-radius: 0 0 20px 20px;
