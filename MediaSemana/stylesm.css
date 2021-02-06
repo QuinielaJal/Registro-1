@@ -7,7 +7,7 @@
 
 .quiniela{
     margin: auto;
-    background-image: url("https://scontent.fgdl9-1.fna.fbcdn.net/v/t1.15752-9/145033141_180282683839637_5264558745308623605_n.png?_nc_cat=103&ccb=2&_nc_sid=ae9488&_nc_eui2=AeHBgEyIlKdq3IQRPCGw9C4G3d_hJp5KF1fd3-EmnkoXV70TgdHZuGImETrPq-M_gkeoBaS92SeE-nTk5kKMmv_J&_nc_ohc=vzAqhKyRoiQAX9XtwIN&_nc_ht=scontent.fgdl9-1.fna&oh=596c86fb05d9df4da29f4be0360b8c2d&oe=603BB02A");
+    background-image: url("https://scontent.fgdl9-1.fna.fbcdn.net/v/t1.15752-9/147073694_870433950414005_7785797545442184828_n.png?_nc_cat=107&ccb=2&_nc_sid=ae9488&_nc_eui2=AeEwM8Il0fL7CpYDE2C0d4jZUZnAnFZBOb1RmcCcVkE5vbM9jfx1sEvIcUTZWQFM-dcCEK-l8Irhc0tWJ7FRyDSy&_nc_ohc=rOuCjYUIpzcAX81tWZM&_nc_ht=scontent.fgdl9-1.fna&oh=68d9672c6f0541aa034fc13ca7f93f25&oe=60445DB6");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
@@ -84,8 +84,8 @@ h1{
     margin-top: 8%;
     border: solid 1px black;
     border-radius: 0 0 20px 20px;
-    background: -webkit-linear-gradient(0.04turn, black  ,rgb(65,124,140) 80%);
-    background: linear-gradient(0.04turn, black  ,rgb(65,124,140) 80%);
+    background: -webkit-linear-gradient(0.04turn, black  ,rgb(0,112,50) 80%);
+    background: linear-gradient(0.04turn, black  ,rgb(0,112,50) 80%);
     font-size: x-large;
 }
 
