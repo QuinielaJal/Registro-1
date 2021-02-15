@@ -7,7 +7,7 @@
 
 .quiniela{
     margin: auto;
-    background-image: url("https://scontent.fgdl9-1.fna.fbcdn.net/v/t1.15752-9/147373303_436375547484584_6688417829971764551_n.png?_nc_cat=109&ccb=2&_nc_sid=ae9488&_nc_eui2=AeEhDTrUXsJYxsDkZesPOx_QCbleH42rhxsJuV4fjauHGymmn1r-j3a6e2WIFL4pCKrIEUgB2zBcf6biKY3HFoCk&_nc_ohc=ELipYHJE7WcAX_-5puM&_nc_ht=scontent.fgdl9-1.fna&oh=c708f3b8a584d52df74bbdbb63e40985&oe=6043D54D");
+    background-image: url("https://scontent.fgdl9-1.fna.fbcdn.net/v/t1.15752-9/150466288_1282242822145968_961814854363877914_n.png?_nc_cat=103&ccb=3&_nc_sid=ae9488&_nc_eui2=AeGD7n_E9hzuG_nwfp4fdCa3QhwKAEtZLhtCHAoAS1kuG4Ig_KHFIkvPlm5VbPHgx0Ck6Mwwt0Nk65kXm3ShhLBz&_nc_ohc=vphtXbalY44AX8blDd-&_nc_ht=scontent.fgdl9-1.fna&oh=906ae17af66103bb1e177ec5eb756571&oe=604DC227");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
@@ -84,8 +84,8 @@ h1{
     margin-top: 8%;
     border: solid 1px black;
     border-radius: 0 0 20px 20px;
-    background: -webkit-linear-gradient(0.04turn, black  ,rgb(4,0,192) 80%);
-    background: linear-gradient(0.04turn, black  ,rgb(4,0,192) 80%);
+    background: -webkit-linear-gradient(0.04turn, black  ,rgb(3,170,2) 80%);
+    background: linear-gradient(0.04turn, black  ,rgb(3,170,2) 80%);
     font-size: x-large;
 }
 
