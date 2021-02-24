@@ -17,7 +17,8 @@
 
 
 .botonera{
-    margin-top: 2%;
+    margin-top: 3%;
+    width: 100%;
 }
 
 @media (max-width: 400px){
@@ -30,10 +31,10 @@
     background-color: rgba(165, 42, 42, 0);
     width: 100%;
     height: 13.5%;
+    padding-top: 2.5%;
 }
 .aux h3{
     width: 9%;
-    height: 60%;
     padding-top: 5px;
     margin-left: 4px;
     background-color: rgba(255, 255, 255, 0.288);
@@ -48,7 +49,10 @@
 .quiniela span{
     width: 10.6%;
     display: inline-flex;
-    
+    -webkit-transition:background-color 0.3s ease;
+   -moz-transition:background-color 0.3s ease;
+   -o-transition:background-color 0.3s ease;
+   transition:background-color 0.3s ease;  
 }
 
 #_{
@@ -83,7 +87,7 @@ h1{
     color: whitesmoke;
     margin-top: 8%;
     border: solid 1px black;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 14px 14px;
     background: -webkit-linear-gradient(0.04turn, black  ,rgb(215,104,14) 80%);
     background: linear-gradient(0.04turn, black  ,rgb(215,104,14) 80%);
     font-size: x-large;
@@ -92,14 +96,9 @@ h1{
 h2,h3{
     background:  linear-gradient(0,  rgb(0, 175, 0) 20%, #4ac959 90%);
     text-align: center;
-    padding: 12px;
-    width: 34%;
+    padding: 12px 20px 12px 0;
     margin-right: 6px;
-    margin-top: 10px;
     border-radius: 6px;
-    border: 2px black solid;
-    border: none;
-    float: left;
     box-shadow: 2px 2px 5px black;
     font-size: larger;
 }
@@ -113,7 +112,6 @@ h2,h3{
 
 #botonlisto{
     background: linear-gradient(0,  rgb(0, 134, 175) 20%, rgb(15, 163, 201)); 
-    width: 12.3%;
     padding: 8px;
     border-radius: 15px;
     padding-top: 10px;
@@ -124,22 +122,16 @@ h2,h3{
     background:  linear-gradient(0,  rgb(184, 0, 0) 20%, rgb(187, 1, 1) 90%);
     border-radius: 15px;
     padding-top: 10px;
-    width: 12.3%;
     padding: 8px;
     font-size: x-large;
 }
 
 #nombrebox{
     border-collapse: collapse;
-    width: 34%;
     background:  linear-gradient(0,  rgb(220, 220, 220) 20%, rgb(255, 255, 255) 90%);
     text-align: center;
-    margin-top: 1.1vh;
     border-radius: 6px;
-    border: none;
     box-shadow: 2px 2px 5px black;
-    max-width: 135px;
-    float: left;
 
 }
 
@@ -163,9 +155,26 @@ h2,h3{
 #random{
     background:  linear-gradient(0,  rgb(250, 250, 200) 20%, rgb(255, 255, 255) 90%);
     border-radius: 4px;
-    padding: 2px;
+    padding: 3px 25%;
     font-size: small;
     box-shadow: 1px 1px 3px black;
+    font-weight: bold;
+}
+
+#checkcombinaciones{
+    height: 25px;
+    background: rgb(255,255,255,0.7);  
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-size: small;
+    box-shadow: 1px 1px 3px black;
+    text-align: center;
+    border: solid 1px #777777;
+    color: #777777; 
+    -webkit-transition:background-color 0.3s ease;
+    -moz-transition:background-color 0.3s ease;
+    -o-transition:background-color 0.3s ease;
+    transition:background-color 0.3s ease;
 }
 
 #undo{
