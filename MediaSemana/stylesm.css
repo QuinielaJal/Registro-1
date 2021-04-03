@@ -102,7 +102,7 @@ h2,h3{
     margin-right: 6px;
     border-radius: 6px;
     box-shadow: 2px 2px 5px black;
-    font-size: larger;
+    font-size: large;
 }
 
 #nombretext{
@@ -179,25 +179,34 @@ h2,h3{
     transition:background-color 0.3s ease;
 }
 
-#undo{
+/*#undo{
     float: right;
     background:  linear-gradient(0,  rgb(250, 200, 200) 20%, rgb(255, 255, 255) 90%);
     border-radius: 4px;
     padding: 2px;
-}
+}*/
 
 
 p{
     padding: 10px;
 }
 
-.display{
+
+#display{
     border: solid black 2px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.356);
+    background-color: rgba(255, 255, 240, 0.4);
     border-radius: 5px;
     text-align: left;
-    margin-top: 10px;
+    padding: 5px 0px;
+    margin: 15px 0;
+    table-layout: fixed;   
+}
+
+
+#display td{
+    border-right: 1px solid rgb(0,0,0,0.2);
+    text-align: center;
 }
 
 h4{
