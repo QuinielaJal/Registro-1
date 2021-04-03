@@ -9,6 +9,8 @@
     <link rel="icon" href="MediaSemana/iconm.jpg">
     <link rel="apple-touch-icon" href="MediaSemana/iconm.jpg">
     <link rel="shortcut icon" href="MediaSemana/iconm.jpg" type="image/x-icon">
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     <script src="MediaSemana/mainm.js"></script>
 </head>
 
@@ -82,7 +84,7 @@
         </div>
         <h1 id="text"></h1>
     </div>
-     <table class="botonera">
+    <table class="botonera">
     <tr>
         <td width="37%">
             <h2 class="botonenviar" onclick="send()"> Enviar <span>0</span>&nbsp <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-5.png" height="23px" style="position: absolute;"></ion-icon></h2>
@@ -107,7 +109,7 @@
                 <td style="width: 36%">
                     <label id="random" onclick="random()">Aleatorio</ion-icon></label>
                 </td>
-                <td style="width: 40%">
+                <td style="width: 50%">
                     <label id="checkcombinaciones" onclick="allowcombination()">
                         Dobles y Triples
                     </label>
@@ -115,7 +117,7 @@
                 <td style="width: 30%"></td>
             </tr>
         </table>
-        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        <!--<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>-->
 
         <br><br>
 
@@ -126,8 +128,10 @@
         <h4 id="numquinielas">0 Quiniela(s)</h4>
     </div>
     <br>
-    <div class="display">
-    <p id="display"></p>
+    <!--<p id="display"></p>-->
+    <div id="divaux">
+        <table id="display">
+        </table>
     </div>
     <!--<button id="undo" onclick="remove()"><ion-icon name="arrow-undo-outline"></ion-icon></button>-->
     <br>
