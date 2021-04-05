@@ -11,6 +11,8 @@
     <link rel="icon" href="icon.jpg">
     <link rel="apple-touch-icon" href="icon.jpg">
     <link rel="shortcut icon" href="icon.jpg" type="image/x-icon">
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     <script src="main1.js"></script>
 </head>
 
@@ -109,7 +111,7 @@
                 <td style="width: 36%">
                     <label id="random" onclick="random()">Aleatorio</ion-icon></label>
                 </td>
-                <td style="width: 32%">
+                <td style="width: 50%">
                     <label id="checkcombinaciones" onclick="allowcombination()">
                         Dobles y Triples
                     </label>
@@ -117,7 +119,7 @@
                 <td style="width: 30%"></td>
             </tr>
         </table>
-        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        <!--<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>-->
 
         <br><br>
 
@@ -128,8 +130,10 @@
         <h4 id="numquinielas">0 Quiniela(s)</h4>
     </div>
     <br>
-    <div class="display">
-    <p id="display"></p>
+    <!--<p id="display"></p>-->
+    <div id="divaux">
+        <table id="display">
+        </table>
     </div>
     <!--<button id="undo" onclick="remove()"><ion-icon name="arrow-undo-outline"></ion-icon></button>-->
     <br>
