@@ -84,13 +84,13 @@ h1{
     background-color: teal;
     text-align: center;
     padding: 18px;
-    color: whitesmoke;
-    text-shadow: black 3px 1px;
+    color: #ffd400;
+    text-shadow: black 2px 2px 5px;
     margin-top: 8%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.5turn, rgb(215,104,14)  ,rgb(10,37,90) 80%);
-    background: linear-gradient(0.5turn, rgb(215,104,14)  ,rgb(10,37,90) 80%);
+    background: -webkit-linear-gradient(0.5turn, rgb(176,142,34)  ,rgb(12,39,94) 80%);
+    background: linear-gradient(0.5turn, rgb(176,142,34)  ,rgb(12,39,94) 80%);
     font-size: x-large;
 }
 
