@@ -54,7 +54,6 @@
    -moz-transition:background-color 0.3s ease;
    -o-transition:background-color 0.3s ease;
    transition:background-color 0.3s ease;  
-   border: 1px solid lightgray;
 }
 
 #_{
@@ -62,7 +61,6 @@
     width: 34.1%;
     height: 100%;
     display: inline-flex;
-    border: 1px solid lightgray;
 }
 
 .partido{
@@ -88,12 +86,12 @@ h1{
     background-color: teal;
     text-align: center;
     padding: 20px;
-    color: whitesmoke;
+    color: rgb(255 240 42);
     margin-top: 8%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.04turn, rgb(8,20,20)  ,rgb(166,13,20) 80%);
-    background: linear-gradient(0.04turn, rgb(8,20,20)  ,rgb(166,13,20) 80%);
+    background: -webkit-linear-gradient(0turn, rgb(3,53,142)  ,rgb(0,98,54) 80%);
+    background: linear-gradient(0turn, rgb(3,53,142)  ,rgb(0,98,54) 80%);
     font-size: x-large;
 }
 
@@ -107,11 +105,6 @@ h2,h3{
     box-shadow: 2px 2px 5px black;
     font-size: large;
 }
-
-h2:hover, h3:hover{
-    color: white;
-}
-
 
 #nombretext{
     color: gray;
@@ -259,6 +252,6 @@ h6{
 }
 
 #costoSpan{
-    color: yellow;
-    text-shadow: 0 0 5px black;
+    /*color: yellow;
+    text-shadow: 0 0 5px black;*/
 }
