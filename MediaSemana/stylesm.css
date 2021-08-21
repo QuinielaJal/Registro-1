@@ -74,7 +74,7 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: url("../fondo7.jpg");
+    background-image: url("../fondo14.jpg");
     background-repeat: repeat-y;
     background-position: top;
 }
@@ -85,12 +85,12 @@ h1{
     background-color: teal;
     text-align: center;
     padding: 18px;
-    color: rgb(255 247 0);
+    color: rgb(250,180,28);
     margin-top: 8%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.5turn, rgb(90,142,41)  ,rgb(7,39,100) 80%);
-    background: linear-gradient(0.5turn, rgb(90,142,41)  ,rgb(7,39,100) 80%);
+    background: -webkit-linear-gradient(0.5turn, rgb(0,0,0)  ,rgb(0,0,0) 80%);
+    background: linear-gradient(0.5turn, rgb(0,0,0,)  ,rgb(0,0,0) 80%);
     font-size: x-large;
     text-shadow: 3px 3px 3px black;
 }
