@@ -90,8 +90,8 @@ h1{
     margin-top: 8%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0turn, rgb(0,36,101)  ,rgb(9,107,178) 80%);
-    background: linear-gradient(0turn, rgb(0,36,101)  ,rgb(9,107,178) 80%);
+    background: -webkit-linear-gradient(0turn, rgb(3,41,114)  ,rgb(43,100,117) 80%);
+    background: linear-gradient(0turn, rgb(3,41,114)  ,rgb(43,100,117) 80%);
     font-size: x-large;
 }
 
