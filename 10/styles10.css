@@ -252,10 +252,10 @@ h6{
 
 
 #cantidad:before{
-    content:'$400,000 pesos!';
+    /*content:'$400,000 pesos!';*/
 }
 
 
 #bolsatxt:before{
-    content:'¡Se va todo el acumulado, bolsa estimada  ';
+    /*content:'¡Se va todo el acumulado, bolsa estimada  ';*/
 }
