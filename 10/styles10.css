@@ -70,10 +70,11 @@
 }
 
 body{
+    /*background: linear-gradient(1deg, purple 45%, orange);*/
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: url("../fondo8.jpg");
+    background-image: url("../fondo15.jpg");
     background-repeat: repeat-y;
     background-position: top;
 }
@@ -84,12 +85,12 @@ h1{
     background-color: teal;
     text-align: center;
     padding: 20px;
-    color: whitesmoke;
+    color: #fffc0c;
     margin-top: 8%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.04turn, rgb(0,0,0)  ,rgb(101,150,0) 80%);
-    background: linear-gradient(0.04turn, rgb(0,0,0)  ,rgb(101,150,0) 80%);
+    background: -webkit-linear-gradient(0.04turn, rgb(0,0,0)  ,rgb(87,40,121) 80%);
+    background: linear-gradient(0.04turn, rgb(0,0,0)  ,rgb(87,40,121) 80%);
     font-size: x-large;
 }
 
