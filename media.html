@@ -2,22 +2,23 @@
 <html lang="en" translate="no">
 <head>
     <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Quiniela Jalisco - Media Semana</title>
+    <meta name="description" content="¡Registra aquí tus quinielas! - Quiniela Liga MX">
+    <meta name="keywords" content="Quiniela, Liga MX, Apostar, Pronósticos">
+    <title>Quiniela Jalisco</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="MediaSemana/stylesm.css">
+    <link rel="stylesheet" href="10/styles10media.css">
     <link rel="icon" href="MediaSemana/iconm.jpg">
     <link rel="apple-touch-icon" href="MediaSemana/iconm.jpg">
     <link rel="shortcut icon" href="MediaSemana/iconm.jpg" type="image/x-icon">
     <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
-    <script src="MediaSemana/mainm.js"></script>
+    <script src="10/main10media.js"></script>
 </head>
 
 <body>
-    <br>
-    <br>
-    <!--<p style='color:white;text-align:center'>Bolsa estimada: <span style="color:yellow">+$200,000 pesos</span></p>-->
+    <p id='bolsa'>¡Se reparte todo el acumulado!<br> Bolsa estimada: <span style="color:yellow">$250,000</span> pesos</p>
     <div class="quiniela" id="quiniela">
         <div class="aux"><h3 style="padding: 5px 7px" onclick="clean()"><ion-icon name="close-outline"></ion-icon></h3></div>
         <div class="partido">
@@ -83,6 +84,13 @@
             <div id="_"></div>
             <span id="V9" onclick="selection(this)"></span>
         </div>
+	<div class="partido">
+            <span id="L10" onclick="selection(this)"></span>
+            <div id="_"></div>
+            <span id="E10" onclick="selection(this)"></span>
+            <div id="_"></div>
+            <span id="V10" onclick="selection(this)"></span>
+        </div>
         <h1 id="text"></h1>
     </div>
     <table class="botonera">
@@ -118,7 +126,7 @@
                 <td style="width: 23%"></td>
             </tr>
         </table>
-        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        <!--<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>-->
 
         <br><br>
 
@@ -130,8 +138,8 @@
     </div>
     <br>
     <!--<p id="display"></p>-->
-    <div id="divaux">
-        <table id="display" translate="no">
+    <div id="divaux" translate="no">
+        <table id="display">
         </table>
     </div>
     <!--<button id="undo" onclick="remove()"><ion-icon name="arrow-undo-outline"></ion-icon></button>-->
