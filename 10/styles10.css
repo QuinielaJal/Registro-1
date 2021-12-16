@@ -247,7 +247,7 @@ h6{
     color: white;
     text-align: center;
     font-weight: bolder;
-    width: 75%;
+    width: 90%;
     margin: auto;
     text-shadow: 1px 1px 5px black;
 }
@@ -260,5 +260,5 @@ h6{
 
 
 #bolsatxt:before{
-    content:'AVISO: Everton vs Leicester fue suspendido, la quiniela se jugará con 9 partidos, ';
+    content:'AVISO:\aEverton vs Leicester fue suspendido, la quiniela se jugará con 9 partidos, ';
 }
