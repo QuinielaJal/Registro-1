@@ -244,10 +244,10 @@ h6{
 }
 
 #bolsa{
-    color:white;
+    color: white;
     text-align: center;
     font-weight: bolder;
-    width: 75%;
+    width: 90%;
     margin: auto;
     text-shadow: 1px 1px 5px black;
 }
@@ -255,9 +255,10 @@ h6{
 
 #cantidad:before{
     content:'$400,000 pesos!';
+    color: yellow;
 }
 
 
 #bolsatxt:before{
-    content:'¡Bolsa estimada  ';
+    content:'Bolsa estimada:';
 }
