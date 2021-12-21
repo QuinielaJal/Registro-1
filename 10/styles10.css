@@ -254,11 +254,11 @@ h6{
 
 
 #cantidad:before{
-    content:'$400,000 pesos!';
+    content:'$400,000 a $450,000 pesos.';
     color: yellow;
 }
 
 
 #bolsatxt:before{
-    content:'Bolsa estimada: ';
+    content:' ¡Se va todo el acumulado!, Bolsa estimada: ';
 }
