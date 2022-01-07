@@ -244,7 +244,7 @@ h6{
 }
 
 #bolsa{
-    color: white;
+    color: yellow;
     text-align: center;
     font-weight: bolder;
     width: 90%;
@@ -254,11 +254,11 @@ h6{
 
 
 #cantidad:before{
-    content:'';
-    color: yellow;
+    content:' fue suspendido, no contará y se jugará con 9 partidos, favor de llenarlo en tu quiniela con cualquier resultado.';
+    color: white;
 }
 
 
 #bolsatxt:before{
-    content:'';
+    content:'Torino vs Fiorentina';
 }
