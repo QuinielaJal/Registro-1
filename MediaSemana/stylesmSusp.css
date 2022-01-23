@@ -1,0 +1,251 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+}
+
+.quiniela{
+    margin: auto;
+    background-image: url("quinielamSusp.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    max-width: 400px;
+    border-radius: 20px;
+
+}
+
+
+.botonera{
+    margin-top: 13%;
+    width: 100%;
+}
+
+@media (max-width: 400px){
+    .botonera {
+        margin-top: 2vh;
+    }
+}
+
+.aux{
+    background-color: rgba(165, 42, 42, 0);
+    width: 100%;
+    height: 12.5%;
+    padding-top: 2.5%;
+}
+
+.aux h3{
+    width: 9%;
+    padding-top: 5px;
+    margin-left: 4px;
+    background-color: rgba(255, 255, 255, 0.288);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.288);
+}
+.aux h3 ion-icon{
+    display: table-row-group;
+}
+
+.aux2{
+    height: 9.7%;
+}
+
+
+.quiniela span{
+    width: 10.6%;
+    display: inline-flex;
+    -webkit-transition:background-color 0.3s ease;
+   -moz-transition:background-color 0.3s ease;
+   -o-transition:background-color 0.3s ease;
+   transition:background-color 0.3s ease;  
+}
+
+#_{
+    background-color: rgba(128, 255, 0, 0);
+    width: 34.1%;
+    height: 100%;
+    display: inline-flex;
+}
+
+.partido{
+    display: flex;
+    height: 6.05%;
+    width: 100%;
+}
+
+body{
+    max-width: 400px;
+    margin: auto;
+    background-color: rgb(6,12,37);
+    background-image: url("fondom.jpg");
+    background-repeat: repeat-y;
+    background-position: top;
+}
+
+  
+
+h1{
+    background-color: teal;
+    text-align: center;
+    padding: 18px;
+    color: whitesmoke;
+    margin-top: 8%;
+    border: solid 1px black;
+    border-radius: 0 0 14px 14px;
+    background: -webkit-linear-gradient(0.01turn, rgb(16,30,77)  ,rgb(188,52,12) 80%);
+    background: linear-gradient(0.01turn, rgb(16,30,77)  ,rgb(188,52,12) 80%);
+    font-size: x-large;
+}
+
+h2,h3{
+    background: -webkit-linear-gradient( #8f6B29, #FCF15C, #DF9F28);
+    background: linear-gradient(left, #8f6B29, #FDE08D, #DF9F28);
+    text-align: center;
+    padding: 12px 20px 12px 0;
+    margin-right: 6px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px black;
+    font-size: large;
+}
+
+#nombretext{
+    color: gray;
+    font-size: 9px;
+    text-align: center;
+    padding: 2px 0 0 2px;
+}
+
+#botonlisto{
+    background: linear-gradient(to bottom, #038bb4, #5caff8, #038bb4);
+    padding: 8px;
+    border-radius: 15px;
+    padding-top: 10px;
+    font-size: x-large;
+}
+
+#botonborrar{
+    background:  linear-gradient(to bottom, #960202, #f82525, #960202); 
+    border-radius: 15px;
+    padding-top: 10px;
+    padding: 8px;
+    font-size: x-large;
+}
+
+#nombrebox{
+    border-collapse: collapse;
+    background:  linear-gradient(0,  rgb(220, 220, 220) 20%, rgb(255, 255, 255) 90%);
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px black;
+
+}
+
+#nombre{
+    background:transparent;
+    display: inline-block;
+    width: 100%;
+    border: none;
+    text-align: center;
+    padding-bottom: 13px;
+    margin: 0 0 2px 2px;
+}
+
+
+#ultimonombre{
+    margin-left: 11%;
+    height: 17px;
+    box-shadow: 1px 1px black;
+}
+
+#random{
+    background:  linear-gradient(0,  rgb(250, 250, 200) 20%, rgb(255, 255, 255) 90%);
+    border-radius: 4px;
+    padding: 3px 25%;
+    font-size: small;
+    box-shadow: 1px 1px 3px black;
+    font-weight: bold;
+}
+
+#checkcombinaciones{
+    height: 25px;
+    background: rgb(255,255,255,0.7);  
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-size: small;
+    box-shadow: 1px 1px 3px black;
+    text-align: center;
+    border: solid 1px #777777;
+    color: #777777; 
+    -webkit-transition:background-color 0.3s ease;
+    -moz-transition:background-color 0.3s ease;
+    -o-transition:background-color 0.3s ease;
+    transition:background-color 0.3s ease;
+}
+
+/*#undo{
+    float: right;
+    background:  linear-gradient(0,  rgb(250, 200, 200) 20%, rgb(255, 255, 255) 90%);
+    border-radius: 4px;
+    padding: 2px;
+}*/
+
+
+p{
+    padding: 10px;
+}
+
+
+#display{
+    border: solid black 2px;
+    width: 100%;
+    background-color: rgba(255, 255, 240, 0.4);
+    border-radius: 5px;
+    text-align: left;
+    padding: 5px 0px;
+    margin: 15px 0;
+    table-layout: fixed;   
+}
+
+
+#display td{
+    border-right: 1px solid rgb(0,0,0,0.2);
+    text-align: center;
+}
+
+h4{
+    float: left;
+    display: contents;
+    text-align: center;
+}
+
+h6{
+    display: inline;
+}
+
+#total{
+    display: inline-block;
+    float: right;
+    margin-top: 0;
+    background-color: rgb(200,200,200,0.5);
+    padding: 0 2px;
+    border-radius: 3px;
+}
+
+#costo, #numquinielas{
+    color: rgba(11, 15, 0, 0.753);
+    background-color: rgb(200,200,200,0.5);
+    display:inline;
+    padding: 0 2px;
+    border-radius: 3px;
+}
+
+#bolsa{
+    color:white;
+    text-align: center;
+    font-weight: bolder;
+}
+
+#costoSpan{
+    color: yellow;
+    text-shadow: 0 0 5px black;
+}
