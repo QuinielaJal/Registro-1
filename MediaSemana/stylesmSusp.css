@@ -77,8 +77,10 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: url("../fondo14.jpg");
-    background-repeat: repeat-y;
+    background-image: url(../fondo11.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     background-position: top;
 }
 
@@ -198,7 +200,7 @@ p{
 #display{
     border: solid black 2px;
     width: 100%;
-    background-color: rgba(255, 255, 240, 0.4);
+    background-color: rgba(255, 255, 240, 0.6);
     border-radius: 5px;
     text-align: left;
     padding: 5px 0px;
@@ -243,6 +245,7 @@ h6{
     color:white;
     text-align: center;
     font-weight: bolder;
+    text-shadow: 1px 1px 4px black;
 }
 
 #costoSpan{
