@@ -17,20 +17,20 @@
 
 
 .botonera{
-    margin-top: 12%;
+    margin-top: 15%;
     width: 100%;
 }
 
-@media (max-width: 400px){
+/*@media (max-width: 400px){
     .botonera {
         margin-top: 2vh;
     }
-}
+}*/
 
 .aux{
     background-color: rgba(165, 42, 42, 0);
     width: 100%;
-    height: 13.5%;
+    height: 12.7%;
     padding-top: 2.5%;
 }
 .aux h3{
@@ -65,7 +65,7 @@
 
 .partido{
     display: flex;
-    height: 6.07%;
+    height: 5.7%;
     width: 100%;
 }
 
@@ -85,11 +85,11 @@ h1{
     text-align: center;
     padding: 20px;
     color: whitesmoke;
-    /*margin-top: 8%;*/
+    margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.04turn, rgb(0,0,0)  ,rgb(3,110,182) 80%);
-    background: linear-gradient(0.04turn, rgb(0,0,0)  ,rgb(3,110,182) 80%);
+    background: -webkit-linear-gradient(0.45turn, rgb(0,0,0)  ,rgb(3,110,182) 80%);
+    background: linear-gradient(0.45turn, rgb(0,0,0)  ,rgb(3,110,182) 80%);
     font-size: x-large;
 }
 
@@ -243,7 +243,7 @@ h6{
 }
 
 .aux2{
-    height: 9.5%;
+    height: 9%;
 }
 
 #bolsa{
