@@ -30,7 +30,7 @@
 .aux{
     background-color: rgba(165, 42, 42, 0);
     width: 100%;
-    height: 12.5%;
+    height: 13.1%;
     padding-top: 2.5%;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .aux2{
-    height: 9.7%;
+    height: 9.4%;
 }
 
 
@@ -69,7 +69,7 @@
 
 .partido{
     display: flex;
-    height: 6.05%;
+    height: 5.9%;
     width: 100%;
 }
 
@@ -92,8 +92,8 @@ h1{
     margin-top: 8%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.01turn, rgb(16,30,77)  ,rgb(188,52,12) 80%);
-    background: linear-gradient(0.01turn, rgb(16,30,77)  ,rgb(188,52,12) 80%);
+    background: -webkit-linear-gradient(0.05turn, rgb(6,33,76)  ,rgb(98,142,65) 80%);
+    background: linear-gradient(0.05turn, rgb(6,33,76)  ,rgb(98,142,65) 80%);
     font-size: x-large;
 }
 
