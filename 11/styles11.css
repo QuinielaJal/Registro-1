@@ -30,7 +30,7 @@
 .aux{
     background-color: rgba(165, 42, 42, 0);
     width: 100%;
-    height: 12.7%;
+    height: 11.9%;
     padding-top: 2.5%;
 }
 .aux h3{
@@ -47,7 +47,7 @@
 
 
 .quiniela span{
-    width: 10.6%;
+    width: 10%;
     display: inline-flex;
     -webkit-transition:background-color 0.3s ease;
    -moz-transition:background-color 0.3s ease;
@@ -57,7 +57,7 @@
 
 #_{
     background-color: rgba(128, 255, 0, 0);
-    width: 34.1%;
+    width: 35%;
     height: 100%;
     display: inline-flex;
 }
@@ -65,7 +65,7 @@
 
 .partido{
     display: flex;
-    height: 5.7%;
+    height: 5.4%;
     width: 100%;
 }
 
@@ -88,8 +88,8 @@ h1{
     margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.45turn, rgb(0,0,0)  ,rgb(3,110,182) 80%);
-    background: linear-gradient(0.45turn, rgb(0,0,0)  ,rgb(3,110,182) 80%);
+    background: -webkit-linear-gradient(0.54turn, rgb(87 37 124)  ,rgb(4 2 6) 80%);
+    background: linear-gradient(0.54turn, rgb(87 37 124)  ,rgb(4 2 6) 80%);
     font-size: x-large;
 }
 
@@ -243,7 +243,7 @@ h6{
 }
 
 .aux2{
-    height: 9%;
+    height: 8.6%;
 }
 
 #bolsa{
