@@ -250,4 +250,17 @@ h6{
     color:white;
     text-align: center;
     font-weight: bolder;
+    margin: auto;
+    text-shadow: 1px 1px 5px black;
+}
+
+#cantidad:before{
+    content:'$300,000 pesos';
+    color: yellow;
+}
+
+
+#bolsatxt:before{
+    content:'¡Se va todo el acumulado!, \A Bolsa estimada: ';
+    white-space: pre;
 }
