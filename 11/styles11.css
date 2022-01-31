@@ -261,6 +261,6 @@ h6{
 
 
 #bolsatxt:before{
-    content:'¡Se va todo el acumulado!, \A Bolsa estimada: ';
+    content:'Bolsa estimada: ';
     white-space: pre;
 }
