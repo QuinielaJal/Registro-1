@@ -12,7 +12,7 @@
     background-repeat: no-repeat;
     max-width: 400px;
     border-radius: 20px;
-
+    box-shadow: 1px 0px 10px black;
 }
 
 
@@ -84,14 +84,15 @@ h1{
     background-color: teal;
     text-align: center;
     padding: 20px;
-    color: #a9d0f7;
+    color: whitesmoke;
     margin-top: 9%;
-    border: solid 1px black;
+    border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.54turn, rgb(81,1,162)  ,rgb(0,0,0) 80%);
-    background: linear-gradient(0.54turn, rgb(81,1,162)  ,rgb(0,0,0) 80%);
+    background: -webkit-linear-gradient(0.59turn, rgb(164 1 120)  ,rgb(58 0 41) 80%);
+    background: linear-gradient(0.59turn, rgb(164 1 120)  ,rgb(58 0 41) 80%);
     font-size: x-large;
-    text-shadow: 2px 2px 1px black;
+    text-shadow: 2px 2px 1px black; 
+    box-shadow: 1px 10px 10px black;
 }
 
 h2,h3{
@@ -256,7 +257,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'$300,000 pesos';
+    content:'$350,000 pesos';
     color: yellow;
 }
 
