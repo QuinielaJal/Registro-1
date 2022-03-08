@@ -12,7 +12,6 @@
     background-repeat: no-repeat;
     max-width: 400px;
     border-radius: 20px;
-    box-shadow: 1px 0px 10px black;
 }
 
 
@@ -92,7 +91,6 @@ h1{
     background: linear-gradient(0.59turn, rgb(164 1 120)  ,rgb(58 0 41) 80%);
     font-size: x-large;
     text-shadow: 2px 2px 1px black; 
-    box-shadow: 1px 10px 10px black;
 }
 
 h2,h3{
