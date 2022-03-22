@@ -90,7 +90,7 @@ h1{
     background: -webkit-linear-gradient(0.53turn, rgb(0,87,150)  ,rgb(0,0,0) 80%);
     background: linear-gradient(0.53turn, rgb(0,87,150)  ,rgb(0,0,0) 80%);
     font-size: x-large;
-    text-shadow: 2px 2px 5px black;
+    text-shadow: 2px 2px 4px black;
 }
 
 h2,h3{
