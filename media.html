@@ -8,17 +8,17 @@
     <meta name="keywords" content="Quiniela, Liga MX, Apostar, Pronósticos">
     <title>Quiniela Jalisco</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="MediaSemana/stylesmSusp.css">
+    <link rel="stylesheet" href="11/styles11media.css">
     <link rel="icon" href="MediaSemana/iconm.jpg">
     <link rel="apple-touch-icon" href="MediaSemana/iconm.jpg">
     <link rel="shortcut icon" href="MediaSemana/iconm.jpg" type="image/x-icon">
     <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
-    <script src="10/main10media.js"></script>
+    <script src="11/main11media.js"></script>
 </head>
 
 <body>
-    <p id='bolsa'>Bolsa estimada: <span style="color:yellow">$250,000</span> pesos<br><span style="font-size:smaller;color:yellow;">AVISO: Las cuentas para realizar los pagos cambiaron.</span></p>
+    <p id='bolsa'><span id="bolsatxt"></span><span id="cantidad"></span></p>
     <div class="quiniela" id="quiniela">
         <div class="aux"><h3 style="padding: 5px 7px" onclick="clean()"><ion-icon name="close-outline"></ion-icon></h3></div>
         <div class="partido">
@@ -84,13 +84,20 @@
             <div id="_"></div>
             <span id="V9" onclick="selection(this)"></span>
         </div>
-    <div class="aux2"></div>
 	<div class="partido">
             <span id="L10" onclick="selection(this)"></span>
             <div id="_"></div>
             <span id="E10" onclick="selection(this)"></span>
             <div id="_"></div>
             <span id="V10" onclick="selection(this)"></span>
+        </div>
+    <div class=aux2></div>
+    <div class="partido">
+            <span id="L11" onclick="selection(this)"></span>
+            <div id="_"></div>
+            <span id="E11" onclick="selection(this)"></span>
+            <div id="_"></div>
+            <span id="V11" onclick="selection(this)"></span>
         </div>
         <h1 id="text"></h1>
     </div>
@@ -132,7 +139,7 @@
         <br><br>
 
     <div>
-    <h4 id="costo">Costo: $0</h4><h4 id="total">Total: $0</h4><br>
+    <h4 id="costo">Costo: <span id="costoSpan">$0</span></h4><h4 id="total">Total: $0</h4><br>
     </div>
     <div>
         <h4 id="numquinielas">0 Quiniela(s)</h4>
