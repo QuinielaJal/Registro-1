@@ -255,17 +255,13 @@ h6{
 }
 
 #cantidad:before{
-<<<<<<< HEAD
     content:'$250,000 pesos';
-=======
-    content:'$400,000 pesos';
->>>>>>> 69597f1a94924e64c04dce0a97237f13c5f93093
     color: yellow;
     white-space:pre;
 }
 
 
 #bolsatxt:before{
-    content:'¡Se reparte todo el acumulado!\A Bolsa estimada: ';
+    content:'Bolsa estimada: ';
     white-space: pre;
 }
