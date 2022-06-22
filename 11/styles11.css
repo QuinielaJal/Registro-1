@@ -254,14 +254,27 @@ h6{
     text-shadow: 1px 1px 5px black;
 }
 
-#cantidad:before{
-    content:'Venados vs Correcaminos\A\A Bolsa estimada: $250,000 pesos';
-    color: yellow;
-    white-space:pre;
-}
-
-
 #bolsatxt:before{
     content:'Chivas vs Necaxa fue suspendido, se \Areemplazará con: ';
     white-space: pre;
 }
+
+#cantidad:before{
+    content:'Venados vs Correcaminos\A\A';
+    color: yellow;
+    white-space:pre;
+}
+
+#sub1:before{
+    content:'Bolsa estimada: ';
+    color: white;
+    white-space:pre;
+}
+
+
+#sub2:before{
+    content:'$250,000 pesos';
+    color: yellow;
+    white-space:pre;
+}
+
