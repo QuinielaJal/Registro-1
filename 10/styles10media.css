@@ -250,7 +250,32 @@ h6{
     color:white;
     text-align: center;
     font-weight: bolder;
-    text-shadow: 1px 1px 3px black;
+    margin: auto;
+    text-shadow: 1px 1px 5px black;
+}
+
+#bolsatxt:before{
+    content:'Bolsa estimada:';
+    white-space: pre;
+}
+
+#cantidad:before{
+    content:'$200,000 pesos';
+    color: yellow;
+    white-space:pre;
+}
+
+#sub1:before{
+    content:';
+    color: white;
+    white-space:pre;
+}
+
+
+#sub2:before{
+    content:'';
+    color: yellow;
+    white-space:pre;
 }
 
 #costoSpan{
