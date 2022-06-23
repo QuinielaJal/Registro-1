@@ -1,1 +1,402 @@
-var _0xa7e9=["\x5F","\x71\x75\x61\x6E\x74\x69\x74\x79\x31\x30\x6D","\x72\x65\x73\x75\x6C\x74\x73\x31\x30\x6D","\x61\x6C\x69\x61\x73\x4D","\x35\x32\x31\x33\x33\x32\x35\x33\x36\x35\x37\x39\x36","\x67\x65\x74\x49\x74\x65\x6D","\x64\x69\x73\x70\x6C\x61\x79","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x6F\x66\x66\x73\x65\x74\x57\x69\x64\x74\x68","\x71\x75\x69\x6E\x69\x65\x6C\x61","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x73\x42\x79\x43\x6C\x61\x73\x73\x4E\x61\x6D\x65","\x68\x65\x69\x67\x68\x74","\x73\x74\x79\x6C\x65","\x70\x78","\x74\x65\x78\x74","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\xA0\xA0","\x6A\x6F\x69\x6E","\x74\x65\x78\x74\x43\x6F\x6E\x74\x65\x6E\x74","\x2E\x62\x6F\x74\x6F\x6E\x65\x6E\x76\x69\x61\x72\x20\x73\x70\x61\x6E","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72","\x2A","\x73\x70\x6C\x69\x74","\x69\x6E\x73\x65\x72\x74\x52\x6F\x77","\x4C","\x45","\x56","\x73\x6C\x69\x63\x65","\x69\x6E\x73\x65\x72\x74\x43\x65\x6C\x6C","\x77\x69\x64\x74\x68","\x36\x2E\x33\x25","\x6C\x65\x6E\x67\x74\x68","\x66\x6F\x6E\x74\x53\x69\x7A\x65","\x73\x6D\x61\x6C\x6C","\x78\x2D\x73\x6D\x61\x6C\x6C","\x3C\x70\x72\x65\x3E","\x3C\x2F\x70\x72\x65\x3E","\x6F\x76\x65\x72\x66\x6C\x6F\x77","\x68\x69\x64\x64\x65\x6E","\x6F\x76\x65\x72\x66\x6C\x6F\x77\x59","\x62\x6F\x72\x64\x65\x72","\x6E\x6F\x6E\x65","\x63\x6C\x61\x73\x73\x4E\x61\x6D\x65","\x63\x65\x6C\x6C\x6E\x61\x6D\x65","\x73\x63\x72\x6F\x6C\x6C\x54\x6F","\x78\x78\x2D\x73\x6D\x61\x6C\x6C","\x3C\x69\x6F\x6E\x2D\x69\x63\x6F\x6E\x20\x6E\x61\x6D\x65\x3D\x22\x63\x6C\x6F\x73\x65\x2D\x63\x69\x72\x63\x6C\x65\x22\x20\x73\x74\x79\x6C\x65\x3D\x22\x63\x6F\x6C\x6F\x72\x3A\x72\x67\x62\x28\x31\x32\x30\x2C\x30\x2C\x30\x29\x3B\x22\x3E\x3C\x2F\x69\x6F\x6E\x2D\x69\x63\x6F\x6E\x3E","\x69\x64","\x78","\x64\x65\x6C\x65\x74\x65\x72","\x63\x6C\x69\x63\x6B","\x63\x6C\x6F\x6E\x65\x4E\x6F\x64\x65","\x72\x65\x70\x6C\x61\x63\x65\x57\x69\x74\x68","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x74\x6F\x74\x61\x6C","\x54\x6F\x74\x61\x6C\x3A\x20\x24","\x0A","\x74\x72","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x73\x42\x79\x54\x61\x67\x4E\x61\x6D\x65","\x37\x25","\x20\x28","\x29","\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x43\x6F\x6C\x6F\x72","","\x72\x67\x62\x28\x32\x35\x30\x2C\x20\x33\x30\x2C\x20\x33\x30\x29","\x3C\x73\x70\x61\x6E\x20\x69\x64\x3D\x27\x73\x75\x70\x53\x70\x61\x6E\x27\x3E\xA0\xA0","\x3C\x2F\x73\x70\x61\x6E\x3E","\x6C\x61\x72\x67\x65\x72","\x70\x61\x64\x64\x69\x6E\x67","\x32\x33\x70\x78","\x78\x2D\x6C\x61\x72\x67\x65","\x32\x30\x70\x78","\x73\x65\x74\x49\x74\x65\x6D","\x76\x61\x6C\x75\x65","\x6E\x6F\x6D\x62\x72\x65","\x69\x6E\x63\x6C\x75\x64\x65\x73","\x44\x65\x62\x65\x73\x20\x6C\x6C\x65\x6E\x61\x72\x20\x74\x6F\x64\x6F\x73\x20\x6C\x6F\x73\x20\x70\x61\x72\x74\x69\x64\x6F\x73","\x44\x65\x62\x65\x73\x20\x65\x6C\x65\x67\x69\x72\x20\x75\x6E\x20\x6E\x6F\x6D\x62\x72\x65","\x66\x6F\x63\x75\x73","\x45\x6E\x76\xED\x61\x20\x74\x75\x73\x20\x71\x75\x69\x6E\x69\x65\x6C\x61\x73\x20\x67\x75\x61\x72\x64\x61\x64\x61\x73\x20\x61\x6E\x74\x65\x73\x20\x64\x65\x20\x61\x67\x72\x65\x67\x61\x72\x20\x6D\xE1\x73","\x2E\x71\x75\x69\x6E\x69\x65\x6C\x61\x20\x73\x70\x61\x6E","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72\x41\x6C\x6C","\x63\x6F\x73\x74\x6F","\x43\x6F\x73\x74\x6F\x3A\x20\x24\x30","\x6E\x75\x6D\x71\x75\x69\x6E\x69\x65\x6C\x61\x73","\x30\x20\x51\x75\x69\x6E\x69\x65\x6C\x61\x28\x73\x29","\x6E\x75\x6C\x6C","\x63\x68\x65\x63\x6B\x63\x6F\x6D\x62\x69\x6E\x61\x63\x69\x6F\x6E\x65\x73","\x72\x67\x62\x28\x30\x2C\x31\x31\x37\x2C\x32\x35\x35\x29","\x62\x6C\x61\x63\x6B\x20\x73\x6F\x6C\x69\x64\x20\x31\x70\x78","\x63\x6F\x6C\x6F\x72","\x77\x68\x69\x74\x65","\x72\x67\x62\x28\x32\x35\x35\x2C\x32\x35\x35\x2C\x32\x35\x35\x2C\x30\x2E\x33\x35\x29","\x23\x37\x37\x37\x37\x37\x37\x20\x73\x6F\x6C\x69\x64\x20\x31\x70\x78","\x23\x37\x37\x37\x37\x37\x37","\x70\x61\x72\x74\x69\x64\x6F","\x73\x70\x61\x6E","\x63\x65\x69\x6C","\x66\x6C\x6F\x6F\x72","\x72\x61\x6E\x64\x6F\x6D","\x43\x6F\x73\x74\x6F\x3A\x20\x24","\x20\x51\x75\x69\x6E\x69\x65\x6C\x61\x28\x73\x29","\x64\x65\x6C\x65\x74\x65\x52\x6F\x77","\x73\x70\x6C\x69\x63\x65","\x6C\x61\x73\x74\x49\x6E\x64\x65\x78\x4F\x66","\x73\x75\x62\x73\x74\x72\x69\x6E\x67","\x53\x65\x20\x62\x6F\x72\x72\x61\x72\xE1\x20\x74\x6F\x64\x6F","\x71\x75\x61\x6E\x74\x69\x74\x79\x4D","\x72\x65\x73\x75\x6C\x74\x73\x4D","\x72\x65\x6C\x6F\x61\x64","\x25\x32\x30\x25\x32\x30","\x72\x65\x70\x6C\x61\x63\x65","\x25\x30\x44","\x68\x72\x65\x66","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x61\x2E\x6D\x65\x2F","\x3F\x74\x65\x78\x74\x3D","\x6C\x6F\x61\x64"];let res=[_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0]];let quantStorage=_0xa7e9[1];let resultStorage=_0xa7e9[2];let aliasStorage=_0xa7e9[3];let price=20;let tel=_0xa7e9[4];let nPartidos=10;let partidoSup=true;let quantity=localStorage[_0xa7e9[5]](quantStorage);let name=localStorage[_0xa7e9[5]](aliasStorage);let combinations=false;var aux;var id=0;function start(){recovername();display= document[_0xa7e9[7]](_0xa7e9[6]);let _0x1007xf=document[_0xa7e9[10]](_0xa7e9[9])[0][_0xa7e9[8]];document[_0xa7e9[7]](_0xa7e9[9])[_0xa7e9[12]][_0xa7e9[11]]= _0x1007xf* 0.9375+ _0xa7e9[13];let _0x1007x10=document[_0xa7e9[7]](_0xa7e9[14]);_0x1007x10[_0xa7e9[15]]= res[_0xa7e9[17]](_0xa7e9[16]);if(quantity){document[_0xa7e9[20]](_0xa7e9[19])[_0xa7e9[18]]= quantity};let _0x1007x11=localStorage[_0xa7e9[5]](resultStorage);if(_0x1007x11){_0x1007x11= _0x1007x11[_0xa7e9[22]](_0xa7e9[21]);for(var _0x1007x12=0;_0x1007x12< quantity;_0x1007x12++){if(_0x1007x11[_0x1007x12]&& _0x1007x11[_0x1007x12]!= undefined){let _0x1007x13=display[_0xa7e9[23]](_0x1007x12);if(_0x1007x11[_0x1007x12][_0xa7e9[22]](_0xa7e9[16])[0][0]!= _0xa7e9[24]&& _0x1007x11[_0x1007x12][_0xa7e9[22]](_0xa7e9[16])[0][0]!= _0xa7e9[25]&& _0x1007x11[_0x1007x12][_0xa7e9[22]](_0xa7e9[16])[0][0]!= _0xa7e9[26]){_0x1007x11[_0x1007x12]= _0x1007x11[_0x1007x12][_0xa7e9[27]](1)};for(var _0x1007x14=0;_0x1007x14< nPartidos;_0x1007x14++){cell1= _0x1007x13[_0xa7e9[28]](_0x1007x14);cell1[_0xa7e9[15]]+= _0x1007x11[_0x1007x12][_0xa7e9[22]](_0xa7e9[16])[_0x1007x14];cell1[_0xa7e9[12]][_0xa7e9[29]]= _0xa7e9[30];if(_0x1007x11[_0x1007x12][_0xa7e9[22]](_0xa7e9[16])[_0x1007x14][_0xa7e9[31]]== 2){cell1[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[33]};if(_0x1007x11[_0x1007x12][_0xa7e9[22]](_0xa7e9[16])[_0x1007x14][_0xa7e9[31]]== 3){cell1[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[34]}};let _0x1007x15=_0x1007x13[_0xa7e9[28]](nPartidos);_0x1007x15[_0xa7e9[15]]+= _0xa7e9[35]+ _0x1007x11[_0x1007x12][_0xa7e9[22]](_0xa7e9[16])[nPartidos]+ _0xa7e9[36];_0x1007x15[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[33];_0x1007x15[_0xa7e9[12]][_0xa7e9[37]]= _0xa7e9[38];_0x1007x15[_0xa7e9[12]][_0xa7e9[39]]= _0xa7e9[38];_0x1007x15[_0xa7e9[12]][_0xa7e9[40]]= _0xa7e9[41];_0x1007x15[_0xa7e9[42]]= _0xa7e9[43];_0x1007x15[_0xa7e9[44]](80,0);if(_0x1007x11[_0x1007x12][_0xa7e9[22]](_0xa7e9[16])[nPartidos][_0xa7e9[31]]> 15){_0x1007x15[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[45]}else {if(_0x1007x11[_0x1007x12][_0xa7e9[22]](_0xa7e9[16])[nPartidos][_0xa7e9[31]]> 11){_0x1007x15[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[34]}};let _0x1007x16=_0x1007x13[_0xa7e9[28]](nPartidos+ 1);_0x1007x16[_0xa7e9[15]]+= _0xa7e9[46];_0x1007x16[_0xa7e9[12]][_0xa7e9[29]]= _0xa7e9[30];_0x1007x16[_0xa7e9[12]][_0xa7e9[40]]= _0xa7e9[41];_0x1007x16[_0xa7e9[47]]= _0xa7e9[48]+ _0x1007x12;_0x1007x16[_0xa7e9[42]]= _0xa7e9[49];_0x1007x16[_0xa7e9[53]](_0xa7e9[50],function(){remove(this);this[_0xa7e9[52]](this[_0xa7e9[51]](true))})}else {break}};id= _0x1007x12;document[_0xa7e9[7]](_0xa7e9[54])[_0xa7e9[15]]= _0xa7e9[55]+ quantity* price+ _0xa7e9[56]}}function updatedisplay(_0x1007x18){let _0x1007x19=document[_0xa7e9[7]](_0xa7e9[6]);let _0x1007x1a=_0x1007x19[_0xa7e9[58]](_0xa7e9[57])[_0xa7e9[31]];if(_0x1007x18== 1){if(aux== undefined){aux= 0};let _0x1007x13=_0x1007x19[_0xa7e9[23]](_0x1007x1a);for(var _0x1007x14=0;_0x1007x14< nPartidos;_0x1007x14++){cell1= _0x1007x13[_0xa7e9[28]](_0x1007x14);cell1[_0xa7e9[15]]+= res[_0x1007x14];cell1[_0xa7e9[12]][_0xa7e9[29]]= _0xa7e9[59];if(res[_0x1007x14][_0xa7e9[31]]== 2){cell1[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[33]};if(res[_0x1007x14][_0xa7e9[31]]== 3){cell1[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[34]}};if(aux> 1){var _0x1007x1b=_0x1007x13[_0xa7e9[28]](nPartidos);_0x1007x1b[_0xa7e9[15]]+= name+ _0xa7e9[60]+ aux+ _0xa7e9[61]}else {var _0x1007x1b=_0x1007x13[_0xa7e9[28]](nPartidos);_0x1007x1b[_0xa7e9[15]]+= name};_0x1007x1b[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[33];_0x1007x1b[_0xa7e9[12]][_0xa7e9[37]]= _0xa7e9[38];_0x1007x1b[_0xa7e9[12]][_0xa7e9[39]]= _0xa7e9[38];_0x1007x1b[_0xa7e9[12]][_0xa7e9[40]]= _0xa7e9[41];_0x1007x1b[_0xa7e9[42]]= _0xa7e9[43];_0x1007x1b[_0xa7e9[44]](80,0);if(name[_0xa7e9[31]]> 15){_0x1007x1b[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[45]}else {if(name[_0xa7e9[31]]> nPartidos){_0x1007x1b[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[34]}};let _0x1007x16=_0x1007x13[_0xa7e9[28]](nPartidos+ 1);_0x1007x16[_0xa7e9[15]]+= _0xa7e9[46];_0x1007x16[_0xa7e9[12]][_0xa7e9[29]]= _0xa7e9[30];_0x1007x16[_0xa7e9[12]][_0xa7e9[40]]= _0xa7e9[41];_0x1007x16[_0xa7e9[47]]= _0xa7e9[48]+ id;_0x1007x16[_0xa7e9[42]]= _0xa7e9[49];_0x1007x16[_0xa7e9[53]](_0xa7e9[50],function(){remove(this);this[_0xa7e9[52]](this[_0xa7e9[51]](true))});id++;aux= 1}else {if(_0x1007x18== 2){id= 0;deleters= _0x1007x19[_0xa7e9[10]](_0xa7e9[49]);for(var _0x1007x12=0;_0x1007x12< _0x1007x1a;_0x1007x12++){deleters[_0x1007x12][_0xa7e9[47]]= _0xa7e9[48]+ id;id++}}};document[_0xa7e9[7]](_0xa7e9[54])[_0xa7e9[15]]= _0xa7e9[55]+ quantity* price}function selection(_0x1007x1d){let _0x1007x1e=parseInt(_0x1007x1d[_0xa7e9[47]][_0xa7e9[27]](1))- 1;let _0x1007x10=document[_0xa7e9[7]](_0xa7e9[14]);if(!_0x1007x1d[_0xa7e9[12]][_0xa7e9[62]]){if(!combinations){validation(_0x1007x1d);res[_0x1007x1e]= _0x1007x1d[_0xa7e9[47]][_0xa7e9[27]](0,1)}else {res[_0x1007x1e]+= _0x1007x1d[_0xa7e9[47]][_0xa7e9[27]](0,1);res[_0x1007x1e]= res[_0x1007x1e][_0xa7e9[22]](_0xa7e9[0])[_0xa7e9[17]](_0xa7e9[63])};_0x1007x1d[_0xa7e9[12]][_0xa7e9[62]]= _0xa7e9[64]}else {if(combinations){_0x1007x1d[_0xa7e9[12]][_0xa7e9[62]]= _0xa7e9[63];if(res[_0x1007x1e]!= _0xa7e9[0]&& res[_0x1007x1e][_0xa7e9[31]]> 1){res[_0x1007x1e]= res[_0x1007x1e][_0xa7e9[22]](_0x1007x1d[_0xa7e9[47]][_0xa7e9[27]](0,1))[_0xa7e9[17]](_0xa7e9[63])}else {res[_0x1007x1e]= _0xa7e9[0]}}};costoactual();if(!partidoSup){_0x1007x10[_0xa7e9[15]]= res[_0xa7e9[17]](_0xa7e9[16])}else {_0x1007x10[_0xa7e9[15]]= res[_0xa7e9[27]](0,nPartidos- 1)[_0xa7e9[17]](_0xa7e9[16])+ _0xa7e9[65]+ res[nPartidos- 1]+ _0xa7e9[66]};if(res[_0xa7e9[17]](_0xa7e9[16])[_0xa7e9[31]]> 35){_0x1007x10[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[67];_0x1007x10[_0xa7e9[12]][_0xa7e9[68]]= _0xa7e9[69]}else {_0x1007x10[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[70];_0x1007x10[_0xa7e9[12]][_0xa7e9[68]]= _0xa7e9[71]}}function validation(_0x1007x1d){let _0x1007x1e=parseInt(_0x1007x1d[_0xa7e9[47]][_0xa7e9[27]](1));document[_0xa7e9[7]](_0xa7e9[24]+ _0x1007x1e)[_0xa7e9[12]][_0xa7e9[62]]= null;document[_0xa7e9[7]](_0xa7e9[25]+ _0x1007x1e)[_0xa7e9[12]][_0xa7e9[62]]= null;document[_0xa7e9[7]](_0xa7e9[26]+ _0x1007x1e)[_0xa7e9[12]][_0xa7e9[62]]= null}function number(){quantity= localStorage[_0xa7e9[5]](quantStorage);if(quantity){localStorage[_0xa7e9[72]](quantStorage,++quantity)}else {localStorage[_0xa7e9[72]](quantStorage,1);quantity= localStorage[_0xa7e9[5]](quantStorage)};document[_0xa7e9[20]](_0xa7e9[19])[_0xa7e9[18]]= quantity;localStorage[_0xa7e9[72]](aliasStorage,name)}function result(){results= localStorage[_0xa7e9[5]](resultStorage);name= document[_0xa7e9[7]](_0xa7e9[74])[_0xa7e9[73]];name= name[_0xa7e9[22]](_0xa7e9[21])[_0xa7e9[17]](_0xa7e9[63]);if(results){if(aux> 1){localStorage[_0xa7e9[72]](resultStorage,results+ _0xa7e9[56]+ res[_0xa7e9[17]](_0xa7e9[16])+ _0xa7e9[16]+ name+ _0xa7e9[60]+ aux+ _0xa7e9[61]+ _0xa7e9[21])}else {localStorage[_0xa7e9[72]](resultStorage,results+ _0xa7e9[56]+ res[_0xa7e9[17]](_0xa7e9[16])+ _0xa7e9[16]+ name+ _0xa7e9[21])}}else {if(aux> 1){localStorage[_0xa7e9[72]](resultStorage,res[_0xa7e9[17]](_0xa7e9[16])+ _0xa7e9[16]+ name+ _0xa7e9[60]+ aux+ _0xa7e9[61]+ _0xa7e9[21])}else {localStorage[_0xa7e9[72]](resultStorage,res[_0xa7e9[17]](_0xa7e9[16])+ _0xa7e9[16]+ name+ _0xa7e9[21])}}}function save(){if(id< 150){name= document[_0xa7e9[7]](_0xa7e9[74])[_0xa7e9[73]];if(res[_0xa7e9[17]](_0xa7e9[16])[_0xa7e9[75]](_0xa7e9[0])){alert(_0xa7e9[76])}else {if(!name){alert(_0xa7e9[77]);document[_0xa7e9[7]](_0xa7e9[74])[_0xa7e9[78]]();return 0}else {if(combinations){calculate()}else {number()};result();updatedisplay(1);clean()}}}else {alert(_0xa7e9[79])}}function clean(){res= [_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0],_0xa7e9[0]];let _0x1007x10=document[_0xa7e9[7]](_0xa7e9[14]);_0x1007x10[_0xa7e9[15]]= res[_0xa7e9[17]](_0xa7e9[16]);spans= document[_0xa7e9[81]](_0xa7e9[80]);for(var _0x1007x12=0;_0x1007x12< nPartidos* 3;_0x1007x12++){spans[_0x1007x12][_0xa7e9[12]][_0xa7e9[62]]= _0xa7e9[63]};document[_0xa7e9[7]](_0xa7e9[82])[_0xa7e9[15]]= _0xa7e9[83];document[_0xa7e9[7]](_0xa7e9[84])[_0xa7e9[15]]= _0xa7e9[85];_0x1007x10[_0xa7e9[12]][_0xa7e9[32]]= _0xa7e9[70];_0x1007x10[_0xa7e9[12]][_0xa7e9[68]]= _0xa7e9[71]}function recovername(){name= localStorage[_0xa7e9[5]](aliasStorage);if(name!= null&& name!= _0xa7e9[86]){document[_0xa7e9[7]](_0xa7e9[74])[_0xa7e9[73]]= name}}function clearname(){document[_0xa7e9[7]](_0xa7e9[74])[_0xa7e9[73]]= _0xa7e9[63]}function allowcombination(){if(!combinations){combinations= true;document[_0xa7e9[7]](_0xa7e9[87])[_0xa7e9[12]][_0xa7e9[62]]= _0xa7e9[88];document[_0xa7e9[7]](_0xa7e9[87])[_0xa7e9[12]][_0xa7e9[40]]= _0xa7e9[89];document[_0xa7e9[7]](_0xa7e9[87])[_0xa7e9[12]][_0xa7e9[90]]= _0xa7e9[91]}else {combinations= false;document[_0xa7e9[7]](_0xa7e9[87])[_0xa7e9[12]][_0xa7e9[62]]= _0xa7e9[92];document[_0xa7e9[7]](_0xa7e9[87])[_0xa7e9[12]][_0xa7e9[40]]= _0xa7e9[93];document[_0xa7e9[7]](_0xa7e9[87])[_0xa7e9[12]][_0xa7e9[90]]= _0xa7e9[94];clean()}}function calculate(){aux= 1;for(var _0x1007x12=0;_0x1007x12< nPartidos;_0x1007x12++){aux*= res[_0x1007x12][_0xa7e9[31]]};quantity= localStorage[_0xa7e9[5]](quantStorage);if(quantity){localStorage[_0xa7e9[72]](quantStorage,parseInt(quantity)+ aux);quantity= localStorage[_0xa7e9[5]](quantStorage)}else {localStorage[_0xa7e9[72]](quantStorage,aux);quantity= localStorage[_0xa7e9[5]](quantStorage)};document[_0xa7e9[20]](_0xa7e9[19])[_0xa7e9[18]]= quantity;localStorage[_0xa7e9[72]](aliasStorage,name)}function random(){clean();let _0x1007x10=document[_0xa7e9[7]](_0xa7e9[14]);let _0x1007x29=document[_0xa7e9[10]](_0xa7e9[95]);for(var _0x1007x12=0;_0x1007x12< nPartidos;_0x1007x12++){var _0x1007x2a=getRandomInt(0,2);_0x1007x29[_0x1007x12][_0xa7e9[58]](_0xa7e9[96])[_0x1007x2a][_0xa7e9[12]][_0xa7e9[62]]= _0xa7e9[64];res[_0x1007x12]= [_0xa7e9[24],_0xa7e9[25],_0xa7e9[26]][_0x1007x2a]};if(!partidoSup){_0x1007x10[_0xa7e9[15]]= res[_0xa7e9[17]](_0xa7e9[16])}else {_0x1007x10[_0xa7e9[15]]= res[_0xa7e9[27]](0,nPartidos- 1)[_0xa7e9[17]](_0xa7e9[16])+ _0xa7e9[65]+ res[nPartidos- 1]+ _0xa7e9[66]};costoactual()}function getRandomInt(_0x1007x2c,_0x1007x2d){_0x1007x2c= Math[_0xa7e9[97]](_0x1007x2c);_0x1007x2d= Math[_0xa7e9[98]](_0x1007x2d);return Math[_0xa7e9[98]](Math[_0xa7e9[99]]()* (_0x1007x2d- _0x1007x2c+ 1))+ _0x1007x2c}function costoactual(){if(true){let _0x1007x2f=1;for(var _0x1007x12=0;_0x1007x12< nPartidos;_0x1007x12++){_0x1007x2f*= res[_0x1007x12][_0xa7e9[31]]};document[_0xa7e9[7]](_0xa7e9[82])[_0xa7e9[15]]= _0xa7e9[100]+ _0x1007x2f* price;document[_0xa7e9[7]](_0xa7e9[84])[_0xa7e9[15]]= _0x1007x2f+ _0xa7e9[101]}}function remove(_0x1007x31){display= document[_0xa7e9[7]](_0xa7e9[6]);eindex= _0x1007x31[_0xa7e9[47]][_0xa7e9[27]](1);tr= display[_0xa7e9[58]](_0xa7e9[57])[eindex];display[_0xa7e9[102]](eindex);results= localStorage[_0xa7e9[5]](resultStorage);results= results[_0xa7e9[22]](_0xa7e9[21]);removing= results[eindex][_0xa7e9[22]](_0xa7e9[16]);if(removing[0][0]!= _0xa7e9[24]&& removing[0][0]!= _0xa7e9[25]&& removing[0][0]!= _0xa7e9[26]){removing[0]= removing[0][_0xa7e9[27]](1)};let _0x1007x32=1;for(var _0x1007x12=0;_0x1007x12< nPartidos;_0x1007x12++){_0x1007x32*= removing[_0x1007x12][_0xa7e9[31]]};quantity-= _0x1007x32;localStorage[_0xa7e9[72]](quantStorage,quantity);results[_0xa7e9[103]](eindex,1);results= results[_0xa7e9[17]](_0xa7e9[21]);localStorage[_0xa7e9[72]](resultStorage,results);document[_0xa7e9[20]](_0xa7e9[19])[_0xa7e9[18]]= quantity;document[_0xa7e9[7]](_0xa7e9[54])[_0xa7e9[15]]= _0xa7e9[55]+ quantity* price+ _0xa7e9[56];updatedisplay(2)}function removeLastLine(){if(resultsx[_0xa7e9[104]](_0xa7e9[56])> 0){return resultsx[_0xa7e9[105]](0,resultsx[_0xa7e9[104]](_0xa7e9[56]))}else {return resultsx}}function deleteall(){if(confirm(_0xa7e9[106])){localStorage[_0xa7e9[72]](_0xa7e9[107],_0xa7e9[63]);localStorage[_0xa7e9[72]](_0xa7e9[108],_0xa7e9[63]);localStorage[_0xa7e9[72]](quantStorage,_0xa7e9[63]);localStorage[_0xa7e9[72]](resultStorage,_0xa7e9[63]);location[_0xa7e9[109]]()}}function send(){if(!quantity|| quantity< 1){save()};if(quantity> 0){let _0x1007x36=res[_0xa7e9[17]](_0xa7e9[110]);_0x1007x36= encodeURI(localStorage[_0xa7e9[5]](resultStorage));_0x1007x36= _0x1007x36[_0xa7e9[22]](_0xa7e9[21])[_0xa7e9[17]](_0xa7e9[112])[_0xa7e9[111]](/#/g,_0xa7e9[63]);window[_0xa7e9[114]][_0xa7e9[113]]= _0xa7e9[115]+ tel+ _0xa7e9[116]+ _0x1007x36}}window[_0xa7e9[53]](_0xa7e9[117],start,false)
+let res = ['_','_','_','_','_','_','_','_','_','_'];
+
+var quantStorage = "quantity10m";
+var resultStorage = "results10m";
+var aliasStorage = "aliasM";
+
+var pricem = 20;  //replace *20
+var telm = "5213325365796";
+var suspIndexm = 1;
+
+var nPartidos = 10;
+var partidoSup = true;
+
+var quantity = localStorage.getItem(quantStorage);
+var name = localStorage.getItem(aliasStorage);
+var combinations = false;
+var aux;
+var id = 0;
+
+function start(){
+    recovername();
+    if (suspIndexm<=res.length)
+        res[suspIndexm] = 'X';
+    display = document.getElementById("display");
+    let width = document.getElementsByClassName('quiniela')[0].offsetWidth;
+    document.getElementById("quiniela").style.height = width*0.9375 + "px";
+    let container = document.getElementById("text");
+    container.innerHTML = res.join("\xa0\xa0");
+    if (quantity)
+        document.querySelector('.botonenviar span').textContent = quantity;
+    let results = localStorage.getItem(resultStorage);
+    if (results){
+        results = results.split("*");
+        for (var i = 0; i < quantity; i++){
+            if (results[i] && results[i] != undefined){
+
+                let fila = display.insertRow(i);
+
+                if (results[i].split("\xa0\xa0")[0][0]!="L" && results[i].split("\xa0\xa0")[0][0]!="E" && results[i].split("\xa0\xa0")[0][0]!="V")
+                	results[i] = results[i].slice(1);
+
+			    for (var j =0; j < nPartidos; j++) {
+			    	cell1 = fila.insertCell(j)
+                    if (j==suspIndexm)
+                        cell1.innerHTML += 'X';
+			    	cell1.innerHTML += results[i].split("\xa0\xa0")[j];
+			    	cell1.style.width = "6.3%";
+			    	if (results[i].split("\xa0\xa0")[j].length == 2)
+			    		cell1.style.fontSize = "small";
+			    	if (results[i].split("\xa0\xa0")[j].length == 3)
+			    		cell1.style.fontSize = "x-small";
+			    }
+
+			  	let cell2 = fila.insertCell(nPartidos);
+			  	cell2.innerHTML += "<pre>" +results[i].split("\xa0\xa0")[nPartidos] + "</pre>";
+			  	cell2.style.fontSize = "small";
+			  	cell2.style.overflow = "hidden";
+			  	cell2.style.overflowY = "hidden";
+			  	cell2.style.border = "none";
+			  	cell2.className = "cellname";
+			  	cell2.scrollTo(80,0);
+
+			  	if(results[i].split("\xa0\xa0")[nPartidos].length > 15)
+			  		cell2.style.fontSize = "xx-small";
+			  	else if(results[i].split("\xa0\xa0")[nPartidos].length > 11)
+			  		cell2.style.fontSize = "x-small";
+
+			  	let cell3 = fila.insertCell(nPartidos+1);
+			  	cell3.innerHTML += '<ion-icon name="close-circle" style="color:rgb(120,0,0);"></ion-icon>';
+			  	cell3.style.width = "6.3%";
+			  	cell3.style.border = "none";
+			  	cell3.id = "x" + i;
+                cell3.className = "deleter"
+			  	cell3.addEventListener('click', function(){remove(this);  this.replaceWith(this.cloneNode(true));});
+			} 
+            else
+                break;
+        }
+        id = i;
+    document.getElementById("total").innerHTML = "Total: $" + quantity*pricem +"\n";
+	}  
+}
+
+function updatedisplay(modo){
+
+    let display = document.getElementById("display");
+    let lastIndex = display.getElementsByTagName("tr").length;
+
+    if (modo == 1){
+        if (aux == undefined)
+            aux=0;
+        
+        let fila = display.insertRow(lastIndex);
+
+        for (var j =0; j < nPartidos; j++) {
+        	cell1 = fila.insertCell(j)
+        	cell1.innerHTML += res[j];
+        	cell1.style.width = "7%";
+        	if (res[j].length == 2)
+        		cell1.style.fontSize = "small";
+        	if (res[j].length == 3)
+        		cell1.style.fontSize = "x-small";
+        }
+
+        if (aux>1){
+    		var cellname = fila.insertCell(nPartidos);
+    		cellname.innerHTML += name + " (" + aux + ")";}
+    	else{
+    		var cellname = fila.insertCell(nPartidos);
+    		cellname.innerHTML += name;}
+
+      	cellname.style.fontSize = "small";
+      	cellname.style.overflow = "hidden";
+      	cellname.style.overflowY = "hidden";
+      	cellname.style.border = "none";
+      	cellname.className = "cellname";
+      	cellname.scrollTo(80,0);
+
+    	if(name.length > 15)
+      		cellname.style.fontSize = "xx-small";
+      	else if(name.length > nPartidos)
+      		cellname.style.fontSize = "x-small";
+
+    	let cell3 = fila.insertCell(nPartidos+1);
+      	cell3.innerHTML += '<ion-icon name="close-circle" style="color:rgb(120,0,0);"></ion-icon>';
+      	cell3.style.width = "6.3%";
+      	cell3.style.border = "none";
+      	cell3.id = "x" + id;
+        cell3.className = "deleter";
+      	cell3.addEventListener('click', function(){remove(this); this.replaceWith(this.cloneNode(true));});
+      	id++;
+        aux = 1;
+        //cell1.innerHTML += res.join("\xa0\xa0") + "\xa0\xa0" + name + " (" + aux + ")" + "*\xa0\xa0";
+    }
+    else if (modo == 2){
+        id = 0;
+        deleters = display.getElementsByClassName("deleter");
+        for (var i = 0; i < lastIndex ;i++) {
+            deleters[i].id = "x" + id;
+            id++;
+        }
+
+    }
+    document.getElementById("total").innerHTML = "Total: $" + quantity*pricem;
+}
+
+function selection(element){ 		//Pinta la casilla y actualiza el texto de la quiniela.
+    let index = parseInt(element.id.slice(1)) - 1;
+    if (index==suspIndexm) return;
+    let container = document.getElementById("text");
+    if (!element.style.backgroundColor){
+        if (!combinations){
+            validation(element);
+            res[index] = element.id.slice(0,1);
+            }
+        else{
+            res[index] += element.id.slice(0,1);
+            res[index] = res[index].split('_').join('');
+        }
+        element.style.backgroundColor = "rgb(250, 30, 30)";
+    }
+    else{
+        if(combinations){
+        element.style.backgroundColor = "";
+        //console.log(res[index].length);
+        if (res[index] != "_" && res[index].length>1)
+            res[index] = res[index].split(element.id.slice(0,1)).join('');
+        else    
+            res[index] = "_";
+        }
+    }
+    costoactual();
+    if (!partidoSup)
+        container.innerHTML = res.join("\xa0\xa0");
+    else
+        container.innerHTML = res.slice(0,nPartidos-1).join("\xa0\xa0") + "<span id='supSpan'>\xa0\xa0" + res[nPartidos-1] + "</span>";
+    //console.log(res.join("\xa0\xa0").length);
+    if (res.join("\xa0\xa0").length>35){
+        container.style.fontSize = "larger";
+        container.style.padding = "23px";
+    }
+    else{
+        container.style.fontSize = "x-large";
+        container.style.padding = "20px";
+    }
+}
+
+function validation(element){	 //Despinta todas las casillas y asigna el index con el número de la casilla seleccionada.
+    let index = parseInt(element.id.slice(1));
+    document.getElementById("L"+index).style.backgroundColor = null;
+    document.getElementById("E"+index).style.backgroundColor = null;
+    document.getElementById("V"+index).style.backgroundColor = null;
+}
+
+function number(){ 				//Actualiza el número del boton "Enviar"
+    quantity = localStorage.getItem(quantStorage);
+    if (quantity)
+        localStorage.setItem(quantStorage, ++quantity);
+    else{
+        localStorage.setItem(quantStorage, 1);
+        quantity = localStorage.getItem(quantStorage);}
+    document.querySelector('.botonenviar span').textContent = quantity;
+    localStorage.setItem(aliasStorage, name);
+}
+
+function result(){ 				//Actualiza el localstorage cuando se añade una nueva quiniela
+    results = localStorage.getItem(resultStorage);
+    name = document.getElementById("nombre").value;
+    name  = name.split('*').join('');
+    if (results){
+        if (aux > 1)
+        localStorage.setItem(resultStorage, results + "\n" + res.join("\xa0\xa0") + "\xa0\xa0" + name + " (" + aux + ")" + "*");
+        else
+            localStorage.setItem(resultStorage, results + "\n" + res.join("\xa0\xa0") + "\xa0\xa0" + name + "*");
+    }
+    else
+    {
+        if (aux > 1)
+        localStorage.setItem(resultStorage,res.join("\xa0\xa0") + "\xa0\xa0" + name + " (" + aux + ")" +  "*");
+        else    
+            localStorage.setItem(resultStorage,res.join("\xa0\xa0") + "\xa0\xa0" + name+ "*");
+    }       
+}
+
+function save(){				//Se añade la quiniela actual a la lista 
+	if(id < 150){
+	    name = document.getElementById("nombre").value;
+	    if (res.join("\xa0\xa0").includes("_"))
+	        alert("Debes llenar todos los partidos");
+	    else if (!name){
+	        alert("Debes elegir un nombre");
+	        document.getElementById("nombre").focus();
+	        return 0;}
+	    else{
+	        if (combinations)
+	            calculate();
+	        else
+	            number();
+	        result();
+	        updatedisplay(1);
+	        clean();}
+    }
+    else
+    	alert("Envía tus quinielas guardadas antes de agregar más");
+}
+
+function clean(){				//Boton para limpiar la quinela
+    res = ['_','_','_','_','_','_','_','_','_','_'];
+    if (suspIndexm<=res.length)
+        res[suspIndexm] = 'X';
+    let container = document.getElementById("text");
+    container.innerHTML = res.join("\xa0\xa0");
+    spans = document.querySelectorAll(".quiniela span");
+    for (var i=0; i<nPartidos*3;i++) //30
+        spans[i].style.backgroundColor = "";
+    document.getElementById("costo").innerHTML = "Costo: $0";
+    document.getElementById("numquinielas").innerHTML = "0 Quiniela(s)";
+    container.style.fontSize = "x-large";
+    container.style.padding = "20px";
+}
+
+//UPDATEDISPLAY
+
+function recovername(){
+    name = localStorage.getItem(aliasStorage);
+    if (name !=  null && name !="null")
+        document.getElementById("nombre").value = name;
+}
+
+function clearname(){
+    document.getElementById("nombre").value = "";
+}
+
+function allowcombination(){
+    if (!combinations) 
+    {
+        combinations = true; /*confirm("¿Desea registrar quinielas multiples?");*/
+        document.getElementById("checkcombinaciones").style.backgroundColor = "rgb(0,117,255)";
+        document.getElementById("checkcombinaciones").style.border = "black solid 1px";
+        document.getElementById("checkcombinaciones").style.color = "white";
+    }
+    else
+    {
+        combinations= false;
+        document.getElementById("checkcombinaciones").style.backgroundColor = "rgb(255,255,255,0.35)";
+        document.getElementById("checkcombinaciones").style.border = "#777777 solid 1px";
+        document.getElementById("checkcombinaciones").style.color = "#777777";
+        clean();
+    }
+}
+
+function calculate(){
+    aux = 1;
+    for (var i=0;i<nPartidos;i++){
+        aux*= res[i].length;
+    }
+    quantity = localStorage.getItem(quantStorage);
+    if (quantity){
+        localStorage.setItem(quantStorage, parseInt(quantity)+aux);
+        quantity = localStorage.getItem(quantStorage);}
+    else{
+        localStorage.setItem(quantStorage, aux);
+        quantity = localStorage.getItem(quantStorage);}
+    document.querySelector('.botonenviar span').textContent = quantity;
+    localStorage.setItem(aliasStorage, name);
+}
+
+function random(){
+    clean();
+    let container = document.getElementById("text");
+    let partidos = document.getElementsByClassName("partido");
+    for (var i = 0; i < nPartidos; i++){
+        var r = getRandomInt(0,2);
+        partidos[i].getElementsByTagName("span")[r].style.backgroundColor = "rgb(250, 30, 30)";
+        res[i] = ["L","E","V"][r];
+    }
+    if (!partidoSup)
+        container.innerHTML = res.join("\xa0\xa0");
+    else{
+        container.innerHTML = res.slice(0,nPartidos-1).join("\xa0\xa0") + "<span id='supSpan'>\xa0\xa0" + res[nPartidos-1] + "</span>";
+        //partidos[nPartidos-1].getElementsByTagName("span")[r].style.backgroundColor = "gray";
+    }
+    costoactual();
+}
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function costoactual(){
+    if (true){
+        let aux2 = 1;
+        for (var i=0;i<nPartidos;i++){
+             aux2*= res[i].length;
+        }
+        document.getElementById("costo").innerHTML = "Costo: $" + aux2*pricem;
+        document.getElementById("numquinielas").innerHTML = aux2 + " Quiniela(s)";
+    }
+}
+function remove(e){
+	display = document.getElementById("display");
+	////console.log(e.id.slice(1));
+	////console.log(display.getElementsByTagName("tr"));
+	eindex = e.id.slice(1);
+	tr = display.getElementsByTagName("tr")[eindex];
+
+	display.deleteRow(eindex);
+
+
+    results = localStorage.getItem(resultStorage);
+    results = results.split("*");
+
+	removing = results[eindex].split("\xa0\xa0");
+	////console.log("removing",removing);
+	if (removing[0][0]!="L" && removing[0][0]!="E" && removing[0][0]!="V")
+        removing[0] = removing[0].slice(1);
+	let aux3 = 1;
+    for (var i=0;i<nPartidos;i++)
+        aux3*= removing[i].length;
+    quantity -= aux3;
+    localStorage.setItem(quantStorage,quantity);
+	results.splice(eindex,1);
+    ////console.log(results);
+    results = results.join("*");
+    localStorage.setItem(resultStorage,results);
+
+    document.querySelector('.botonenviar span').textContent = quantity;
+    document.getElementById("total").innerHTML = "Total: $" + quantity*pricem +"\n";
+    updatedisplay(2);
+
+}
+
+function removeLastLine(){
+    if(resultsx.lastIndexOf("\n")>0) {
+        return resultsx.substring(0, resultsx.lastIndexOf("\n"));
+    } else {
+        return resultsx;
+    }
+}
+
+function deleteall(){
+    if(confirm("Se borrará todo"))
+        {localStorage.setItem("quantityM","");
+        localStorage.setItem("resultsM","");
+        localStorage.setItem(quantStorage,"");
+        localStorage.setItem(resultStorage,"");
+        location.reload();}
+}
+
+function send(){				//Envia la quiniela al whatsapp 
+    if (!quantity || quantity < 1)
+        save();
+    if (quantity > 0){
+    let whatsapptext = res.join("%20%20")
+    whatsapptext = encodeURI(localStorage.getItem(resultStorage));
+    whatsapptext = whatsapptext.split('*').join('%0D').replace(/#/g,"");
+    window.location.href = "https://wa.me/"+telm+"?text="+whatsapptext;}
+}
+
+window.addEventListener("load",start,false);
