@@ -255,14 +255,16 @@ h6{
 }
 
 #bolsatxt:before{
-    content:'Chivas vs Necaxa fue suspendido, se \Areemplazará con: ';
+    content:'Chivas vs Necaxa y San José vs Galaxy fueron\A suspendidos, ';
     white-space: pre;
+    font-size:14px;
 }
 
 #cantidad:before{
-    content:'Venados vs Correcaminos\A\A';
+    content:'la Quiniela se jugará con 9 partidos.\A\A';
     color: yellow;
     white-space:pre;
+    font-size:14px;
 }
 
 #sub1:before{
