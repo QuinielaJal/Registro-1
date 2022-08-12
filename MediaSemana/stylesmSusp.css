@@ -5,6 +5,15 @@
     font-family: 'Roboto',sans-serif;
 }
 
+body{
+    max-width: 400px;
+    margin: auto;
+    background-color: rgb(6,12,37);
+    background-image: url("../bg/fondo11.jpg");
+    background-repeat: repeat-y;
+    background-position: top;
+}
+
 .quiniela{
     margin: auto;
     background-image: url("quinielamSusp.jpg");
@@ -12,25 +21,22 @@
     background-repeat: no-repeat;
     max-width: 400px;
     border-radius: 20px;
-
+    max-height: 400px;
+    height: 100vw;
 }
 
-
-.botonera{
-    margin-top: 13%;
+.controles{
+    margin-top: 8%;
     width: 100%;
-}
-
-@media (max-width: 400px){
-    .botonera {
-        /*margin-top: 2vh;*/
-    }
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
 }
 
 .aux{
     background-color: rgba(165, 42, 42, 0);
     width: 100%;
-    height: 13.1%;
+    height: 12.1%;
     padding-top: 2.5%;
 }
 
@@ -41,15 +47,13 @@
     background-color: rgba(255, 255, 255, 0.288);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.288);
+    box-shadow: 2px 2px 4px black;
+    font-size: large;
 }
+
 .aux h3 ion-icon{
     display: table-row-group;
 }
-
-.aux2{
-    height: 9.4%;
-}
-
 
 .quiniela span{
     width: 10.6%;
@@ -69,154 +73,179 @@
 
 .partido{
     display: flex;
-    height: 5.9%;
+    height: 5.55%;
     width: 100%;
 }
 
-body{
-    max-width: 400px;
-    margin: auto;
-    background-color: rgb(6,12,37);
-    background-image: url(../fondo11.jpg);
-    background-repeat: repeat-y;
-    background-position: top;
+.partido .opcion-active{
+    background-color: rgb(250, 30, 30);
 }
 
-  
+.partido .opcion{
+    background: none;
+    background-color: none;
+}
 
-h1{
-    background-color: teal;
+#text{
+    font-weight: bold;
     text-align: center;
-    padding: 18px;
     color: whitesmoke;
-    margin-top: 8%;
+    margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
     background: -webkit-linear-gradient(1turn, rgb(4,27,54)  ,rgb(0,57,30) 80%);
     background: linear-gradient(1turn, rgb(4,27,54)  ,rgb(0,57,30) 80%);
-    font-size: x-large;
-    text-shadow: 1px 1px 5px black;
 }
 
-h2,h3{
+.text-lg{
+    padding: 20px;
+    font-size: x-large;
+}
+
+.text-sm{
+    font-size: large;
+    padding: 23px;
+}
+
+.boton{
+    border:  none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 6px black;
+}
+
+#botonenviar{
     background: -webkit-linear-gradient( #8f6B29, #FCF15C, #DF9F28);
     background: linear-gradient(left, #8f6B29, #FDE08D, #DF9F28);
-    text-align: center;
-    padding: 12px 20px 12px 0;
-    margin-right: 6px;
+    font-size: 14px;  
+    height: 46px;
+    max-height: 46px;
+}
+
+#botonagregar{
+    background: -webkit-linear-gradient(to bottom, #038bb4, #5caff8, #038bb4);
+    background: linear-gradient(to bottom, #038bb4, #5caff8, #038bb4);
+    font-size: 14px;
+    height: 46px;
+    max-height: 46px;
+    align-items: center;
+}
+
+#botonborrar{
+    background:  -webkit-linear-gradient(to bottom, #500000, #a00000, #500000); 
+    background: linear-gradient(to bottom, #500000, #a00000, #500000); 
+    color:  #DDDDDD;
+    font-size: 12px;
+    padding: 5px;
+    height: 46px;
+    max-height: 46px;
+}
+
+#nombrebox{
+    background:  -webkit-linear-gradient(0,  rgb(220, 220, 220) 20%, rgb(255, 255, 255) 90%);
+    background:  linear-gradient(0,  rgb(220, 220, 220) 20%, rgb(255, 255, 255) 90%);
+    border: none;
     border-radius: 6px;
-    box-shadow: 2px 2px 5px black;
-    font-size: large;
+    text-align: center;
+    box-shadow: 1px 1px 6px black;
+    height: 46px;
+    max-height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #nombretext{
     color: gray;
     font-size: 9px;
     text-align: center;
-    padding: 2px 0 0 2px;
-}
-
-#botonlisto{
-    background: linear-gradient(to bottom, #038bb4, #5caff8, #038bb4);
-    padding: 8px;
-    border-radius: 15px;
-    padding-top: 10px;
-    font-size: x-large;
-}
-
-#botonborrar{
-    background:  linear-gradient(to bottom, #960202, #f82525, #960202); 
-    border-radius: 15px;
-    padding-top: 10px;
-    padding: 8px;
-    font-size: x-large;
-}
-
-#nombrebox{
-    border-collapse: collapse;
-    background:  linear-gradient(0,  rgb(220, 220, 220) 20%, rgb(255, 255, 255) 90%);
-    text-align: center;
-    border-radius: 6px;
-    box-shadow: 2px 2px 5px black;
-
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    padding-right: 24px;
 }
 
 #nombre{
     background:transparent;
-    display: inline-block;
-    width: 100%;
     border: none;
     text-align: center;
-    padding-bottom: 13px;
-    margin: 0 0 2px 2px;
-}
-
-
-#ultimonombre{
-    margin-left: 11%;
-    height: 17px;
-    box-shadow: 1px 1px black;
+    font-size: 18px;
+    width: inherit;
 }
 
 #random{
     background:  linear-gradient(0,  rgb(250, 250, 200) 20%, rgb(255, 255, 255) 90%);
     border-radius: 4px;
-    padding: 3px 25%;
     font-size: small;
     box-shadow: 1px 1px 3px black;
     font-weight: bold;
+    height: 20px;
+    padding: 0;
+    margin-bottom: 5px;
 }
 
 #checkcombinaciones{
-    height: 25px;
-    background: rgb(255,255,255,0.7);  
+    padding: 0;
+    height: 20px;
     border-radius: 4px;
-    padding: 2px 5px;
-    font-size: small;
+    font-size: x-small;
     box-shadow: 1px 1px 3px black;
     text-align: center;
-    border: solid 1px #777777;
-    color: #777777; 
     -webkit-transition:background-color 0.3s ease;
     -moz-transition:background-color 0.3s ease;
     -o-transition:background-color 0.3s ease;
     transition:background-color 0.3s ease;
 }
 
-/*#undo{
-    float: right;
-    background:  linear-gradient(0,  rgb(250, 200, 200) 20%, rgb(255, 255, 255) 90%);
-    border-radius: 4px;
-    padding: 2px;
-}*/
-
-
-p{
-    padding: 10px;
+.allowcomb-active{
+    background-color: rgb(0,117,255);
+    border: 1px solid black;
+    color: white;
 }
 
+.allowcomb{
+    border: solid 1px #777777;
+    color: #777777; 
+    background: rgb(255,255,255,0.7); 
+}
 
-#display{
-    border: solid black 2px;
-    width: 100%;
-    background-color: rgba(255, 255, 240, 0.5);
-    border-radius: 5px;
-    text-align: left;
-    padding: 5px 0px;
+#listaContainer{
     margin: 15px 0;
+    border: solid black 2px;
+    background-color: rgba(255, 255, 240, 0.4);
+    padding: 5px 0px;
+    border-radius: 5px;
+}
+
+#lista{
+    width: 100%;
+    text-align: left;
     table-layout: fixed;   
 }
 
-
-#display td{
+#lista td{
+    border:  none;
     border-right: 1px solid rgb(0,0,0,0.2);
     text-align: center;
+    color: black;
 }
 
-h4{
+.deleteIcon{
+    color:  rgb(120,0,0);
+    vertical-align: text-bottom;
+}
+
+
+span{
     float: left;
     display: contents;
     text-align: center;
+    font-weight: bold;
 }
 
 h6{
@@ -240,8 +269,13 @@ h6{
     border-radius: 3px;
 }
 
+.aux2{
+    height: 9%;
+}
+
 #bolsa{
     color:white;
+    padding: 5px 0px;
     text-align: center;
     font-weight: bolder;
     margin: auto;
@@ -254,7 +288,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'$200,000 pesos';
+    content:'$200,000 pesos ';
     color: yellow;
     white-space:pre;
 }
@@ -265,14 +299,85 @@ h6{
     white-space:pre;
 }
 
-
 #sub2:before{
     content:'';
     color: yellow;
     white-space:pre;
 }
 
-#costoSpan{
-    color: yellow;
-    text-shadow: 0 0 5px black;
+#imgwsp{
+    align-self: baseline;
+}
+
+#touchIcon{
+    position: absolute;
+    pointer-events:none;
+    animation: mymove 1.5s;
+    animation-iteration-count: infinite;
+    font-size: 45px;
+}
+
+#touchIconDiv{
+    transform: rotate(315deg);
+    position: absolute;
+    top: 140px;
+    height: 0px;
+    pointer-events:none;
+}
+
+#touchIcon2{
+    pointer-events:none;
+    animation: mymove 1.5s;
+    animation-iteration-count: infinite;
+    font-size: 55px;
+    color: #FFFF00DD;
+}
+
+#touchIconDiv2{
+    display: none;
+    transform: rotate(45deg);
+    position: absolute;
+    margin: 22px 27px 0px 0px;
+
+}
+
+@keyframes mymove {
+    0%   { transform:scale(1.0); opacity:0.7; }
+    50%  { transform:scale(1.2); opacity:0.5; }
+    100% { transform:scale(1.0); opacity:0.7; }
+}
+
+
+@media (max-width: 365px){
+    .text-lg {
+        font-size: min(6vw, 30px);
+        padding: min(4vw,18px);
+    }
+    .text-sm {
+        font-size: min(5vw, 20px);
+        padding: min(4vw,10px);
+    }
+    .boton, #botonenviar, #botonborrar, #botonagregar, #nombrebox, #random{
+        font-size:max(3.3vw, 8px);
+    }
+    #checkcombinaciones, #nombretext{
+        font-size:max(3.3vw, 8px);
+    }
+    #nombre, #bolsa{
+        font-size:min(6vw, 16px);
+    }
+}
+
+@media (max-width: 300px){
+    .boton, #botonenviar, #botonborrar, #botonagregar, #nombrebox, #random{
+        font-size:max(3.5vw, 8px);
+        max-height: 30px;
+    }
+    #checkcombinaciones, #nombretext{
+        font-size:max(3.0vw, 7px);
+    }
+    #imgwsp{
+        height: 15px;
+        align-self: center;
+    }
 }
