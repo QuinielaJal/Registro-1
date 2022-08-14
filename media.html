@@ -108,8 +108,11 @@
             <div id="nombretext">Nombre</div>
             <div id="nombrebox">
                 <div class="row g-0">
-                    <div class="col-11">
-                        <input id="nombre" type="text" placeholder="" maxlength="20" spellcheck="false" autocomplete="off">
+                    <div class="col-11 position-relative">
+                        <div id="touchIconDivName">
+                            <i class="material-icons" id="touchIconName">touch_app</i>
+                        </div>
+                        <input id="nombre" type="text" placeholder="" maxlength="20" spellcheck="false" autocomplete="off" oninput="updateIcons(this)" onfocus="nameIn()" onfocusout="nameOut(this)" >
                     </div>
                     <div class="col-1 d-flex align-items-end">
                         <label id="borrarnombre" onclick="clearname()">
