@@ -334,11 +334,27 @@ h6{
 }
 
 #touchIconDiv2{
+    pointer-events:none;
     display: none;
     transform: rotate(45deg);
     position: absolute;
     margin: 22px 27px 0px 0px;
+}
 
+#touchIconName{
+    pointer-events:none;
+    animation: mymove 1.5s;
+    animation-iteration-count: infinite;
+    font-size: 35px;
+}
+
+#touchIconDivName{
+    pointer-events:none;
+    display: none;
+
+    transform: rotate(45deg);
+    position: absolute;
+    width: 100%;
 }
 
 @keyframes mymove {
