@@ -288,7 +288,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'$300,000 pesos ';
+    content:'$350,000 pesos ';
     color: yellow;
     white-space:pre;
 }
