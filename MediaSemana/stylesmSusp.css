@@ -193,7 +193,7 @@ body{
     padding: 0;
     height: 20px;
     border-radius: 4px;
-    font-size: x-small;
+    font-size: xx-small;
     box-shadow: 1px 1px 3px black;
     text-align: center;
     -webkit-transition:background-color 0.3s ease;
@@ -334,11 +334,27 @@ h6{
 }
 
 #touchIconDiv2{
+    pointer-events:none;
     display: none;
     transform: rotate(45deg);
     position: absolute;
     margin: 22px 27px 0px 0px;
+}
 
+#touchIconName{
+    pointer-events:none;
+    animation: mymove 1.5s;
+    animation-iteration-count: infinite;
+    font-size: 35px;
+}
+
+#touchIconDivName{
+    pointer-events:none;
+    display: none;
+
+    transform: rotate(45deg);
+    position: absolute;
+    width: 100%;
 }
 
 @keyframes mymove {
