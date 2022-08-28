@@ -10,7 +10,7 @@ body{
     margin: auto;
     background-color: rgb(6,12,37);
     background-image: url("../bg/fondo8.jpg");
-    background-repeat: repeat-y;
+    background-repeat: repeat-y ;
     background-position: top;
 }
 
