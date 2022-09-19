@@ -288,13 +288,13 @@ h6{
 }
 
 #cantidad:before{
-    content:'$500,000 pesos ';
+    content:'+$300,000 pesos ';
     color: yellow;
     white-space:pre;
 }
 
 #sub1:before{
-    content:'\A ¡Se reparte todo el acumulado!';
+    content:'';
     color: white;
     white-space:pre;
 }
