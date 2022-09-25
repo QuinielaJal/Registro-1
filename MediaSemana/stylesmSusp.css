@@ -89,12 +89,12 @@ body{
 #text{
     font-weight: bold;
     text-align: center;
-    color: whitesmoke;
+    color: #00f7ff;
     margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(1turn, rgb(4,27,54)  ,rgb(16,58,45) 80%);
-    background: linear-gradient(1turn, rgb(4,27,54)  ,rgb(16,58,45) 80%);
+    background: -webkit-linear-gradient(1turn, rgb(0,11,75)  ,rgb(0,43,75) 80%);
+    background: linear-gradient(1turn, rgb(0,11,75)  ,rgb(0,43,75) 80%);
 }
 
 .text-lg{
@@ -288,7 +288,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'+$200,000 pesos ';
+    content:'+$250,000 pesos ';
     color: yellow;
     white-space:pre;
 }
@@ -396,5 +396,4 @@ h6{
         height: 15px;
         align-self: center;
     }
->>>>>>> c5d0da4ef4d6a35fa92fce932c7b37473cb38448
 }
