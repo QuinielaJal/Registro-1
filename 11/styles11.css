@@ -78,7 +78,7 @@ body{
 }
 
 .partido .opcion-active{
-    background-color: #0021ff;
+    background-color: rgb(250, 30, 30);
 }
 
 .partido .opcion{
