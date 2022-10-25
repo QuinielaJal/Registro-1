@@ -89,12 +89,12 @@ body{
 #text{
     font-weight: bold;
     text-align: center;
-    color: #62ff00;
+    color: yellow;
     margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.49turn, rgb(1,90,42)  ,rgb(0,0,0) 80%);
-    background: linear-gradient(0.49turn, rgb(1,90,42)  ,rgb(0,0,0) 80%);
+    background: -webkit-linear-gradient(0.49turn, rgb(1,40,119)  ,rgb(0,0,0) 80%);
+    background: linear-gradient(0.49turn, rgb(1,40,119)  ,rgb(0,0,0) 80%);
 }
 
 .text-lg{
@@ -283,24 +283,24 @@ h6{
 }
 
 #bolsatxt:before{
-    content:'Bolsa estimada: ';
+    content:'';
     white-space: pre;
 }
 
 #cantidad:before{
-    content:'$400,000 pesos';
+    content:'¡Se reparte todo el acumulado! \A';
     color: yellow;
     white-space:pre;
 }
 
 #sub1:before{
-    content:'';
+    content:'Bolsa estimada: ';
     color: white;
     white-space:pre;
 }
 
 #sub2:before{
-    content:'';
+    content:'$500,000 pesos';
     color: yellow;
     white-space:pre;
 }
