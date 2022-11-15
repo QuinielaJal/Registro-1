@@ -9,7 +9,7 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: url("../bg/fondo8.jpg");
+    background-image: url("../bg/fondo17.jpg");
     background-repeat: repeat-y ;
     background-position: top;
 }
@@ -89,7 +89,7 @@ body{
 #text{
     font-weight: bold;
     text-align: center;
-    color: yellow;
+    color: #ffe000;
     margin-top: 9%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
@@ -220,6 +220,8 @@ body{
     background-color: rgba(255, 255, 240, 0.4);
     padding: 5px 0px;
     border-radius: 5px;
+    background: url(../bg/fondo19.jpg);
+    background-position: top;
 }
 
 #lista{
@@ -279,12 +281,14 @@ h6{
     text-align: center;
     font-weight: bolder;
     margin: auto;
-    text-shadow: 1px 1px 5px black;
+    text-shadow: 1px 1px 4px black;
 }
 
 #bolsatxt:before{
     content:'Bolsa estimada: ';
     white-space: pre;
+    color: #630000;
+    text-shadow: 0 0 black;
 }
 
 #cantidad:before{
@@ -320,7 +324,7 @@ h6{
 #touchIconDiv{
     transform: rotate(315deg);
     position: absolute;
-    top: 140px;
+    top: 160px;
     height: 0px;
     pointer-events:none;
 }
@@ -396,4 +400,9 @@ h6{
         height: 15px;
         align-self: center;
     }
+}
+
+
+img, svg {
+    vertical-align: bottom;
 }
