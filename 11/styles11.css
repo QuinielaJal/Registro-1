@@ -26,7 +26,7 @@ body{
 }
 
 .controles{
-    margin-top: /*8%*/;
+    margin-top: 8%;
     width: 100%;
     -webkit-user-select: none;
     -ms-user-select: none; 
@@ -93,8 +93,8 @@ body{
     margin-top: 9%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.51turn, rgb(86,0,101)  ,rgb(45,0,48) 80%);
-    background: linear-gradient(0.51turn, rgb(86,0,101)  ,rgb(45,0,48) 80%);
+    background: -webkit-linear-gradient(0.49turn, rgb(0,79,0)  ,rgb(36,6,64) 80%);
+    background: linear-gradient(0.49turn, rgb(0,79,0)  ,rgb(36,6,64) 80%);
 }
 
 .text-lg{
@@ -292,7 +292,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'$400,000 pesos';
+    content:'$450,000 pesos \A';
     color: yellow;
     white-space:pre;
 }
@@ -304,7 +304,7 @@ h6{
 }
 
 #sub2:before{
-    content:'';
+    content:'¡Se reparte todo el acumulado!';
     color: yellow;
     white-space:pre;
 }
