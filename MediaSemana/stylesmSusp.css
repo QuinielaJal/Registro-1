@@ -9,7 +9,7 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: url("../bg/fondo20.jpg");
+    background-image: url("../bg/fondo11.jpg");
     background-repeat: repeat-y;
     background-position: top;
 }
@@ -93,8 +93,8 @@ body{
     margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(1turn, rgb(0,2,67)  ,rgb(66,0,97) 80%);
-    background: linear-gradient(1turn, rgb(0,2,67)  ,rgb(66,0,97) 80%);
+    background: -webkit-linear-gradient(1turn, rgb(0,2,67)  ,rgb(1,56,25) 80%);
+    background: linear-gradient(1turn, rgb(0,2,67)  ,rgb(1,56,25) 80%);
 }
 
 .text-lg{
@@ -220,7 +220,6 @@ body{
     background-color: rgba(255, 255, 240, 0.4);
     padding: 5px 0px;
     border-radius: 5px;
-    background: url(../bg/fondo19.png);
     background-position: top;
 }
 
@@ -276,7 +275,7 @@ h6{
 }
 
 #bolsa{
-    color:black;
+    color:whitesmoke;
     padding: 5px 0px;
     text-align: center;
     font-weight: bolder;
@@ -287,7 +286,6 @@ h6{
 #bolsatxt:before{
     content:'Bolsa estimada:';
     white-space: pre;
-    text-shadow: 1px 1px 5px white;
 }
 
 #cantidad:before{
