@@ -1,7 +1,7 @@
 try {
 
 var Snow = function (options) {
-    document.getElementById(options.id).style.position = "fixed";
+    document.getElementById(options.id).style.position = "absolute";
     document.getElementById(options.id).style.top = 0;
     document.getElementById(options.id).style.left = 0;
     document.getElementById(options.id).style.right = 0;
