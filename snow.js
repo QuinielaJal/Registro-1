@@ -12,7 +12,8 @@ var Snow = function (options) {
     //create canvas
     this.canvas = document.createElement("canvas"); //add random number to change canvas id
     this.canvas.width = window.innerWidth;
-    this.canvas.height = window.innerHeight;
+    this.canvas.height = 1200;
+    this.canvas.style.position = "fixed";
     document.getElementById(options.id).appendChild(this.canvas);
 
     //get theme
@@ -53,7 +54,7 @@ var Snow = function (options) {
             context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
             //update snowflakes
-            for (var i = 0; i < 150; i++) {
+            for (var i = 0; i < 250; i++) {
                 this.snowflakes[i].update();
                 this.snowflakes[i].show();
 
