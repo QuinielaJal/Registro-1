@@ -10,7 +10,7 @@ body{
     margin: auto;
     background-color: rgb(6,12,37);
     background-image: url("../bg/fondo8.jpg");
-    background-repeat: repeat-y repeat-x;
+    background-repeat: repeat-y;
     background-position: top;
 }
 
@@ -94,8 +94,8 @@ body{
     margin-top: 9%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.49turn, rgb(2,98,0)  ,rgb(1,34,0) 59%);
-    background: linear-gradient(0.49turn, rgb(2,98,0)  ,rgb(1,34,0) 59%);
+    background: -webkit-linear-gradient(0.49turn, rgb(2,98,0) -40% ,rgb(0,6,94) 100%);
+    background: linear-gradient(0.49turn, rgb(2,98,0) -40% ,rgb(0,6,94) 100%);
 }
 
 .text-lg{
@@ -292,7 +292,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'$250,000 pesos';
+    content:'$400,000 pesos';
     color: yellow;
     white-space:pre;
 }
