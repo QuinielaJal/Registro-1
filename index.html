@@ -19,11 +19,13 @@
     <script src="11/main11.js"></script>
     <script src="https://quinielajal.github.io/Registro-1/var.js"></script>
     <script src="var.js"></script>
+    <script src='./snow.js' defer></script>
 </head>
 
 <body>
     <p id='bolsa'><span id="bolsatxt"></span><span id="cantidad"><span id="sub1"></span><span id="sub2"></span></span></p>
     <!-- Quiniela -->
+    <div id="snow"></div>
     <div class="quiniela" id="quiniela">
         <div class="aux"><h3 style="padding: 5px 7px" onclick="clean()"><ion-icon name="close-outline"></ion-icon></h3></div>
         <div class="partido">
@@ -175,5 +177,9 @@
         <table id="lista">
         </table>
     </div>
+<div class="d-flex justify-content-end" style="filter:opacity(0.3);">
+    <ion-icon style="filter:invert(1); margin-top:4px;" name="snow"></ion-icon>
+    <div class="form-check form-switch"><input id="snowBtn" class="form-check-input" type="checkbox" checked></div>
+</div>
 <br>
 </body>
