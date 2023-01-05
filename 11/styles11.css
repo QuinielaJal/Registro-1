@@ -300,7 +300,7 @@ h6{
 }
 
 #sub1:before{
-    content:'si contará \A\A Bolsa estimada: ';
+    content:'si contará \A Bolsa estimada: ';
     color: white;
     
     font-style: italic;
@@ -328,7 +328,7 @@ h6{
 #touchIconDiv{
     transform: rotate(315deg);
     position: absolute;
-    top: 160px;
+    top: 195px;
     height: 0px;
     pointer-events:none;
 }
