@@ -285,26 +285,30 @@ h6{
 }
 
 #bolsatxt:before{
-    content:'Bolsa estimada: ';
-    white-space: pre;
-    color: white;
+    content:'Mazatlán vs León fue suspendido, el \A partido ';
+    white-swhite;
+    white-space:pre;
+    font-style: italic;
     text-shadow: 1px 1px 4px black;
 }
 
 #cantidad:before{
-    content:'$400,000 pesos';
+    content:'Pachuca vs Puebla ';
     color: yellow;
+    font-style: italic;
     white-space:pre;
 }
 
 #sub1:before{
-    content:'';
+    content:'si contará \A\A Bolsa estimada: ';
     color: white;
+    
+    font-style: italic;
     white-space:pre;
 }
 
 #sub2:before{
-    content:'';
+    content:'$400,000 pesos';
     color: yellow;
     white-space:pre;
 }
