@@ -300,17 +300,30 @@ h6{
 }
 
 #sub1:before{
-    content:'si contará \A Bolsa estimada: ';
+    content:'si contará.';
     color: white;
-    
     font-style: italic;
     white-space:pre;
 }
 
 #sub2:before{
+    content:'';
+    color: white;
+    white-space:pre;
+}
+
+#sub3:before{
+    content:'\A Bolsa estimada: ';
+    color: white;
+    white-space:pre;
+    vertical-align: sub;
+}
+
+#sub4:before{
     content:'$400,000 pesos';
     color: yellow;
     white-space:pre;
+    vertical-align: sub;
 }
 
 #imgwsp{
@@ -328,7 +341,7 @@ h6{
 #touchIconDiv{
     transform: rotate(315deg);
     position: absolute;
-    top: 195px;
+    top: 205px;
     height: 0px;
     pointer-events:none;
 }
