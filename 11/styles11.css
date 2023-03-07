@@ -16,7 +16,7 @@ body{
 
 .quiniela{
     margin: auto;
-    background-image: url("quiniela11.jpg");
+    background-image: url("2e5841b4-8d6f-4dc8-9886-88cfd50664b5.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
@@ -94,8 +94,8 @@ body{
     margin-top: 9%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(1turn, rgb(23,1,104) -28% ,rgb(54,79,22) 110%);
-    background: linear-gradient(1turn, rgb(23,1,104) -28% ,rgb(54,79,22) 110%);
+    background: -webkit-linear-gradient(1turn, rgb(23,1,104) -28% ,rgb(0,80,81) 110%);
+    background: linear-gradient(1turn, rgb(23,1,104) -28% ,rgb(0,80,81) 110%);
 }
 
 .text-lg{
