@@ -132,8 +132,6 @@ body{
     background: -webkit-linear-gradient(0,  rgb(0, 134, 175) 20%, rgb(15, 163, 201)); 
     background: linear-gradient(0,  rgb(0, 134, 175) 20%, rgb(15, 163, 201)); 
     font-size: 14px;
-    text-shadow: 0px 0px 5px black;
-    color: white;
     height: 46px;
     max-height: 46px;
     align-items: center;
