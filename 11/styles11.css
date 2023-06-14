@@ -16,7 +16,7 @@ body{
 
 .quiniela{
     margin: auto;
-    background-image: url("dd.png");
+    background-image: url("5dd3964a-b94e-40d8-be43-01922e868502.jpeg");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
@@ -94,8 +94,8 @@ body{
     margin-top: 9%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(1turn, rgb(23,1,104) -28% ,rgb(104,0,111) 110%);
-    background: linear-gradient(1turn, rgb(23,1,104) -28% ,rgb(104,0,111) 110%);
+    background: -webkit-linear-gradient(1turn, rgb(23,1,104) -28% ,rgb(153,1,38) 110%);
+    background: linear-gradient(1turn, rgb(23,1,104) -28% ,rgb(153,1,38) 110%);
 }
 
 .text-lg{
@@ -292,7 +292,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'$300,000 pesos';
+    content:'$300,000 pesos \A ¡Se reparte todo el acumulado!';
     color: yellow;
     white-space:pre;
 }
