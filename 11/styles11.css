@@ -292,7 +292,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'$300,000 pesos \A ¡Se reparte todo el acumulado!';
+    content:'$300,000 pesos';
     color: yellow;
     white-space:pre;
 }
