@@ -16,7 +16,7 @@ body{
 
 .quiniela{
     margin: auto;
-    background-image: url("quinielamSusp.jpg");
+    background-image: url("IMG-20231203-WA0019.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
@@ -289,7 +289,7 @@ h6{
 }
 
 #cantidad:before{
-    content:' $250,000 pesos';
+    content:' $300,000 pesos \A ¡Se reparte todo el acumulado!';
     color: yellow;
     white-space:pre;
 }
