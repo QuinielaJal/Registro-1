@@ -56,26 +56,25 @@ body{
 }
 
 .quiniela span{
-    width: 10%;
+    width: 10.6%;
     display: inline-flex;
     -webkit-transition:background-color 0.3s ease;
-    -moz-transition:background-color 0.3s ease;
-    -o-transition:background-color 0.3s ease;
-    transition:background-color 0.3s ease;
+   -moz-transition:background-color 0.3s ease;
+   -o-transition:background-color 0.3s ease;
+   transition:background-color 0.3s ease;  
 }
 
 #_{
     background-color: rgba(128, 255, 0, 0);
-    width: 35.1%;
+    width: 34.1%;
     height: 100%;
     display: inline-flex;
 }
 
 .partido{
     display: flex;
-    height: 5.4%;
+    height: 5.55%;
     width: 100%;
-    padding: 0 1.2% 0 1.7%;
 }
 
 .partido .opcion-active{
@@ -90,12 +89,12 @@ body{
 #text{
     font-weight: bold;
     text-align: center;
-    color: #9cff5e;
+    color: #ffd80a;
     margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
     background: -webkit-linear-gradient(1turn, rgb(0,8,65)  ,rgb(71,0,96) 80%);
-    background: linear-gradient(1turn, rgb(0,8,65)  ,rgb(46,69,25) 80%);
+    background: linear-gradient(1turn, rgb(0,8,65)  ,rgb(71,0,96) 80%);
 }
 
 .text-lg{
@@ -272,7 +271,7 @@ h6{
 }
 
 .aux2{
-    height: 8.6%;
+    height: 9%;
 }
 
 #bolsa{
@@ -290,7 +289,7 @@ h6{
 }
 
 #cantidad:before{
-    content:' $225,000 pesos';
+    content:' +$250,000 pesos';
     color: yellow;
     white-space:pre;
 }
