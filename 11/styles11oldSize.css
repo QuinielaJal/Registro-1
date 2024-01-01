@@ -36,7 +36,7 @@ body{
 .aux{
     background-color: rgba(165, 42, 42, 0);
     width: 100%;
-    height: 11.8%;
+    height: 11.9%;
     padding-top: 2.5%;
 }
 
@@ -56,26 +56,25 @@ body{
 }
 
 .quiniela span{
-    width: 9.7%;
+    width: 10%;
     display: inline-flex;
     -webkit-transition:background-color 0.3s ease;
-    -moz-transition:background-color 0.3s ease;
-    -o-transition:background-color 0.3s ease;
-    transition:background-color 0.3s ease;
+   -moz-transition:background-color 0.3s ease;
+   -o-transition:background-color 0.3s ease;
+   transition:background-color 0.3s ease;  
 }
 
 #_{
     background-color: rgba(128, 255, 0, 0);
-    width: 35.8%;
+    width: 35%;
     height: 100%;
     display: inline-flex;
 }
 
 .partido{
     display: flex;
-    height: 5.27%;
+    height: 5.4%;
     width: 100%;
-    padding: 0 1.35% 0 1.35%;
 }
 
 .partido .opcion-active{
@@ -92,11 +91,11 @@ body{
     text-align: center;
     color: #e0f9ff;
     text-shadow: 1px 2px 2px black;
-    margin-top: 8.5%;
+    margin-top: 9%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
     background: -webkit-linear-gradient(0.5turn, rgb(127,92,24) -28% ,rgb(28,1,52) 45%, rgb(127,92,24) 115% );
-    background: linear-gradient(0.99turn, rgb(139 9 12) -28% ,rgb(17 47 64) 45%, rgb(139 9 12) 115% );
+    background: linear-gradient(0.5turn, rgb(127,92,24) -28% ,rgb(28,1,52) 45%, rgb(127,92,24) 115% );
 }
 
 .text-lg{
@@ -273,7 +272,7 @@ h6{
 }
 
 .aux2{
-    height: 8.5%;
+    height: 8.6%;
 }
 
 #bolsa{
@@ -293,7 +292,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'+$400,000 pesos \A ¡Se reparte todo el acumulado!';
+    content:'+$300,000 pesos';
     color: yellow;
     white-space:pre;
 }
