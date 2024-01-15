@@ -95,8 +95,8 @@ body{
     margin-top: 8.5%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.48turn, rgb(6 134 11) -7% ,rgb(0,11,93) 60%, rgb(6 134 11) 148% );
-    background: linear-gradient(0.48turn, rgb(6 134 11) -7% ,rgb(0,11,93) 60%, rgb(6 134 11) 148% );
+    background: -webkit-linear-gradient(0.48turn, rgb(141,57,20) -7% ,rgb(0,11,93) 60%, rgb(141,57,20) 148% );
+    background: linear-gradient(0.48turn, rgb(141,57,20) -7% ,rgb(0,11,93) 60%, rgb(141,57,20) 148% );
 }
 
 .text-lg{
