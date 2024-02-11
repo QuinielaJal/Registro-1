@@ -94,8 +94,8 @@ body{
     margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(1turn, rgb(1,56,33) ,rgb(0 3 74) 80%);
-    background: linear-gradient(0.5turn, rgb(1,56,33) ,rgb(0 3 74) 80%);
+    background: -webkit-linear-gradient(1turn, rgb(71,0,36) ,rgb(0 3 74) 80%);
+    background: linear-gradient(0.5turn, rgb(71,0,36) ,rgb(0 3 74) 80%);
 }
 
 .text-lg{
@@ -290,7 +290,7 @@ h6{
 }
 
 #cantidad:before{
-    content:' +$350,000 pesos\A¡Se reparte todo el acumulado!';
+    content:' +$225,000 pesos';
     color: yellow;
     white-space:pre;
 }
