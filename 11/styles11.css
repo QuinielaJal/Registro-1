@@ -338,7 +338,7 @@ h6{
 #touchIconDiv{
     transform: rotate(315deg);
     position: absolute;
-    top: 170px;
+    top: 185px;
     height: 0px;
     pointer-events:none;
 }
