@@ -16,7 +16,7 @@ body{
 
 .quiniela{
     margin: auto;
-    background-image: url('IMG-20240505-WA0008.jpg')
+    background-image: url('./IMG-20240505-WA0008.jpg')
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
