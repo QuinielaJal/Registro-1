@@ -9,7 +9,7 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: url("../bg/fondo11.jpg");
+    background-image: url("../bg/euro_f.jpg");
     background-repeat: repeat-y;
     background-position: top;
 }
@@ -276,12 +276,16 @@ h6{
 }
 
 #bolsa{
-    color:whitesmoke;
-    padding: 5px 0px;
+    color: whitesmoke;
+    padding: 1px 5px;
+    margin-top: 5px;
+    width: fit-content;
+    background: #000000e3;
+    border-radius: 4px;
     text-align: center;
     font-weight: bolder;
-    margin: auto;
-    text-shadow: 1px 1px 5px black;
+    margin: 5px auto;
+    text-shadow: 0px 0px 7px black;
 }
 
 #bolsatxt:before{
