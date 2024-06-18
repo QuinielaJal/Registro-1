@@ -363,6 +363,10 @@ h6{
     width: 100%;
 }
 
+.boton:hover {
+    filter: brightness(1.2) !important;
+}
+
 @keyframes mymove {
     0%   { transform:scale(1.0); opacity:0.7; }
     50%  { transform:scale(1.2); opacity:0.5; }
