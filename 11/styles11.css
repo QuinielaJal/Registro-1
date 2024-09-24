@@ -16,7 +16,7 @@ body{
 
 .quiniela{
     margin: auto;
-    background-image: url("quiniela11.jpg");
+    background-image: url("fe75092a-ee4a-439a-bdf4-5ccf9d81056e.jpeg");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
@@ -95,8 +95,8 @@ body{
     margin-top: 8.5%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.49turn, rgb(18 0 78) -7%, rgb(109 0 121) 80%);
-    background: linear-gradient(0.49turn, rgb(18 0 78) -7%, rgb(109 0 121) 80%);
+    background: -webkit-linear-gradient(0.49turn, rgb(18 0 78) -7%, rgb(0, 74, 18) 80%);
+    background: linear-gradient(0.49turn, rgb(18 0 78) -7%, rgb(0, 74, 18) 80%);
 }
 
 .text-lg{
@@ -293,7 +293,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'+$350,000 pesos';
+    content:'$300,000 pesos';
     color: yellow;
     white-space:pre;
 }
