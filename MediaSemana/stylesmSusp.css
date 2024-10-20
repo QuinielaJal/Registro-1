@@ -16,7 +16,7 @@ body{
 
 .quiniela{
     margin: auto;
-    background-image: url("quinielamSusp.jpg");
+    background-image: url("beca23f1-e2e9-4d2a-8047-009428b5c066.jpeg");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
@@ -94,8 +94,8 @@ body{
     margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.5turn, rgb(35,0,100), rgb(0 13 63) 80%);
-    background: linear-gradient(0.5turn, rgb(35,0,100), rgb(0 13 63) 80%);
+    background: -webkit-linear-gradient(0.5turn, rgb(1,11,125), rgb(0 13 63) 80%);
+    background: linear-gradient(0.5turn, rgb(1,11,125), rgb(0 13 63) 80%);
 }
 
 .text-lg{
@@ -294,7 +294,7 @@ h6{
 }
 
 #cantidad:before{
-    content:' +$225,000 pesos';
+    content:' $250,000 pesos';
     color: yellow;
     white-space:pre;
 }
