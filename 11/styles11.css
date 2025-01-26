@@ -293,7 +293,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'+$325,000 pesos';
+    content:'+$400,000 pesos';
     color: yellow;
     white-space:pre;
 }
