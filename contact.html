@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es-mx" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Quiniela Liga MX - Quiniela Jalisco">
+    <meta name="keywords" content="Quiniela Jalisco, Liga MX, Apuesta deportiva">
+    <title>Quiniela Jalisco</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="icon" href="icon.jpg">
+    <link rel="apple-touch-icon" href="icon.jpg">
+
+    <link rel="stylesheet" href="11/styles11.css">
+    <link rel="icon" href="icon.jpg">
+    <link rel="apple-touch-icon" href="icon.jpg">
+    <link rel="shortcut icon" href="icon.jpg" type="image/x-icon">
+    <script src="var.js"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+      }
+      #img-q {
+        max-width: 100%;
+        height: auto;
+        width: 95%;
+        margin-bottom: 30px;
+        border-radius: 12px;
+      }
+
+      .pulse {
+        cursor: pointer;
+        animation: pulsar 0.5s infinite alternate;
+      }
+
+      @keyframes pulsar {
+        0% {
+          transform: scale(0.95);
+          text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        100% {
+          transform: scale(1);
+          text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+      }
+    </style>
+</head>
+
+<body>
+  <div style="max-width: 400px; display: flex; flex-direction: column; align-items: center; margin-top: 30px;">
+    <div class="rounded-pill px-2" id="phone" style="background: #ffffff80; font-size: 12px;"></div>
+    <p id='bolsa' style="font-size: 20px;" class="pulse">
+      <span id="bolsatxt"></span>
+      <span id="cantidad">
+        <span id="sub1"></span>
+        <span id="sub2"></span>
+        <span id="sub3"></span>
+        <span id="sub4"></span>
+      </span>
+  </p>
+  
+    <img src="11/quiniela11.jpg" alt="Quiniela" id="img-q">
+    <button id="botonenviar" class="boton pulse" style="width: 80%; font-size: 20px;">
+      Enviar mensaje &nbsp;
+      <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-5.png" height="20px">
+    </button>
+    
+  </div>
+
+  <script>
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const phoneNumber = urlParams.get('to') ?? telm;
+      const duration = parseInt(urlParams.get('ms'), 10) || null;
+      const defaultMessage = "Hola, necesito más información.";
+  
+      if (phoneNumber) {
+        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
+        const btn = document.getElementById('botonenviar');
+        document.getElementById('phone').textContent = `${phoneNumber}`;
+        
+        btn.onclick = function() {
+          window.location.href = whatsappLink;
+        };
+  
+        if (duration) {
+          setTimeout(function() {
+            window.location.href = whatsappLink;
+          }, duration);
+        }
+
+      } else {
+        console.log("Número de teléfono no especificado en la URL.");
+      }
+    };
+  </script>
+  
+  
+</body>
