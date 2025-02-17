@@ -74,7 +74,7 @@
   <script>
     window.onload = function() {
       const urlParams = new URLSearchParams(window.location.search);
-      const phoneNumber = urlParams.get('to') ?? tel;
+      const phoneNumber = urlParams.get('to') ?? telm;
       const duration = parseInt(urlParams.get('ms'), 10) || null;
       const defaultMessage = "Hola, necesito más información.";
   
