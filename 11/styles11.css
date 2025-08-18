@@ -56,7 +56,7 @@ body{
 }
 
 .quiniela span{
-    width: 10%;
+    width: 9.9%;
     display: inline-flex;
     -webkit-transition:background-color 0.3s ease;
     -moz-transition:background-color 0.3s ease;
@@ -66,7 +66,7 @@ body{
 
 #_{
     background-color: rgba(128, 255, 0, 0);
-    width: 35%;
+    width: 35.2%;
     height: 100%;
     display: inline-flex;
 }
@@ -75,7 +75,7 @@ body{
     display: flex;
     height: 5.4%;
     width: 100%;
-    padding: 0 1.35% 0 1.35%;
+    padding: 0 1.15% 0 1.35%;
 }
 
 .partido .opcion-active{
