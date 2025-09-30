@@ -255,6 +255,7 @@ h6{
 }
 
 #total{
+    margin-right: 4px;
     display: inline-block;
     float: right;
     margin-top: 0;
@@ -264,6 +265,7 @@ h6{
 }
 
 #costo, #numquinielas{
+    margin-left: 4px;
     color: rgba(11, 15, 0, 0.753);
     background-color: rgb(200,200,200,0.5);
     display:inline;
