@@ -95,8 +95,8 @@ body{
     margin-top: 8.5%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.49turn, rgb(30,0,115) -7%, rgb(1,4,96) 80%);
-    background: linear-gradient(0.49turn, rgb(30,0,115) -7%, rgb(1,4,96) 80%);
+    background: -webkit-linear-gradient(0.49turn, rgb(90,20,50) -7%, rgb(1,4,96) 80%);
+    background: linear-gradient(0.49turn, rgb(90,20,50) -7%, rgb(1,4,96) 80%);
 }
 
 .text-lg{
@@ -295,7 +295,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'+$350,000 pesos';
+    content:'+$450,000 pesos';
     color: yellow;
     white-space:pre;
 }
