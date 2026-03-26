@@ -295,7 +295,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'+$400,000 pesos';
+    content:'+$400,000 pesos\A¡Se reparte todo el acumulado!';
     color: yellow;
     white-space:pre;
 }
