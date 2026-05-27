@@ -130,12 +130,15 @@ body{
 }
 
 #botonagregar{
-    background: -webkit-linear-gradient(0,  rgb(0, 134, 175) 20%, rgb(15, 163, 201)); 
-    background: linear-gradient(0,  rgb(0, 134, 175) 20%, rgb(15, 163, 201)); 
+    /* background: -webkit-linear-gradient(0,  rgb(0, 134, 175) 20%, rgb(15, 163, 201)); 
+    background: linear-gradient(0,  rgb(0, 134, 175) 20%, rgb(15, 163, 201));  */
+    background: -webkit-linear-gradient(0.49turn, rgb(30,0,113) -7%, rgb(1,4,96) 80%);
+    background: linear-gradient(0.49turn, rgb(30,0,113) -7%, rgb(1,4,96) 80%);
     font-size: 14px;
     height: 46px;
     max-height: 46px;
     align-items: center;
+    color: white;
 }
 
 #botonborrar{
