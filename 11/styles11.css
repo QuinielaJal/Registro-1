@@ -225,7 +225,7 @@ body{
 #listaContainer{
     margin: 15px 0;
     border: solid black 2px;
-    background-color: rgba(255, 255, 255, 0.65);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 5px 0px;
     border-radius: 5px;
     background-position: top;

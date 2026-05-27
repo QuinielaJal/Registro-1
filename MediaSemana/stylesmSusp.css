@@ -142,9 +142,11 @@ body{
     background: linear-gradient(to bottom, #500000, #a00000, #500000); 
     color:  #DDDDDD;
     font-size: 12px;
-    padding: 5px;
-    height: 46px;
-    max-height: 46px;
+    padding: 3px;
+    height: 32px;
+    max-height: 32px;
+    width: 45%;
+    margin: auto;
 }
 
 #nombrebox{
@@ -218,7 +220,7 @@ body{
 #listaContainer{
     margin: 15px 0;
     border: solid black 2px;
-    background-color: rgba(255, 255, 240, 0.4);
+    background-color: rgba(255, 255, 240, 0.8);
     padding: 5px 0px;
     border-radius: 5px;
     background-position: top;
