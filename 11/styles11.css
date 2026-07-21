@@ -9,14 +9,14 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: url("../bg/m10.jpg");
+    background-image: url("../bg/fondo8.jpg");
     background-repeat: repeat-y;
     background-position: top;
 }
 
 .quiniela{
     margin: auto;
-    background-image: url("IMG_2344.png");
+    background-image: url("quiniela11.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
@@ -95,8 +95,8 @@ body{
     margin-top: 8.5%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.49turn, rgb(102,20,38) -7%, rgb(6,32,84) 80%);
-    background: linear-gradient(0.49turn, rgb(102,20,38) -7%, rgb(6,32,84) 80%);
+    background: -webkit-linear-gradient(0.49turn, rgb(32,0,113) -7%, rgb(6,32,84) 80%);
+    background: linear-gradient(0.49turn, rgb(32,0,113) -7%, rgb(6,32,84) 80%);
 }
 
 .text-lg{
