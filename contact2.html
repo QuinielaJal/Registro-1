@@ -22,8 +22,8 @@
         --amber-deep: #E4930F;
         --whatsapp: #25D366;
         --cream: #F4ECDA;
-        --glass-bg: rgba(255,255,255,.09);
-        --glass-bg-strong: rgba(255,255,255,.14);
+        --glass-bg: rgba(6,16,11,.82);
+        --glass-bg-strong: rgba(6,16,11,.88);
         --glass-border: rgba(255,255,255,.28);
         --glass-highlight: rgba(255,255,255,.55);
       }
@@ -45,13 +45,46 @@
         0%   { transform: translateX(0); }
         100% { transform: translateX(-50%); }
       }
-      @keyframes glowPulse {
-        0%, 100% { text-shadow: 0 0 14px rgba(255,182,39,.6), 0 0 2px rgba(255,182,39,.7); }
-        50%      { text-shadow: 0 0 24px rgba(255,182,39,.9), 0 0 4px rgba(255,182,39,.9); }
-      }
       @keyframes pulse {
         0%, 100% { transform: scale(1); }
         50% { transform: scale(1.04); }
+      }
+
+      @keyframes shimmer {
+        0% {
+          text-shadow: 0px 0px 20px rgba(255, 215, 0, 0.3),
+                       0px 0px 40px rgba(255, 165, 0, 0.2),
+                       0px 2px 4px rgba(0, 0, 0, 0.3),
+                       inset -3px -3px 10px rgba(0, 0, 0, 0.2);
+          filter: brightness(1) drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
+        }
+        50% {
+          text-shadow: 0px 0px 40px rgba(255, 215, 0, 0.6),
+                       0px 0px 60px rgba(255, 165, 0, 0.4),
+                       0px 2px 4px rgba(0, 0, 0, 0.3),
+                       inset -3px -3px 10px rgba(0, 0, 0, 0.2);
+          filter: brightness(1.2) drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+        }
+        100% {
+          text-shadow: 0px 0px 20px rgba(255, 215, 0, 0.3),
+                       0px 0px 40px rgba(255, 165, 0, 0.2),
+                       0px 2px 4px rgba(0, 0, 0, 0.3),
+                       inset -3px -3px 10px rgba(0, 0, 0, 0.2);
+          filter: brightness(1) drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
+        }
+      }
+
+      .prize-amount {
+        font-family: 'Helvetica', sans-serif;
+        font-weight: 900;
+        font-size: 50px;
+        line-height: 1;
+        background: linear-gradient(180deg, #FFD700, #FFA500);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: shimmer 2.5s ease-in-out infinite;
+        letter-spacing: 2px;
       }
 
       body {
@@ -63,6 +96,16 @@
         align-items: flex-start;
         padding: 8px;
         overflow-x: hidden;
+      }
+
+      /* Canvas de confeti cayendo, detrás de todo lo demás */
+      #confetti-canvas {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        pointer-events: none;
       }
 
       /* Manchas de luz difusas -> el "líquido" detrás del vidrio */
@@ -138,10 +181,14 @@
       .prize-amount {
         font-family: 'Helvetica', sans-serif;
         font-weight: 900;
-        font-size: 50px;
-        color: var(--amber);
+        font-size: 56px;
         line-height: 1;
-        animation: glowPulse 2.6s ease-in-out infinite;
+        background: linear-gradient(180deg, #FFD700, #FFA500);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3), 
+                     0px 0px 1px rgba(255, 255, 255, 0.5);
       }
       .prize-label {
         font-size: 12.5px;
@@ -355,6 +402,8 @@
 
 <body>
 
+  <canvas id="confetti-canvas"></canvas>
+
   <div class="blob blob--1"></div>
   <div class="blob blob--2"></div>
   <div class="blob blob--3"></div>
@@ -501,6 +550,108 @@
       }
 
     };
+  </script>
+
+  <!-- ================= CONFETI DE FONDO ================= -->
+  <script>
+    (function () {
+      const canvas = document.getElementById('confetti-canvas');
+      const ctx = canvas.getContext('2d');
+      const colors = ['#FFB627', '#FFD700', '#25D366', '#1F8F5E', '#1EAE9A', '#F4ECDA'];
+
+      let pieces = [];
+      let dpr = Math.max(window.devicePixelRatio || 1, 1);
+      let W, H;
+
+      function resize() {
+        W = window.innerWidth;
+        H = window.innerHeight;
+        canvas.width = W * dpr;
+        canvas.height = H * dpr;
+        canvas.style.width = W + 'px';
+        canvas.style.height = H + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function rand(min, max) { return Math.random() * (max - min) + min; }
+
+      function makePiece(initial) {
+        const shapeRoll = Math.random();
+        return {
+          x: rand(0, W),
+          y: initial ? rand(-H, 0) : rand(-40, -10),
+          size: rand(6, 12),
+          color: colors[Math.floor(rand(0, colors.length))],
+          speedY: rand(0.6, 1.8),
+          speedX: rand(-0.6, 0.6),
+          rotation: rand(0, 360),
+          rotationSpeed: rand(-3, 3),
+          sway: rand(0.5, 2),
+          swaySpeed: rand(0.01, 0.03),
+          swayOffset: rand(0, Math.PI * 2),
+          shape: shapeRoll < 0.34 ? 'rect' : (shapeRoll < 0.67 ? 'circle' : 'strip'),
+          opacity: rand(0.55, 0.95)
+        };
+      }
+
+      function initPieces() {
+        const count = W < 480 ? 60 : 110;
+        pieces = Array.from({ length: count }, () => makePiece(true));
+      }
+
+      function drawPiece(p) {
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rotation * Math.PI) / 180);
+        ctx.globalAlpha = p.opacity;
+        ctx.fillStyle = p.color;
+
+        if (p.shape === 'rect') {
+          ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+        } else if (p.shape === 'circle') {
+          ctx.beginPath();
+          ctx.arc(0, 0, p.size / 2.4, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          ctx.fillRect(-p.size / 6, -p.size / 1.4, p.size / 3, p.size * 1.2);
+        }
+        ctx.restore();
+      }
+
+      function update() {
+        for (const p of pieces) {
+          p.y += p.speedY;
+          p.x += p.speedX + Math.sin(p.y * p.swaySpeed + p.swayOffset) * p.sway * 0.05;
+          p.rotation += p.rotationSpeed;
+
+          if (p.y > H + 20) {
+            Object.assign(p, makePiece(false), { x: rand(0, W) });
+          }
+          if (p.x > W + 20) p.x = -20;
+          if (p.x < -20) p.x = W + 20;
+        }
+      }
+
+      let reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function loop() {
+        if (!reduceMotion) {
+          ctx.clearRect(0, 0, W, H);
+          update();
+          for (const p of pieces) drawPiece(p);
+        }
+        requestAnimationFrame(loop);
+      }
+
+      window.addEventListener('resize', function () {
+        resize();
+        initPieces();
+      });
+
+      resize();
+      initPieces();
+      if (!reduceMotion) requestAnimationFrame(loop);
+    })();
   </script>
 
 </body>
