@@ -215,8 +215,8 @@
 
       #phone {
         font-family: 'JetBrains Mono', monospace;
-        font-size: 11px;
-        color: rgba(244,236,218,.8);
+        font-size: 9px;
+        color: rgba(244, 236, 218, 0.571);
         text-align: center;
         letter-spacing: 1px;
         margin-bottom: 14px;
@@ -391,6 +391,94 @@
         .trust-title { font-size: 10.5px; }
       }
 
+      /* MODAL */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 100;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(4px);
+        animation: fadeIn .3s ease-out;
+      }
+      .modal-overlay.active {
+        display: flex;
+      }
+      .modal-content {
+        background: var(--glass-bg-strong);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        padding: 28px 22px;
+        max-width: 340px;
+        width: 90%;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,.25);
+        animation: slideUp .4s ease-out;
+        text-align: center;
+      }
+      .modal-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--cream);
+        margin-bottom: 8px;
+      }
+      .modal-subtitle {
+        font-size: 12.5px;
+        color: rgba(244,236,218,.7);
+        margin-bottom: 22px;
+      }
+      .modal-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .modal-btn {
+        width: 100%;
+        padding: 14px 16px;
+        border: none;
+        border-radius: 14px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13.5px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all .3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .modal-btn-primary {
+        background: linear-gradient(180deg, rgba(60,235,140,.9), rgba(37,211,102,.85));
+        color: #06210F;
+        border: 1px solid rgba(255,255,255,.4);
+        box-shadow: 0 8px 20px rgba(37,211,102,.3);
+      }
+      .modal-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(37,211,102,.5);
+      }
+      .modal-btn-secondary {
+        background: rgba(255,182,39,.15);
+        color: var(--amber);
+        border: 1px solid rgba(255,182,39,.5);
+      }
+      .modal-btn-secondary:hover {
+        background: rgba(255,182,39,.25);
+        border-color: rgba(255,182,39,.7);
+        transform: translateY(-2px);
+      }
+      .modal-close {
+        margin-top: 16px;
+        background: transparent;
+        color: rgba(244,236,218,.5);
+        border: 1px solid rgba(255,255,255,.15);
+      }
+      .modal-close:hover {
+        background: rgba(255,255,255,.08);
+        color: rgba(244,236,218,.8);
+      }
+
       @media (prefers-reduced-motion: reduce) {
         .blob, .prize-amount, .scoreboard-track,
         .container-main, .logo-wrap, .hero, .trust-row, .gallery-section {
@@ -421,18 +509,18 @@
     <div class="glass">
 
       <div class="hero">
-        <div id="phone"></div>
-        <div class="prize-amount">$500,000+</div>
+        <div class="prize-label">Más de</div>
+        <div class="prize-amount">$500,000</div>
         <div class="prize-label">en premios cada semana</div>
 
         <div class="scoreboard">
           <div class="scoreboard-track">
-            <span>⚽ PREMIO DE SEGUNDO LUGAR</span>
+            <span>⚽ PREMIOS A 1° Y 2° LUGAR</span>
             <span>⚽ REGISTRO POR WHATSAPP</span>
-            <span>⚽ 10 PARTIDOS POR JORNADA</span>
-            <span>⚽ PREMIO DE SEGUNDO LUGAR</span>
+            <span>⚽ MEDIA SEMANA $20 ⚽ FIN DE SEMANA $25</span>
+            <span>⚽ PREMIOS A 1° Y 2° LUGAR</span>
             <span>⚽ REGISTRO POR WHATSAPP</span>
-            <span>⚽ 10 PARTIDOS POR JORNADA</span>
+            <span>⚽ MEDIA SEMANA $20 ⚽ FIN DE SEMANA $25</span>
           </div>
         </div>
       </div>
@@ -443,7 +531,7 @@
           <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-5.png" alt="WhatsApp">
         </button>
 
-        <button class="button-secondary" style="padding: 8px" onclick="window.location.href='index.html'">
+        <button class="button-secondary" style="padding: 8px" onclick="openQuinielaModal()">
           <div style="font-size: 10.5px; opacity: .75; margin-bottom: 1px;">¿Ya sabes cómo jugar?</div>
           <div style="font-size: 15px; font-weight: 700;">Llena tu quiniela aquí</div>
         </button>
@@ -451,6 +539,16 @@
 
       <!-- 3 COLUMNAS DE CONFIANZA -->
       <div class="trust-row">
+        <div class="trust-card">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="16" rx="2"/>
+              <path d="M16 3v4M8 3v4M3 10h18"/>
+            </svg>
+          </div>
+          <div class="trust-title">7 años de trayectoria</div>
+          <div class="trust-desc">Entregando premios sin interrupciones</div>
+        </div>
         <div class="trust-card">
           <div class="trust-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -471,17 +569,9 @@
           <div class="trust-title">Simulador de resultados</div>
           <div class="trust-desc">Calcula resultados en diferentes escenarios</div>
         </div>
-        <div class="trust-card">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="5" width="18" height="16" rx="2"/>
-              <path d="M16 3v4M8 3v4M3 10h18"/>
-            </svg>
-          </div>
-          <div class="trust-title">7 años de trayectoria</div>
-          <div class="trust-desc">Entregando premios sin interrupciones</div>
-        </div>
       </div>
+
+      <div id="phone"></div>
 
       <!-- GALERÍA DE PREMIOS ANTERIORES -->
       <!-- <div class="gallery-section">
@@ -525,7 +615,43 @@
     </div>
   </div>
 
+  <!-- MODAL DE QUINIELA -->
+  <div class="modal-overlay" id="quinielaModal">
+    <div class="modal-content">
+      <div class="modal-title">Elige tu Quiniela</div>
+      <div class="modal-subtitle">¿Qué quiniela deseas jugar?</div>
+      <div class="modal-buttons">
+        <button class="modal-btn modal-btn-primary" onclick="goToQuiniela('index.html')">
+          Fin de Semana
+        </button>
+        <button class="modal-btn modal-btn-secondary" onclick="goToQuiniela('media.html')">
+          Media Semana
+        </button>
+      </div>
+      <button class="modal-btn modal-close" onclick="closeQuinielaModal()">Cerrar</button>
+    </div>
+  </div>
+
   <script>
+    function openQuinielaModal() {
+      document.getElementById('quinielaModal').classList.add('active');
+    }
+
+    function closeQuinielaModal() {
+      document.getElementById('quinielaModal').classList.remove('active');
+    }
+
+    function goToQuiniela(page) {
+      window.location.href = page;
+    }
+
+    // Cerrar modal al hacer click fuera
+    document.getElementById('quinielaModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeQuinielaModal();
+      }
+    });
+
     window.onload = function() {
       const urlParams = new URLSearchParams(window.location.search);
       const phoneNumber = urlParams.get('to') ?? tel;
