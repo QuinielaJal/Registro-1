@@ -4,98 +4,831 @@
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="Quiniela Liga MX - Quiniela Jalisco">
+    <meta name="description" content="Quiniela Liga MX - Gana hasta $500,000 cada semana">
     <meta name="keywords" content="Quiniela Jalisco, Liga MX, Apuesta deportiva">
+    <!-- <meta name="color-scheme" content="light"> -->
     <title>Quiniela Jalisco</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" href="icon.jpg">
     <link rel="apple-touch-icon" href="icon.jpg">
-
-    <link rel="stylesheet" href="11/styles11.css">
-    <link rel="icon" href="icon.jpg">
-    <link rel="apple-touch-icon" href="icon.jpg">
-    <link rel="shortcut icon" href="icon.jpg" type="image/x-icon">
     <script src="var.js"></script>
     <style>
-      body {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        max-width: 100%;
-      }
-      #img-q {
-        max-width: 100%;
-        height: auto;
-        width: 95%;
-        margin-bottom: 30px;
-        border-radius: 12px;
-      }
-
-      .pulse {
-        cursor: pointer;
-        animation: pulsar 0.5s infinite alternate;
+      /* ============================================
+         QUINIELA JALISCO — Liquid Glass / cancha nocturna
+      ============================================ */
+      :root {
+        --amber: #FFB627;
+        --amber-deep: #E4930F;
+        --whatsapp: #25D366;
+        --cream: #F4ECDA;
+        --glass-bg: rgba(6,16,11,.82);
+        --glass-bg-strong: rgba(6,16,11,.88);
+        --glass-border: rgba(255,255,255,.28);
+        --glass-highlight: rgba(255,255,255,.55);
       }
 
-      @keyframes pulsar {
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html { -webkit-tap-highlight-color: transparent; }
+
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(22px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes drift {
+        0%   { transform: translate(0,0) scale(1); }
+        50%  { transform: translate(3%, -4%) scale(1.08); }
+        100% { transform: translate(0,0) scale(1); }
+      }
+      @keyframes ticker {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.04); }
+      }
+
+      @keyframes shimmer {
         0% {
-          transform: scale(0.95);
-          text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          text-shadow: 0px 0px 20px rgba(255, 215, 0, 0.3),
+                       0px 0px 40px rgba(255, 165, 0, 0.2),
+                       0px 2px 4px rgba(0, 0, 0, 0.3),
+                       inset -3px -3px 10px rgba(0, 0, 0, 0.2);
+          filter: brightness(1) drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
+        }
+        50% {
+          text-shadow: 0px 0px 40px rgba(255, 215, 0, 0.6),
+                       0px 0px 60px rgba(255, 165, 0, 0.4),
+                       0px 2px 4px rgba(0, 0, 0, 0.3),
+                       inset -3px -3px 10px rgba(0, 0, 0, 0.2);
+          filter: brightness(1.2) drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
         }
         100% {
-          transform: scale(1);
-          text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+          text-shadow: 0px 0px 20px rgba(255, 215, 0, 0.3),
+                       0px 0px 40px rgba(255, 165, 0, 0.2),
+                       0px 2px 4px rgba(0, 0, 0, 0.3),
+                       inset -3px -3px 10px rgba(0, 0, 0, 0.2);
+          filter: brightness(1) drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
+        }
+      }
+
+      .prize-amount {
+        font-family: 'Helvetica', sans-serif;
+        font-weight: 900;
+        font-size: 50px;
+        line-height: 1;
+        background: linear-gradient(180deg, #FFD700, #FFA500);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: shimmer 2.5s ease-in-out infinite;
+        letter-spacing: 2px;
+      }
+
+      body {
+        font-family: 'Space Grotesk', sans-serif;
+        background: #050D09;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 8px;
+        overflow-x: hidden;
+      }
+
+      /* Canvas de confeti cayendo, detrás de todo lo demás */
+      #confetti-canvas {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* Manchas de luz difusas -> el "líquido" detrás del vidrio */
+      .blob {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(70px);
+        z-index: 0;
+        opacity: .55;
+        animation: drift 14s ease-in-out infinite;
+      }
+      .blob--1 { width: 340px; height: 340px; top: -80px; left: -60px; background: #1F8F5E; }
+      .blob--2 { width: 300px; height: 300px; top: 220px; right: -100px; background: #FFB627; animation-delay: -4s; opacity: .35; }
+      .blob--3 { width: 320px; height: 320px; bottom: -60px; left: 10%; background: #1EAE9A; animation-delay: -8s; opacity: .4; }
+
+      .container-main {
+        width: 100%;
+        max-width: 420px;
+        margin-top: 8px;
+        position: relative;
+        z-index: 1;
+        animation: fadeIn .7s ease-out;
+      }
+
+      /* Vidrio base */
+      .glass {
+        position: relative;
+        background: var(--glass-bg);
+        /* backdrop-filter: blur(22px) saturate(160%); */
+        /* -webkit-backdrop-filter: blur(22px) saturate(160%); */
+        border: 1px solid var(--glass-border);
+        border-radius: 28px;
+        box-shadow: 0 12px 34px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.25);
+        overflow: hidden;
+      }
+      .glass::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 46%;
+        background: linear-gradient(180deg, rgba(255,255,255,.20), rgba(255,255,255,0));
+        pointer-events: none;
+      }
+
+      /* LOGO */
+      .logo-wrap {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+        animation: slideUp .6s ease-out .05s both;
+      }
+      .logo-badge { position: relative; display: flex; align-items: center; justify-content: center; z-index: 10; }
+      .logo-badge::before {
+        content: '';
+        position: absolute;
+        width: 150%; height: 150%;
+        background: radial-gradient(circle, rgba(255,182,39,.32), transparent 70%);
+        border-radius: 50%;
+      }
+      .logo-badge img {
+        position: relative; z-index: 1;
+        width: 116px; height: auto;
+        filter: drop-shadow(0 6px 14px rgba(0,0,0,.45));
+      }
+
+      /* HERO */
+      .hero {
+        padding: 22px 18px 0;
+        text-align: center;
+        color: var(--cream);
+        animation: slideUp .6s ease-out .12s both;
+      }
+      .prize-amount {
+        font-family: 'Helvetica', sans-serif;
+        font-weight: 900;
+        font-size: 56px;
+        line-height: 1;
+        background: linear-gradient(180deg, #FFD700, #FFA500);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3), 
+                     0px 0px 1px rgba(255, 255, 255, 0.5);
+      }
+      .prize-label {
+        font-family: 'Helvetica', sans-serif;
+        font-size: 14px;
+        color: rgba(244,236,218,.85);
+        margin-top: 6px;
+        font-weight: 700;
+      }
+
+      .scoreboard {
+        margin-top: 16px;
+        overflow: hidden;
+        white-space: nowrap;
+        background: rgba(0,0,0,.28);
+        border-top: 1px solid rgba(255,255,255,.12);
+        border-bottom: 1px solid rgba(255,255,255,.12);
+      }
+      .scoreboard-track { display: inline-flex; width: max-content; animation: ticker 16s linear infinite; }
+      .scoreboard-track span {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px; font-weight: 600; letter-spacing: 2px;
+        color: var(--amber); padding: 8px 20px; text-transform: uppercase;
+      }
+
+      .hero-body { padding: 20px 18px 22px; }
+
+      #phone {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 9px;
+        color: rgba(244, 236, 218, 0.571);
+        text-align: center;
+        letter-spacing: 1px;
+        margin-bottom: 14px;
+        min-height: 14px;
+      }
+
+      .button-cta {
+        width: 100%;
+        background: linear-gradient(180deg, rgba(60,235,140,.9), rgba(37,211,102,.85));
+        backdrop-filter: blur(6px);
+        color: #06210F;
+        border: 1px solid rgba(255,255,255,.4);
+        padding: 15px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 10px 24px rgba(37,211,102,.35), inset 0 1px 0 rgba(255,255,255,.5);
+        transition: all .3s ease;
+        animation: pulse 1.6s ease-in-out infinite;
+      }
+      .button-cta:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(37,211,102,.55), inset 0 1px 0 rgba(255,255,255,.6), 0 0 24px rgba(37,211,102,.4);
+        background: linear-gradient(180deg, rgba(70,245,155,.95), rgba(47,221,112,.9));
+      }
+      .button-cta:active { transform: scale(.97); }
+      .button-cta img { height: 18px; }
+
+      .button-secondary {
+        width: 100%;
+        margin-top: 12px;
+        background: rgba(255,182,39,.38);
+        backdrop-filter: blur(10px);
+        color: var(--cream);
+        border: 1.5px solid rgba(255,182,39,.7);
+        padding: 14px 12px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        border-radius: 16px;
+        cursor: pointer;
+        transition: all .3s ease;
+        animation: pulse 1.6s ease-in-out infinite;
+        box-shadow: 0 8px 22px rgba(255,182,39,.32);
+      }
+      .button-secondary:hover {
+        background: rgba(255,182,39,.48);
+        border-color: rgba(255,182,39,.9);
+        box-shadow: 0 12px 32px rgba(255,182,39,.45), inset 0 1px 0 rgba(255,255,255,.4);
+        transform: translateY(-2px);
+      }
+      .button-secondary:active { background: rgba(255,182,39,.52); }
+
+      /* 3 COLUMNAS DE CONFIANZA */
+      .trust-row {
+        display: flex;
+        gap: 8px;
+        margin-top: 14px;
+        animation: slideUp .6s ease-out .2s both;
+      }
+      .trust-card {
+        flex: 1;
+        padding: 14px 8px 12px;
+        text-align: center;
+        color: var(--cream);
+      }
+      .trust-icon {
+        width: 34px; height: 34px;
+        margin: 0 auto 8px;
+        border-radius: 50%;
+        background: rgba(255,182,39,.18);
+        border: 1px solid rgba(255,182,39,.4);
+        display: flex; align-items: center; justify-content: center;
+      }
+      .trust-icon svg { width: 17px; height: 17px; }
+      .trust-title {
+        font-size: 11.5px;
+        font-weight: 700;
+        margin-bottom: 3px;
+        line-height: 1.2;
+      }
+      .trust-desc {
+        font-size: 9.5px;
+        color: rgba(244,236,218,.65);
+        line-height: 1.3;
+      }
+
+      /* GALERÍA DE PREMIOS ANTERIORES */
+      .gallery-section {
+        margin-top: 14px;
+        padding: 16px 0 6px;
+        animation: slideUp .6s ease-out .28s both;
+      }
+      .gallery-heading {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 18px 12px;
+        color: var(--cream);
+      }
+      .gallery-heading .line { flex: 1; height: 1px; background: rgba(255,255,255,.2); }
+      .gallery-heading span {
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(244,236,218,.85);
+        white-space: nowrap;
+      }
+      .gallery-scroll {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding: 4px 18px 8px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+      .gallery-scroll::-webkit-scrollbar { display: none; }
+      .gallery-item {
+        flex: 0 0 auto;
+        width: 148px;
+        scroll-snap-align: start;
+        border-radius: 18px;
+        border: 1px solid var(--glass-border);
+        overflow: hidden;
+        background: var(--glass-bg-strong);
+        backdrop-filter: blur(14px);
+      }
+      .gallery-photo {
+        height: 96px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+      }
+      .gallery-photo--1 { background-image: linear-gradient(135deg, rgba(31,142,94,.55), rgba(255,182,39,.35)), url('img/premio-1.jpg'); }
+      .gallery-photo--2 { background-image: linear-gradient(135deg, rgba(30,174,154,.55), rgba(31,94,66,.4)), url('img/premio-2.jpg'); }
+      .gallery-photo--3 { background-image: linear-gradient(135deg, rgba(255,182,39,.45), rgba(31,94,66,.55)), url('img/premio-3.jpg'); }
+      .gallery-photo--4 { background-image: linear-gradient(135deg, rgba(31,94,66,.55), rgba(30,174,154,.4)), url('img/premio-4.jpg'); }
+      .gallery-caption { padding: 8px 10px 10px; }
+      .gallery-week {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 9.5px;
+        color: rgba(244,236,218,.6);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .gallery-amount {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--amber);
+        margin-top: 2px;
+      }
+
+      .footnote {
+        text-align: center;
+        font-size: 9.5px;
+        color: rgba(244,236,218,.35);
+        padding: 14px 18px 4px;
+      }
+
+      @media (max-width: 380px) {
+        .prize-amount { font-size: 34px; }
+        .logo-badge img { width: 100px; }
+        .trust-title { font-size: 10.5px; }
+      }
+
+      /* MODAL */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 100;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(4px);
+        animation: fadeIn .3s ease-out;
+      }
+      .modal-overlay.active {
+        display: flex;
+      }
+      .modal-content {
+        background: var(--glass-bg-strong);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        padding: 28px 22px;
+        max-width: 340px;
+        width: 90%;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,.25);
+        animation: slideUp .4s ease-out;
+        text-align: center;
+      }
+      .modal-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--cream);
+        margin-bottom: 8px;
+      }
+      .modal-subtitle {
+        font-size: 12.5px;
+        color: rgba(244,236,218,.7);
+        margin-bottom: 22px;
+      }
+      .modal-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .modal-btn {
+        width: 100%;
+        padding: 14px 16px;
+        border: none;
+        border-radius: 14px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13.5px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all .3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .modal-btn-primary {
+        background: linear-gradient(180deg, rgba(60,235,140,.9), rgba(37,211,102,.85));
+        color: #06210F;
+        border: 1px solid rgba(255,255,255,.4);
+        box-shadow: 0 8px 20px rgba(37,211,102,.3);
+      }
+      .modal-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(37,211,102,.5);
+      }
+      .modal-btn-secondary {
+        background: rgba(255,182,39,.15);
+        color: var(--amber);
+        border: 1px solid rgba(255,182,39,.5);
+      }
+      .modal-btn-secondary:hover {
+        background: rgba(255,182,39,.25);
+        border-color: rgba(255,182,39,.7);
+        transform: translateY(-2px);
+      }
+      .modal-close {
+        margin-top: 16px;
+        background: transparent;
+        color: rgba(244,236,218,.5);
+        border: 1px solid rgba(255,255,255,.15);
+      }
+      .modal-close:hover {
+        background: rgba(255,255,255,.08);
+        color: rgba(244,236,218,.8);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .blob, .prize-amount, .scoreboard-track,
+        .container-main, .logo-wrap, .hero, .trust-row, .gallery-section {
+          animation: none;
         }
       }
     </style>
 </head>
 
 <body>
-  <div style="max-width: 400px; display: flex; flex-direction: column; align-items: center; margin-top: 30px;">
-    <div class="rounded-pill px-2" id="phone" style="background: #ffffff80; font-size: 12px;"></div>
-    <p id='bolsa' style="font-size: 20px;" class="pulse">
-      <span id="bolsatxt"></span>
-      <span id="cantidad">
-        <span id="sub1"></span>
-        <span id="sub2"></span>
-        <span id="sub3"></span>
-        <span id="sub4"></span>
-      </span>
-  </p>
-  
-    <img src="11/quiniela11.jpg" alt="Quiniela" id="img-q">
-    <button id="botonenviar" class="boton pulse" style="width: 80%; font-size: 20px; color: black; text-shadow: none !important;">
-      Enviar mensaje &nbsp;
-      <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-5.png" height="20px">
-    </button>
-    
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="blob blob--1"></div>
+  <div class="blob blob--2"></div>
+  <div class="blob blob--3"></div>
+
+  <div class="container-main">
+
+    <!-- LOGO -->
+    <div class="logo-wrap">
+      <div class="logo-badge">
+        <img src="logo.png" alt="Quiniela Jalisco">
+      </div>
+    </div>
+
+    <!-- PANEL PRINCIPAL DE VIDRIO -->
+    <div class="glass">
+
+      <div class="hero">
+        <div class="prize-label">Más de</div>
+        <div class="prize-amount">$500,000</div>
+        <div class="prize-label">pesos en premios cada semana</div>
+
+        <div class="scoreboard">
+          <div class="scoreboard-track">
+            <span>⚽ PREMIOS A 1° Y 2° LUGAR</span>
+            <span>⚽ REGISTRO POR WHATSAPP</span>
+            <span>⚽ MEDIA SEMANA $20 ⚽ FIN DE SEMANA $25</span>
+            <span>⚽ PREMIOS A 1° Y 2° LUGAR</span>
+            <span>⚽ REGISTRO POR WHATSAPP</span>
+            <span>⚽ MEDIA SEMANA $20 ⚽ FIN DE SEMANA $25</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-body">
+        <button id="botonenviar" class="button-cta">
+          Enviar Whatsapp
+          <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-5.png" alt="WhatsApp">
+        </button>
+
+        <button class="button-secondary" style="padding: 8px" onclick="openQuinielaModal()">
+          <div style="font-size: 10.5px; opacity: .75; margin-bottom: 1px;">¿Ya sabes cómo jugar?</div>
+          <div style="font-size: 15px; font-weight: 700;">Llena tu quiniela aquí</div>
+        </button>
+      </div>
+
+      <!-- 3 COLUMNAS DE CONFIANZA -->
+      <div class="trust-row">
+        <div class="trust-card">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="16" rx="2"/>
+              <path d="M16 3v4M8 3v4M3 10h18"/>
+            </svg>
+          </div>
+          <div class="trust-title">7 años de trayectoria</div>
+          <div class="trust-desc">14 Torneos organizados</div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l7 3v6c0 5-3.4 8.4-7 11-3.6-2.6-7-6-7-11V5l7-3z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="trust-title">100% Transparente</div>
+          <div class="trust-desc">Pagos publicados cada semana</div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M6 20c0-2.667 2.686-4 6-4s6 1.333 6 4"/>
+            </svg>
+          </div>
+          <div class="trust-title">Miles de participantes</div>
+          <div class="trust-desc">De todo México y Estados Unidos</div>
+        </div>
+      </div>
+
+      <br>
+      <div id="phone"></div>
+
+      <!-- GALERÍA DE PREMIOS ANTERIORES -->
+      <!-- <div class="gallery-section">
+        <div class="gallery-heading">
+          <span>Premios entregados</span>
+          <div class="line"></div>
+        </div>
+        <div class="gallery-scroll">
+          <div class="gallery-item">
+            <div class="gallery-photo gallery-photo--1">.</div>
+            <div class="gallery-caption">
+              <div class="gallery-week">Jornada 14</div>
+              <div class="gallery-amount">$120,000</div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-photo gallery-photo--2">.</div>
+            <div class="gallery-caption">
+              <div class="gallery-week">Jornada 11</div>
+              <div class="gallery-amount">$85,000</div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-photo gallery-photo--3">.</div>
+            <div class="gallery-caption">
+              <div class="gallery-week">Jornada 8</div>
+              <div class="gallery-amount">$500,000</div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-photo gallery-photo--4">.</div>
+            <div class="gallery-caption">
+              <div class="gallery-week">Jornada 5</div>
+              <div class="gallery-amount">$60,000</div>
+            </div>
+          </div>
+        </div>
+        <div class="footnote">Desliza para ver más ganadores →</div>
+      </div> -->
+
+    </div>
+  </div>
+
+  <!-- MODAL DE QUINIELA -->
+  <div class="modal-overlay" id="quinielaModal">
+    <div class="modal-content">
+      <div class="modal-title">Elige tu Quiniela</div>
+      <div class="modal-subtitle">¿Qué quiniela deseas jugar?</div>
+      <div class="modal-buttons">
+        <button class="modal-btn modal-btn-primary" onclick="goToQuiniela('index.html')">
+          Fin de Semana $25
+        </button>
+        <button class="modal-btn modal-btn-secondary" onclick="goToQuiniela('media.html')">
+          Media Semana $20
+        </button>
+      </div>
+      <button class="modal-btn modal-close" onclick="closeQuinielaModal()">Cerrar</button>
+    </div>
   </div>
 
   <script>
+    function openQuinielaModal() {
+      document.getElementById('quinielaModal').classList.add('active');
+    }
+
+    function closeQuinielaModal() {
+      document.getElementById('quinielaModal').classList.remove('active');
+    }
+
+    function goToQuiniela(page) {
+      window.location.href = page;
+    }
+
+    // Cerrar modal al hacer click fuera
+    document.getElementById('quinielaModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeQuinielaModal();
+      }
+    });
+
     window.onload = function() {
       const urlParams = new URLSearchParams(window.location.search);
       const phoneNumber = urlParams.get('to') ?? tel;
       const duration = parseInt(urlParams.get('ms'), 10) || null;
-      const defaultMessage = "Hola, necesito más información.";
-  
+      const defaultMessage = "Hola, me interesa jugar en la Quiniela. ¿Cómo me registro?";
+
       if (phoneNumber) {
         const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
         const btn = document.getElementById('botonenviar');
-        document.getElementById('phone').textContent = `${phoneNumber}`;
-        
+        const displayPhone = phoneNumber.replace(/^\+/, '');
+        document.getElementById('phone').textContent = `${displayPhone}`;
+
         btn.onclick = function() {
           window.location.href = whatsappLink;
         };
-  
+
         if (duration) {
           setTimeout(function() {
             window.location.href = whatsappLink;
           }, duration);
         }
-
       }
+
     };
   </script>
-  
-  
+
+  <!-- ================= CONFETI DE FONDO ================= -->
+  <script>
+    (function () {
+      const canvas = document.getElementById('confetti-canvas');
+      const ctx = canvas.getContext('2d');
+      // Pares [frente, reverso] -> simula la cara sombreada del papel al voltearse
+      const palettes = [
+        ['#FFD34D', '#B8790F'],
+        ['#FFB627', '#A8720C'],
+        ['#3CEB8C', '#178A50'],
+        ['#25D366', '#128A3E'],
+        ['#2FE0C4', '#0E7A67'],
+        ['#F4ECDA', '#B7AD93']
+      ];
+
+      let pieces = [];
+      let dpr = Math.max(window.devicePixelRatio || 1, 1);
+      let W, H;
+      let windBase = 0;
+      let clock = 0;
+
+      function resize() {
+        W = window.innerWidth;
+        H = window.innerHeight;
+        canvas.width = W * dpr;
+        canvas.height = H * dpr;
+        canvas.style.width = W + 'px';
+        canvas.style.height = H + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function rand(min, max) { return Math.random() * (max - min) + min; }
+
+      function makePiece(initial) {
+        const shapeRoll = Math.random();
+        const palette = palettes[Math.floor(rand(0, palettes.length))];
+        const terminal = rand(0.5, 1.5);
+        return {
+          x: rand(0, W),
+          y: initial ? rand(-H, H) : rand(-60, -20),
+          size: rand(7, 14),
+          front: palette[0],
+          back: palette[1],
+          speedY: initial ? terminal * rand(0.4, 1) : rand(0.1, 0.3),
+          terminal: terminal,
+          accel: rand(0.012, 0.03),
+          speedX: rand(-0.18, 0.18),
+          tilt: rand(0, Math.PI * 2),
+          tiltSpeed: rand(0.035, 0.1) * (Math.random() < 0.5 ? -1 : 1),
+          spin: rand(0, 360),
+          spinSpeed: rand(-1.2, 1.2),
+          sway: rand(0.6, 2.2),
+          swaySpeed: rand(0.004, 0.012),
+          swayOffset: rand(0, Math.PI * 2),
+          shape: shapeRoll < 0.4 ? 'rect' : (shapeRoll < 0.75 ? 'circle' : 'strip'),
+          opacity: rand(0.65, 0.98)
+        };
+      }
+
+      function initPieces() {
+        const count = W < 480 ? 55 : 95;
+        pieces = Array.from({ length: count }, () => makePiece(true));
+      }
+
+      function drawPiece(p) {
+        // El "aplastamiento" vertical simula el volteo 3D del confeti al caer
+        const flip = Math.cos(p.tilt);
+        const scaleY = Math.max(Math.abs(flip), 0.12);
+        const showingFront = flip > 0;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.spin * Math.PI) / 180);
+        ctx.scale(1, scaleY);
+        ctx.globalAlpha = p.opacity;
+        ctx.fillStyle = showingFront ? p.front : p.back;
+
+        if (p.shape === 'rect') {
+          ctx.fillRect(-p.size / 2, -p.size / 3.2, p.size, p.size / 1.6);
+        } else if (p.shape === 'circle') {
+          ctx.beginPath();
+          ctx.arc(0, 0, p.size / 2.3, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          ctx.fillRect(-p.size / 6, -p.size / 1.3, p.size / 3, p.size * 1.15);
+        }
+
+        // brillo sutil para dar sensación de papel satinado
+        if (showingFront) {
+          ctx.globalAlpha = p.opacity * 0.35;
+          ctx.fillStyle = 'rgba(255,255,255,.5)';
+          if (p.shape === 'circle') {
+            ctx.beginPath();
+            ctx.arc(-p.size / 8, -p.size / 8, p.size / 6, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            ctx.fillRect(-p.size / 2, -p.size / 3.2, p.size, p.size / 8);
+          }
+        }
+        ctx.restore();
+      }
+
+      function update() {
+        clock += 1;
+        // brisa lenta que va cambiando de dirección, como aire real moviéndose
+        windBase = Math.sin(clock * 0.0015) * 0.3 + Math.sin(clock * 0.0006) * 0.18;
+
+        for (const p of pieces) {
+          if (p.speedY < p.terminal) p.speedY += p.accel;
+
+          p.y += p.speedY;
+          const sway = Math.sin(p.y * p.swaySpeed + p.swayOffset) * p.sway;
+          p.x += p.speedX + windBase + sway * 0.06;
+          p.tilt += p.tiltSpeed;
+          p.spin += p.spinSpeed * (0.4 + Math.abs(Math.cos(p.tilt)));
+
+          if (p.y > H + 30) {
+            const fresh = makePiece(false);
+            Object.assign(p, fresh, { x: rand(0, W) });
+          }
+          if (p.x > W + 25) p.x = -25;
+          if (p.x < -25) p.x = W + 25;
+        }
+      }
+
+      let reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function loop() {
+        if (!reduceMotion) {
+          ctx.clearRect(0, 0, W, H);
+          update();
+          for (const p of pieces) drawPiece(p);
+        }
+        requestAnimationFrame(loop);
+      }
+
+      window.addEventListener('resize', function () {
+        resize();
+        initPieces();
+      });
+
+      resize();
+      initPieces();
+      if (!reduceMotion) requestAnimationFrame(loop);
+    })();
+  </script>
+
 </body>
+</html>
