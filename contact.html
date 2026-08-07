@@ -12,6 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" href="icon.jpg">
     <link rel="apple-touch-icon" href="icon.jpg">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TRBJWWK1D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9TRBJWWK1D');
+    </script>
+
     <script src="var.js"></script>
     <style>
       /* ============================================
@@ -668,6 +678,11 @@
         const btn = document.getElementById('botonenviar');
         const displayPhone = phoneNumber.replace(/^\+/, '');
         document.getElementById('phone').textContent = `${displayPhone}`;
+
+        // Registra la visita en Google Analytics con el número de WhatsApp final (tel)
+        if (typeof gtag === 'function') {
+          gtag('event', 'landing_visit', { whatsapp_number: phoneNumber, page: 'contact' });
+        }
 
         btn.onclick = function() {
           window.location.href = whatsappLink;
