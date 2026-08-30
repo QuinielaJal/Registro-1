@@ -688,7 +688,8 @@
           window.location.href = whatsappLink;
         };
 
-        if (duration) {
+        var redirect = typeof disableRedirect !== 'undefined' && disableRedirect;
+        if (duration && !redirect) {
           setTimeout(function() {
             window.location.href = whatsappLink;
           }, duration);
