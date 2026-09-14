@@ -285,23 +285,28 @@ h6{
 }
 
 #bolsa{
-    color:white;
-    padding: 5px 0px;
+    color: #741817;
+    padding: 4px 8px 0px 8px;
     text-align: center;
     font-weight: bolder;
     margin: auto;
-    text-shadow: 1px 1px 4px black;
+    text-shadow: 1px 1px 4px white;
+    background: #00000045;
+    width: fit-content;
+    margin: 4px auto;
+    border-radius: 8px;
+    line-height: normal;
 }
 
 #bolsatxt:before{
     content:'Bolsa estimada: ';
     white-space:pre;
-    text-shadow: 1px 1px 4px black;
+    text-shadow: 1px 1px 4px white;
 }
 
 #cantidad:before{
     content:'$400,000 pesos';
-    color: yellow;
+    color: #741817;
     white-space:pre;
 }
 
