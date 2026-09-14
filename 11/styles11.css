@@ -285,7 +285,7 @@ h6{
 }
 
 #bolsa{
-    color: #005000;
+    color: #009300;
     padding: 4px 8px 0px 8px;
     text-align: center;
     font-weight: bolder;
@@ -305,7 +305,7 @@ h6{
 
 #cantidad:before{
     content:'$400,000 pesos';
-    color: #741817;
+    color: #ad0019;
     white-space:pre;
 }
 
