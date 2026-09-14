@@ -285,24 +285,33 @@ h6{
 }
 
 #bolsa{
-    color: #009300;
-    padding: 4px 8px 0px 8px;
+    background: -webkit-linear-gradient(0.49turn, rgb(0,115,0) -7%, rgb(125,0,0) 110%);
+    background: linear-gradient(0.49turn, rgb(0,115,0) -7%, rgb(125,0,0) 110%);
+    color: #ffffff;
+    padding: 6px 14px;
     text-align: center;
     font-weight: bolder;
-    margin: auto;
-    text-shadow: 1px 1px 4px #ffffff96;
-    font-size: 18px;
+    margin: 8px auto;
+    width: fit-content;
+    max-width: 92%;
+    border-radius: 6px;
+    box-shadow: 1px 1px 6px black;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    font-size: 16px;
+    line-height: normal;
 }
 
 #bolsatxt:before{
     content:'Bolsa estimada: ';
     white-space:pre;
+    font-weight: 600;
 }
 
 #cantidad:before{
     content:'$400,000 pesos';
-    color: #ad0019;
+    color: yellow;
     white-space:pre;
+    font-weight: 800;
 }
 
 #sub1:before{
