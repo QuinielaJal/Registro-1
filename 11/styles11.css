@@ -291,7 +291,7 @@ h6{
     font-weight: bolder;
     margin: auto;
     text-shadow: 1px 1px 4px #ffffff96;
-    background: #00000045;
+    /*background: #00000045;*/
     width: fit-content;
     margin: 4px auto;
     border-radius: 8px;
