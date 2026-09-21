@@ -9,7 +9,7 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: url("../bg/fondo12.png");
+    background-image: url("../bg/fondo8.jpg");
     background-repeat: repeat-y;
     background-position: top;
 }
@@ -95,8 +95,8 @@ body{
     margin-top: 8.5%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.49turn, rgb(74,44,15) -7%, rgb(0,80,0) 80%);
-    background: linear-gradient(0.49turn, rgb(74,44,15) -7%, rgb(0,80,0) 80%);
+    background: -webkit-linear-gradient(0.49turn, rgb(0,0,118) -7%, rgb(0,0,90) 80%);
+    background: linear-gradient(0.49turn, rgb(0,0,118) -7%, rgb(0,0,90) 80%);
 }
 
 .text-lg{
@@ -285,8 +285,8 @@ h6{
 }
 
 #bolsa{
-    background: -webkit-linear-gradient(0.49turn, rgb(0,115,0) -7%, rgb(125,0,0) 110%);
-    background: linear-gradient(0.49turn, rgb(0,115,0) -7%, rgb(125,0,0) 110%);
+    // background: -webkit-linear-gradient(0.49turn, rgb(0,115,0) -7%, rgb(125,0,0) 110%);
+    // background: linear-gradient(0.49turn, rgb(0,115,0) -7%, rgb(125,0,0) 110%);
     color: #ffffff;
     padding: 6px 14px;
     text-align: center;
@@ -295,7 +295,7 @@ h6{
     width: fit-content;
     max-width: 92%;
     border-radius: 6px;
-    box-shadow: 1px 1px 6px black;
+    // box-shadow: 1px 1px 6px black;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     font-size: 16px;
     line-height: normal;
