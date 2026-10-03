@@ -439,8 +439,8 @@ function send(){                //Envia la quiniela al whatsapp
     if (quantity > 0) {
         const storageResults = localStorage.getItem(resultStorage);
         const splittedResults = storageResults.split("*");  
-        const whatsappText = splittedResults.join('').replaceAll('#','');
-        globalThis.location.href = whatsAppUrl(tel, whatsappText);
+        const whatsappText = splittedResults.join('').replace(/#/g,'');
+        window.location.href = whatsAppUrl(tel, whatsappText);
     }
 }
 
