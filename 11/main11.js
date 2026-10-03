@@ -440,7 +440,7 @@ function send(){                //Envia la quiniela al whatsapp
         const storageResults = localStorage.getItem(resultStorage);
         const splittedResults = storageResults.split("*");  
         const whatsappText = splittedResults.join('').replace(/#/g,'');
-        window.location.href = whatsAppUrl(tel, whatsappText);
+        openWhatsApp(tel, whatsappText);
     }
 }
 

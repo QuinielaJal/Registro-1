@@ -16,10 +16,32 @@ function androidIntentUrl(phone, encodedText) {
         encodeURIComponent(waMeUrl(phone, encodedText)) + ";end";
 }
 
+// Esquema directo de la app: en WebViews de Android (Facebook, Instagram...) evita que wa.me caiga en WhatsApp Web
+function whatsAppSchemeUrl(phone, encodedText) {
+    return "whatsapp://send?phone=" + phone + "&text=" + encodedText;
+}
+
+function isAndroidInApp(userAgent) {
+    return /Android/i.test(userAgent) && IN_APP_BROWSER.test(userAgent);
+}
+
 function whatsAppUrl(phone, message, userAgent) {
     var ua = userAgent || navigator.userAgent;
     var encodedText = encodeURIComponent(message);
-    return isAndroidBrowser(ua)
-        ? androidIntentUrl(phone, encodedText)
-        : waMeUrl(phone, encodedText);
+    if (isAndroidBrowser(ua)) return androidIntentUrl(phone, encodedText);
+    if (isAndroidInApp(ua)) return whatsAppSchemeUrl(phone, encodedText);
+    return waMeUrl(phone, encodedText);
+}
+
+// Abre WhatsApp; en WebViews de Android, si la app no tomó el control, cae a wa.me
+function openWhatsApp(phone, message) {
+    var ua = navigator.userAgent;
+    window.location.href = whatsAppUrl(phone, message, ua);
+    if (isAndroidInApp(ua)) {
+        setTimeout(function () {
+            if (!document.hidden) {
+                window.location.href = waMeUrl(phone, encodeURIComponent(message));
+            }
+        }, 1500);
+    }
 }
