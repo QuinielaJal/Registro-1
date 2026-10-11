@@ -298,7 +298,7 @@ h6{
 }
 
 #cantidad:before{
-    content:' +$250,000 pesos\A¡Todos los partidos el día Martes!';
+    content:' +$250,000 pesos';
     color: yellow;
     white-space:pre;
 }
