@@ -374,3 +374,13 @@ function nameOut(element){
 // DOMContentLoaded (no "load"): no espera imágenes ni fuentes, así los botones funcionan aunque la red sea lenta.
 // Los scripts son defer, así que var.js ya se ejecutó cuando se dispara este evento.
 document.addEventListener("DOMContentLoaded",start,false);
+
+// Si la pestaña estuvo oculta más de 5 min, al volver se recarga para traer var.js actualizado
+// (teléfonos, suspendidos). No recarga si hay una quiniela a medio llenar; la lista guardada sobrevive porque está en store.
+var hiddenSince = null;
+document.addEventListener("visibilitychange", function(){
+    if (document.hidden) { hiddenSince = Date.now(); return; }
+    var midFill = res.join("") !== emptyQuiniela().join("");
+    if (hiddenSince && Date.now() - hiddenSince > 5 * 60 * 1000 && !midFill) location.reload();
+    hiddenSince = null;
+});
