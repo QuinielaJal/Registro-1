@@ -8,16 +8,33 @@ var pricem = 20
 //var tel = "5213317816346";
 //var suspIndexm = 1;
 const nPartidos = 10;
+const SEP = "\xa0\xa0";
+const MAX_GUARDADAS = 150;
 
 // El dibujo está definido una sola vez (<symbol id="i-close-circle"> en el HTML); cada fila solo lo referencia con <use>.
 // Se pone xlink:href además de href porque navegadores viejos solo entienden xlink:href.
 const CLOSE_CIRCLE_ICON = '<svg class="ico deleteIcon" viewBox="0 0 512 512" width="1em" height="1em" aria-hidden="true"><use xlink:href="#i-close-circle" href="#i-close-circle"></use></svg>';
 
-let quantity = localStorage.getItem(quantStorage);
-let name = localStorage.getItem(aliasStorage);
+// localStorage puede no existir o lanzar error (WebViews de apps sin almacenamiento, Safari con cookies
+// bloqueadas, modo privado viejo). En ese caso se guarda en memoria para que la página siga funcionando.
+const store = (function(){
+    try {
+        var ls = window.localStorage;
+        ls.setItem("__test", "1");
+        ls.removeItem("__test");
+        return ls;
+    } catch (e) {
+        var memory = {};
+        return {
+            getItem: function(key){ return Object.prototype.hasOwnProperty.call(memory, key) ? memory[key] : null; },
+            setItem: function(key, value){ memory[key] = String(value); }
+        };
+    }
+})();
+
+let quantity = 0;   // Nunca se suma/resta a mano: siempre se recalcula desde la lista guardada (ver renderList).
+let name = store.getItem(aliasStorage);
 let combinations = false;
-var aux;
-var id = 0;
 var touchIcon = true;
 
 let touchIconDivName, touchIconDiv2, sendBtnQuantityLabel, nameInput
@@ -33,134 +50,99 @@ function getHtmlElements() {
 
 function start(){
     getHtmlElements()
-    nameInput.addEventListener('input', function() {this.value = this.value.replace(/[&()%$#@]/g, '');;});
+    nameInput.addEventListener('input', function() {this.value = this.value.replace(/[&()%$#@]/g, '');});
     recovername();
-    for (var w = 0; w<suspIndexm.length; w++){
-        if (suspIndexm[w]<=res.length)
-            res[suspIndexm[w]] = 'X';
-    }
+    res = emptyQuiniela();
 
-    var lista = document.getElementById("lista");
     var container = document.getElementById("text");
-    container.innerHTML = res.join("\xa0\xa0");
-
-    if (quantity) sendBtnQuantityLabel.textContent = quantity;
+    container.innerHTML = res.join(SEP);
 
     if (hideBottomInfo) {
         container.style.marginTop = '0'
         document.getElementsByClassName('controles')[0].style.marginTop = '0'
     }
 
-    var results = localStorage.getItem(resultStorage);
-    if (!results) return
-    results = results.split("*");
+    renderList();
+    // Si la lista cambia en otra pestaña, se vuelve a dibujar para no quedar desincronizada.
+    window.addEventListener("storage", function(e){ if (e.key === resultStorage) renderList(); });
+}
 
-    for (var i = 0; i < quantity; i++){
-        if (!results[i]) break;
+function emptyQuiniela(){
+    var empty = Array(nPartidos).fill("_");
+    suspIndexm.forEach(function(i){ if (i < nPartidos) empty[i] = 'X'; });
+    return empty;
+}
 
-        var fila = lista.insertRow(i);
+// ---- Lista guardada ----
+// store[resultStorage] es la única fuente de verdad. Se conserva el formato de siempre
+// ("quiniela1*\nquiniela2*") para que versiones viejas del script en caché sigan funcionando.
+// Cada quiniela es "L  E  V ...  Nombre" separada por SEP.
+
+function getEntries(){
+    var stored = store.getItem(resultStorage);
+    if (!stored) return [];
+    return stored.split("*")
+        .map(function(entry){ return entry.replace(/^\n+/, ''); })
+        .filter(function(entry){ return entry.trim() !== ''; });
+}
+
+function setEntries(entries){
+    store.setItem(resultStorage, entries.map(function(entry){ return entry + "*"; }).join("\n"));
+    store.setItem(quantStorage, countQuinielas(entries) || "");
+}
+
+function combinationsOf(picks){     //Número de quinielas que representa una selección (producto de opciones por partido)
+    var total = 1;
+    for (var i = 0; i < nPartidos; i++)
+        total *= (picks[i] || "").length || 1;
+    return total;
+}
+
+function countQuinielas(entries){
+    return entries.reduce(function(sum, entry){ return sum + combinationsOf(entry.split(SEP)); }, 0);
+}
+
+function renderList(){              //Dibuja la tabla y actualiza el total y el botón "Enviar" desde lo guardado
+    var entries = getEntries();
+    var lista = document.getElementById("lista");
+    lista.innerHTML = "";
+
+    entries.forEach(function(entry, index){
+        var parts = entry.split(SEP);
+        var fila = lista.insertRow(-1);
+
         //Resultados
-        if (results[i].split("\xa0\xa0")[0][0]!="L" && results[i].split("\xa0\xa0")[0][0]!="E" && results[i].split("\xa0\xa0")[0][0]!="V")
-            results[i] = results[i].slice(1);
-
-        for (var j =0; j < nPartidos; j++) {
-            cell1 = fila.insertCell(j)
-            if (suspIndexm.includes(j))
-                cell1.innerHTML += 'X';
-            else
-            cell1.innerHTML += results[i].split("\xa0\xa0")[j];
-            cell1.style.width = "6.3%";
-            if (results[i].split("\xa0\xa0")[j].length == 2)
-                cell1.style.fontSize = "small";
-            if (results[i].split("\xa0\xa0")[j].length == 3)
-                cell1.style.fontSize = "x-small";
+        for (var j = 0; j < nPartidos; j++) {
+            var pick = suspIndexm.includes(j) ? 'X' : (parts[j] || '');
+            var cell = fila.insertCell(-1);
+            cell.textContent = pick;
+            cell.style.width = "6.3%";
+            if (pick.length == 2) cell.style.fontSize = "small";
+            if (pick.length == 3) cell.style.fontSize = "x-small";
         }
 
         //Nombre
-        var cell2 = fila.insertCell(nPartidos);
-        cell2.innerHTML += results[i].split("\xa0\xa0")[nPartidos];
-        cell2.style.fontSize = "small";
-        cell2.style.overflow = "hidden";
-        cell2.style.overflowY = "hidden";
-        cell2.style.border = "none";
-        cell2.className = "cellname";
-        cell2.scrollTo(80,0);
-
-        if(results[i].split("\xa0\xa0")[nPartidos].length > 15)
-            cell2.style.fontSize = "xx-small";
-        else if(results[i].split("\xa0\xa0")[nPartidos].length > 11)
-            cell2.style.fontSize = "x-small";
+        var entryName = parts.slice(nPartidos).join(SEP);
+        var cellname = fila.insertCell(-1);
+        cellname.textContent = entryName;
+        cellname.className = "cellname";
+        cellname.style.fontSize = entryName.length > 15 ? "xx-small" : entryName.length > 11 ? "x-small" : "small";
+        cellname.style.overflow = "hidden";
+        cellname.style.border = "none";
+        cellname.scrollLeft = 80;   // scrollLeft funciona en todos los navegadores; Element.scrollTo no existe en WebViews viejos
 
         //Boton borrar
-        var cell3 = fila.insertCell(nPartidos+1);
-        cell3.innerHTML += CLOSE_CIRCLE_ICON;
-        cell3.style.width = "6.3%";
-        cell3.id = "x" + i;
-        cell3.className = "deleter"
-        cell3.addEventListener('click', function(){remove(this);  this.replaceWith(this.cloneNode(true));});
-    }
+        var deleter = fila.insertCell(-1);
+        deleter.innerHTML = CLOSE_CIRCLE_ICON;
+        deleter.style.width = "6.3%";
+        deleter.className = "deleter";
+        deleter.addEventListener('click', function(){ remove(index); });
+    });
 
-    id = i;
-    document.getElementById("botonenviar").style.filter = "none";
-    document.getElementById("total").innerHTML = "Total: $" + quantity*pricem +"\n";
-}
-
-function updatelista(modo){
-    var lista = document.getElementById("lista");
-    var lastIndex = lista.getElementsByTagName("tr").length;
-
-    if (modo == 1){ //Agregar
-        if (aux == undefined) aux=0;
-        
-        var fila = lista.insertRow(lastIndex);
-
-        for (var j =0; j < nPartidos; j++) {
-            cell1 = fila.insertCell(j)
-            cell1.innerHTML += res[j];
-            cell1.style.width = "7%";
-            if (res[j].length == 2)
-                cell1.style.fontSize = "small";
-            if (res[j].length == 3)
-                cell1.style.fontSize = "x-small";
-        }
-
-        if (aux>1){
-            var cellname = fila.insertCell(nPartidos);
-            cellname.innerHTML += name + " (" + aux + ")";
-        } else{
-            var cellname = fila.insertCell(nPartidos);
-            cellname.innerHTML += name;
-        }
-
-        cellname.style.fontSize = "small";
-        cellname.style.overflow = "hidden";
-        cellname.style.overflowY = "hidden";
-        cellname.style.border = "none";
-        cellname.className = "cellname";
-        cellname.scrollTo(80,0);
-
-        if(name.length > 15) cellname.style.fontSize = "xx-small";
-        else if(name.length > nPartidos) cellname.style.fontSize = "x-small";
-
-        var cell3 = fila.insertCell(nPartidos+1);
-        cell3.innerHTML += CLOSE_CIRCLE_ICON;
-        cell3.style.width = "6.3%";
-        cell3.id = "x" + id;
-        cell3.className = "deleter";
-        cell3.addEventListener('click', function(){remove(this); this.replaceWith(this.cloneNode(true));});
-        id++;
-        aux = 1;
-    }
-    else if (modo == 2){ //Eliminar
-        id = 0;
-        deleters = lista.getElementsByClassName("deleter");
-        for (var i = 0; i < lastIndex ;i++) {
-            deleters[i].id = "x" + id;
-            id++;
-        }
-
-    }
+    quantity = countQuinielas(entries);
+    sendBtnQuantityLabel.textContent = quantity;
     document.getElementById("total").innerHTML = "Total: $" + quantity*pricem;
+    return entries;
 }
 
 function selection(element){        //Pinta la casilla y actualiza el texto de la quiniela.
@@ -181,16 +163,15 @@ function selection(element){        //Pinta la casilla y actualiza el texto de l
     else{
         if(combinations){
             element.className = "opcion";
-            console.log(res[index].length);
             if (res[index] != "_" && res[index].length>1)
                 res[index] = res[index].split(element.id.slice(0,1)).join('');
-            else    
+            else
                 res[index] = "_";
         }
     }
     costoactual();
-    container.innerHTML = res.join("\xa0\xa0");
-    if (res.join("\xa0\xa0").length>35){
+    container.innerHTML = res.join(SEP);
+    if (res.join(SEP).length>35){
         container.className = "text-sm";
     }
     else{
@@ -204,7 +185,7 @@ function selection(element){        //Pinta la casilla y actualiza el texto de l
     }
     else{
         touchIconDivName.style.display = "none";
-        if ((!quantity || quantity == 0) && !res.includes("_"))
+        if (quantity == 0 && !res.includes("_"))
             touchIconDiv2.style.display = "block";
         else
             touchIconDiv2.style.display = "none";
@@ -222,45 +203,16 @@ function validation(element){    //Despinta todas las casillas y asigna el index
     document.getElementById("V"+index).className = "opcion";
 }
 
-function number(){              //Actualiza el número del boton "Enviar"
-    quantity = localStorage.getItem(quantStorage);
-    if (quantity)
-        localStorage.setItem(quantStorage, ++quantity);
-    else{
-        localStorage.setItem(quantStorage, 1);
-        quantity = localStorage.getItem(quantStorage);
-    }
-    sendBtnQuantityLabel.textContent = quantity;
-    localStorage.setItem(aliasStorage, name);
-}
-
-function result(){              //Actualiza el localstorage cuando se añade una nueva quiniela
-    results = localStorage.getItem(resultStorage);
-    name = nameInput.value;
-    name = name.split('*').join('').trim().replace(/[&()%$#@]/g, '');
-    if (prefix != null && prefix !== '') name = prefix + ' ' + name
-    if (results){
-        if (aux > 1)
-        localStorage.setItem(resultStorage, results + "\n" + res.join("\xa0\xa0") + "\xa0\xa0" + name + " (" + aux + ")" + "*");
-        else
-            localStorage.setItem(resultStorage, results + "\n" + res.join("\xa0\xa0") + "\xa0\xa0" + name + "*");
-    } else {
-        if (aux > 1)
-        localStorage.setItem(resultStorage,res.join("\xa0\xa0") + "\xa0\xa0" + name + " (" + aux + ")" +  "*");
-        else    
-            localStorage.setItem(resultStorage,res.join("\xa0\xa0") + "\xa0\xa0" + name+ "*");
-    }       
-}
-
-function save(){                //Se añade la quiniela actual a la lista 
-    if (id > 150) {
+function save(){                //Se añade la quiniela actual a la lista
+    var entries = getEntries();
+    if (entries.length > MAX_GUARDADAS) {
         return alert("Envía tus quinielas guardadas antes de agregar más");
     }
 
-    if (res.join("\xa0\xa0").includes("_")) {
+    if (res.includes("_")) {
         return alert("Debes llenar todos los partidos");
     }
-        
+
     name = nameInput.value.trim().replace(/[&()%$#@]/g, '');
     if (!name){
         nameInput.focus();
@@ -268,23 +220,23 @@ function save(){                //Se añade la quiniela actual a la lista
     }
     //Se actualizan los iconos de ayuda
     touchIconDiv2.style.display = "none";
+    store.setItem(aliasStorage, name);
 
-    if (combinations) calculate();
-    else number();
+    var entryName = name.split('*').join('');
+    if (prefix != null && prefix !== '') entryName = prefix + ' ' + entryName;
+    var count = combinationsOf(res);
+    if (count > 1) entryName += " (" + count + ")";
 
-    result();
-    updatelista(1);
+    entries.push(res.join(SEP) + SEP + entryName);
+    setEntries(entries);
+    renderList();
     clean();
 }
 
 function clean(){               //Boton para limpiar la quinela
-    res = Array(nPartidos).fill("_");
-    for (var w = 0; w<suspIndexm.length; w++){
-        if (suspIndexm[w]<=res.length)
-            res[suspIndexm[w]] = 'X';
-    }
+    res = emptyQuiniela();
     var container = document.getElementById("text");
-    container.innerHTML = res.join("\xa0\xa0");
+    container.innerHTML = res.join(SEP);
     spans = document.querySelectorAll(".quiniela span");
     for (var i=0; i<nPartidos*3;i++)
         spans[i].className = "opcion";
@@ -304,7 +256,7 @@ function clean(){               //Boton para limpiar la quinela
 }
 
 function recovername(){
-    name = localStorage.getItem(aliasStorage);
+    name = store.getItem(aliasStorage);
     if (name ==  null || name === "null") return
     nameInput.value = name.trim();
 }
@@ -326,23 +278,6 @@ function allowcombination(){
     }
 }
 
-function calculate(){
-    aux = 1;
-    for (var i=0;i<nPartidos;i++){
-        aux*= res[i].length;
-    }
-    quantity = localStorage.getItem(quantStorage);
-    if (quantity){
-        localStorage.setItem(quantStorage, parseInt(quantity)+aux);
-        quantity = localStorage.getItem(quantStorage);
-    } else {
-        localStorage.setItem(quantStorage, aux);
-        quantity = localStorage.getItem(quantStorage);}
-    sendBtnQuantityLabel.textContent = quantity;
-
-    localStorage.setItem(aliasStorage, name);
-}
-
 function random(){
     clean();
     //Se actualizan los iconos de ayuda
@@ -350,14 +285,14 @@ function random(){
         touchIconDivName.style.display = "block";
     else{
         touchIconDivName.style.display = "none";
-        if (!quantity || quantity == 0) touchIconDiv2.style.display = "block";
+        if (quantity == 0) touchIconDiv2.style.display = "block";
     }
 
     if (touchIcon){
         touchIcon = false;
         document.getElementById("touchIconDiv").style.display = "none";
     }
-    
+
     var container = document.getElementById("text");
     var partidos = document.getElementsByClassName("partido");
     for (var i = 0; i < nPartidos; i++){
@@ -366,7 +301,7 @@ function random(){
         partidos[i].getElementsByTagName("span")[r].className = "opcion-active";
         res[i] = ["L","E","V"][r];
         }
-    container.innerHTML = res.join("\xa0\xa0");
+    container.innerHTML = res.join(SEP);
     costoactual();
 }
 
@@ -377,60 +312,35 @@ function getRandomInt(min, max) {
 }
 
 function costoactual(){
-    var aux2 = 1;
-    for (var i=0;i<nPartidos;i++){
-            aux2*= res[i].length;
-    }
-    document.getElementById("costo").innerHTML = "Costo: $" + aux2*pricem;
-    document.getElementById("numquinielas").innerHTML = aux2 + " Quiniela(s)";
+    var count = combinationsOf(res);
+    document.getElementById("costo").innerHTML = "Costo: $" + count*pricem;
+    document.getElementById("numquinielas").innerHTML = count + " Quiniela(s)";
 }
 
-function remove(e){
-    lista = document.getElementById("lista");
-    eindex = e.id.slice(1);
-    tr = lista.getElementsByTagName("tr")[eindex];
-
-    lista.deleteRow(eindex);
-
-    results = localStorage.getItem(resultStorage);
-    results = results.split("*");
-
-    removing = results[eindex].split("\xa0\xa0");
-    if (removing[0][0]!="L" && removing[0][0]!="E" && removing[0][0]!="V")
-        removing[0] = removing[0].slice(1);
-    var aux3 = 1;
-    for (var i=0;i<nPartidos;i++)
-        aux3*= removing[i].length;
-    quantity -= aux3;
-    localStorage.setItem(quantStorage,quantity);
-    results.splice(eindex,1);
-    results = results.join("*");
-    localStorage.setItem(resultStorage,results);
-
-    sendBtnQuantityLabel.textContent = quantity;
-    document.getElementById("total").innerHTML = "Total: $" + quantity*pricem +"\n";
+function remove(index){
+    var entries = getEntries();
+    entries.splice(index, 1);
+    setEntries(entries);
+    renderList();
 
     nombre = nameInput.value.trim();
     //Se actualizan los iconos de ayuda
-    if ((!quantity || quantity == 0) && !res.includes("_") && nombre != ""){
+    if (quantity == 0 && !res.includes("_") && nombre != "")
         touchIconDiv2.style.display = "block";
-    }
     else
-         touchIconDiv2.style.display = "none";
-
-    updatelista(2);
+        touchIconDiv2.style.display = "none";
 }
 
 function deleteall(){
     if(!confirm("Se borrará todo")) return
-    
-    localStorage.setItem(quantStorage,"");
-    localStorage.setItem(resultStorage,"");
+
+    setEntries([]);
     location.reload();
 }
 
-function send(){                //Envia la quiniela al whatsapp 
-    if (!quantity || quantity < 1){
+function send(){                //Envia la quiniela al whatsapp
+    var entries = renderList();     //Se relee lo guardado para enviar exactamente lo que se ve
+    if (quantity < 1){
         alert("La lista está vacía\r\nPresiona [AGREGAR] para añadir una quiniela");
         touchIconDiv2.style.display = "block";
         return;
@@ -439,18 +349,13 @@ function send(){                //Envia la quiniela al whatsapp
         alert("La participación mínima es de 2 Quinielas.")
         return;
     }
-    if (quantity > 0) {
-        const storageResults = localStorage.getItem(resultStorage);
-        const splittedResults = storageResults.split("*");  
-        const whatsappText = splittedResults.join('').replace(/#/g,'');
-        openWhatsApp(telm, whatsappText);
-    }
+    openWhatsApp(telm, entries.join("\n").replace(/#/g,''));
 }
 
 function updateIcons(element){
     if (element.value.trim() != ""){
         touchIconDivName.style.display = "none";
-        if ((!quantity || quantity == 0) && !res.includes("_"))
+        if (quantity == 0 && !res.includes("_"))
             touchIconDiv2.style.display = "block";
     }
     else{
@@ -466,4 +371,6 @@ function nameOut(element){
     if (element.value.trim() == "") touchIconDivName.style.display = "block";
 }
 
-window.addEventListener("load",start,false);
+// DOMContentLoaded (no "load"): no espera imágenes ni fuentes, así los botones funcionan aunque la red sea lenta.
+// Los scripts son defer, así que var.js ya se ejecutó cuando se dispara este evento.
+document.addEventListener("DOMContentLoaded",start,false);

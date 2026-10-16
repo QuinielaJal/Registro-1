@@ -43,6 +43,7 @@ body{
 .aux h3{
     width: 9%;
     padding-top: 5px;
+    padding-bottom: 5px;
     margin-left: 4px;
     background-color: rgba(255, 255, 255, 0.288);
     border-radius: 10px;
@@ -59,8 +60,10 @@ body{
     vertical-align: baseline;
 }
 
-.aux h3 ion-icon{
-    display: table-row-group;
+.aux h3 .ico{
+    display: block;
+    width: 22px;
+    height: 22px;
 }
 
 .quiniela span{
