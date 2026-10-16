@@ -35,6 +35,11 @@ function whatsAppUrl(phone, message, userAgent) {
 
 // Abre WhatsApp; en WebViews de Android, si la app no tomó el control, cae a wa.me
 function openWhatsApp(phone, message) {
+    if (isSendBlocked()) {
+        alert("Los envíos están desactivados de 2:00 am a 7:00 am (hora de México).");
+        updateSendButton();
+        return;
+    }
     var ua = navigator.userAgent;
     window.location.href = whatsAppUrl(phone, message, ua);
     if (isAndroidInApp(ua)) {
@@ -45,3 +50,54 @@ function openWhatsApp(phone, message) {
         }, 1500);
     }
 }
+
+// Bloqueo de envíos de 2am a 7am. Todo va en try/catch: si algo falla, solo se pierde el bloqueo y la página sigue normal.
+
+// Diferencia entre la hora del servidor y el reloj del dispositivo (0 si no se pudo obtener)
+var serverOffset = 0;
+
+// Solo aplica en el sitio de 1Joel (quinielajal.github.io/Registro-1/); los demás sitios cargan este mismo archivo
+var sendBlockEnabled = false;
+try {
+    sendBlockEnabled = /^\/Registro-1(\/|$)/i.test(location.pathname);
+} catch (e) {}
+
+// Envíos desactivados de 2am a 7am hora de México (UTC-6 fijo: México no tiene horario de verano desde 2022)
+function isSendBlocked() {
+    try {
+        if (!sendBlockEnabled) return false;
+        var h = (new Date(Date.now() + serverOffset).getUTCHours() + 18) % 24;
+        return h >= 2 && h < 7;
+    } catch (e) {
+        return false;
+    }
+}
+
+// Pone el botón de enviar en gris mientras los envíos están desactivados
+function updateSendButton() {
+    try {
+        var btn = document.getElementById("botonenviar");
+        if (!btn) return;
+        if (isSendBlocked()) {
+            btn.style.setProperty("filter", "grayscale(1)", "important");
+        } else {
+            btn.style.removeProperty("filter");
+        }
+    } catch (e) {}
+}
+
+try {
+    document.addEventListener("DOMContentLoaded", updateSendButton);
+    setInterval(updateSendButton, 60000);
+
+    // Toma la hora del servidor (encabezado Date) para no depender del reloj del dispositivo
+    if (sendBlockEnabled && window.fetch) {
+        fetch(location.href, { method: "HEAD", cache: "no-store" }).then(function (r) {
+            var t = Date.parse(r.headers.get("Date"));
+            if (!isNaN(t)) {
+                serverOffset = t - Date.now();
+                updateSendButton();
+            }
+        }).catch(function () {});
+    }
+} catch (e) {}
