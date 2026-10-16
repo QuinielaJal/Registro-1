@@ -9,7 +9,6 @@
     <title>Quiniela Jalisco</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="11/styles11.css">
     <link rel="icon" href="icon.jpg">
     <link rel="apple-touch-icon" href="icon.jpg">
@@ -25,6 +24,16 @@
 </head>
 
 <body>
+    <!-- Íconos -->
+    <!-- Close-circle -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-close-circle" viewBox="0 0 512 512"><path d="M256,48C141.31,48,48,141.31,48,256s93.31,208,208,208,208-93.31,208-208S370.69,48,256,48Zm75.31,260.69a16,16,0,1,1-22.62,22.62L256,278.63l-52.69,52.68a16,16,0,0,1-22.62-22.62L233.37,256l-52.68-52.69a16,16,0,0,1,22.62-22.62L256,233.37l52.69-52.68a16,16,0,0,1,22.62,22.62L278.63,256Z"/></symbol>
+    </svg>
+    <!-- Touch App Icon -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-touch-app" viewBox="0 0 24 24"><path d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 5.01 13.99 3 11.5 3S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"/></symbol>
+    </svg>
+    <!-- Fin Íconos -->
     <p id='bolsa'>
         <span id="bolsatxt"></span>
         <span id="cantidad">
@@ -41,7 +50,7 @@
         <div class="partido">
             <span id="L1" onclick="selection(this)"></span>
             <div id="_"></div>
-            <span id="E1" onclick="selection(this)"><div id="touchIconDiv"><i class="material-icons" id="touchIcon">touch_app</i></div></span>
+            <span id="E1" onclick="selection(this)"><div id="touchIconDiv"><svg id="touchIcon" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" style="display:inline-block"><use xlink:href="#i-touch-app" href="#i-touch-app"></use></svg></div></span>
             <div id="_"></div>
             <span id="V1" onclick="selection(this)"></span>
         </div>
@@ -128,7 +137,7 @@
                 <div class="row g-0">
                     <div class="col-11 position-relative">
                         <div id="touchIconDivName">
-                            <i class="material-icons" id="touchIconName">touch_app</i>
+                            <svg id="touchIconName" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" style="display:inline-block"><use xlink:href="#i-touch-app" href="#i-touch-app"></use></svg>
                         </div>
                         <input id="nombre" type="text" placeholder="" maxlength="20" spellcheck="false" autocomplete="off" oninput="updateIcons(this)" onfocus="nameIn()" onfocusout="nameOut(this)" >
                     </div>
@@ -143,7 +152,7 @@
 
         <div class="col-4 p-1">
             <h2 id="botonagregar" class="boton" onclick="save()">
-                <div id="touchIconDiv2"><i class="material-icons" id="touchIcon2">touch_app</i></div>
+                <div id="touchIconDiv2"><svg id="touchIcon2" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" style="display:inline-block"><use xlink:href="#i-touch-app" href="#i-touch-app"></use></svg></div>
                 AGREGAR <ion-icon name="add-outline" style="font-size:20px;"></ion-icon>
             </h2>
         </div>

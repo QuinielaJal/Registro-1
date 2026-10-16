@@ -51,6 +51,14 @@ body{
     font-size: large;
 }
 
+.ico{
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: baseline;
+}
+
 .aux h3 ion-icon{
     display: table-row-group;
 }

@@ -9,6 +9,10 @@ var pricem = 20
 //var suspIndexm = 1;
 const nPartidos = 10;
 
+// El dibujo está definido una sola vez (<symbol id="i-close-circle"> en el HTML); cada fila solo lo referencia con <use>.
+// Se pone xlink:href además de href porque navegadores viejos solo entienden xlink:href.
+const CLOSE_CIRCLE_ICON = '<svg class="ico deleteIcon" viewBox="0 0 512 512" width="1em" height="1em" aria-hidden="true"><use xlink:href="#i-close-circle" href="#i-close-circle"></use></svg>';
+
 let quantity = localStorage.getItem(quantStorage);
 let name = localStorage.getItem(aliasStorage);
 let combinations = false;
@@ -89,7 +93,7 @@ function start(){
 
         //Boton borrar
         var cell3 = fila.insertCell(nPartidos+1);
-        cell3.innerHTML += '<ion-icon name="close-circle" class="deleteIcon"></ion-icon>';
+        cell3.innerHTML += CLOSE_CIRCLE_ICON;
         cell3.style.width = "6.3%";
         cell3.id = "x" + i;
         cell3.className = "deleter"
@@ -139,7 +143,7 @@ function updatelista(modo){
         else if(name.length > nPartidos) cellname.style.fontSize = "x-small";
 
         var cell3 = fila.insertCell(nPartidos+1);
-        cell3.innerHTML += '<ion-icon name="close-circle" class="deleteIcon"></ion-icon>';
+        cell3.innerHTML += CLOSE_CIRCLE_ICON;
         cell3.style.width = "6.3%";
         cell3.id = "x" + id;
         cell3.className = "deleter";
