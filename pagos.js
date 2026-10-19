@@ -16,7 +16,8 @@
         "spin": ["spin", "SPIN"], "spin oxxo": ["spin", "SPIN"], "oxxo": ["spin", "OXXO"],
         "bancoppel": ["coppel", "Coppel"], "coppel": ["coppel", "Coppel"],
         "banorte": ["banorte", "Banorte"], "santander": ["santander", "Sant."], "banamex": ["banamex", "Bnmx"],
-        "azteca": ["azteca", "Azteca"], "banco azteca": ["azteca", "Azteca"], "nu": ["nu", "nu"], "mercado pago": ["mp", "MP"]
+        "azteca": ["azteca", "Azteca"], "banco azteca": ["azteca", "Azteca"], "nu": ["nu", "nu"], "mercado pago": ["mp", "MP"],
+        "scotiabank": ["scotia", "Scotia"]
     };
 
     var ICON_CARD = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>';

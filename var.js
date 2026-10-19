@@ -30,7 +30,18 @@ var QJ_CONFIG = {
                 {"banco":"Spin OXXO","num":"4217 4701 8488 5602","uso":"Solo depósitos en OXXO"},
                 {"banco":"BanCoppel","num":"4169 1604 8119 3747","uso":"Depósito en sucursal o transferencia BanCoppel","titular":"Jorge Salvador Becerra","aviso":"No depositar en OXXO a esta cuenta"}
             ]},
-        "2": {"tel":"5213314457066","telm":"5213317917329","min2":true,"min2m":true,"sendBlock":false,"disableRedirect":true,"hideBottomInfo":false},
+        "2": {"tel":"5213314457066","telm":"5213317917329","min2":true,"min2m":true,"sendBlock":false,"disableRedirect":true,"hideBottomInfo":false,
+            "cuentas": [
+                {"banco":"BBVA","num":"4152 3139 4305 8227","uso":"Solo transferencias, practicaja y sucursal","titular":"Jessica Jesus Garcia"},
+                {"banco":"Scotiabank","num":"4043 1300 1149 8421","uso":"Solo depósitos en OXXO","aviso":"No transferencias"},
+                {"banco":"Spin OXXO","num":"4217 4700 3895 4554","uso":"Solo depósitos en OXXO","aviso":"No transferencias"},
+                {"banco":"Banco Azteca","num":"5512 3823 8870 7525","uso":"Depósitos únicamente en sucursal"}
+            ],
+            "cuentasm": [
+                {"banco":"BBVA","num":"4152 3139 5152 9119","uso":"Solo transferencias, practicaja y sucursal"},
+                {"banco":"HSBC","num":"4213 1693 0981 9702","uso":"Solo depósitos en OXXO","aviso":"No transferencias"},
+                {"banco":"Spin OXXO","num":"4217 4700 7638 8954","uso":"Solo depósitos en OXXO","aviso":"No transferencias"}
+            ]},
         "3": {"tel":"5213318920664","telm":"5213333059683","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
         "4": {"tel":"5213314444345","telm":"5213319128966","min2":true,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
         "5": {"tel":"5213317816346","telm":"5213313265676","min2":false,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},

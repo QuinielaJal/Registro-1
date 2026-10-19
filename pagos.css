@@ -195,6 +195,7 @@ body.pg-sin-scroll{ overflow: hidden; }
 .pg-modal .pg-logo.azteca{ background: #006341; }
 .pg-modal .pg-logo.nu{ background: #820ad1; font-size: 13px; }
 .pg-modal .pg-logo.mp{ background: #00b1ea; }
+.pg-modal .pg-logo.scotia{ background: #ec111a; }
 
 .pg-modal .pg-info{
     flex: 1;
