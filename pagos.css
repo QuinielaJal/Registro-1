@@ -186,9 +186,9 @@ body.pg-sin-scroll{ overflow: hidden; }
     background: #5b6170;
     color: white;
 }
-.pg-modal .pg-logo.bbva{ background: #072146; color: #49b8ff; }
+.pg-modal .pg-logo.bbva{ background: #072146; color: white; }
 .pg-modal .pg-logo.hsbc{ background: #db0011; }
-.pg-modal .pg-logo.spin{ background: #e2231a; color: #ffd200; }
+.pg-modal .pg-logo.spin{ background: linear-gradient(90deg, #5a1fd1, #7b45d6); color: white; }
 .pg-modal .pg-logo.coppel{ background: #ffe200; color: #0047bb; }
 .pg-modal .pg-logo.banorte{ background: #eb0029; }
 .pg-modal .pg-logo.santander{ background: #ec0000; }
