@@ -133,8 +133,8 @@ body{
 
 #botonenviar{
     /* Verde metálico (mismo efecto que el dorado de antes): el dorado se confundía con el botón amarillo de Cuentas para pagar */
-    background: -webkit-linear-gradient(top, #13702a, #7ff08f, #1c9a3b);
-    background: linear-gradient(to bottom, #13702a, #7ff08f, #1c9a3b);
+    background: -webkit-linear-gradient(top, #0f6a25, #3fd35c, #148a33);
+    background: linear-gradient(to bottom, #0f6a25, #3fd35c, #148a33);
     font-size: 14px;  
     height: 46px;
     max-height: 46px;
