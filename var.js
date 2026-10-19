@@ -1,9 +1,71 @@
-var tel  = "5213330335106";
-var telm = "5213313265676";
-var suspIndex  = [];
-var suspIndexm = [];
-var price  = 25;
-var pricem = 20;
+// Configuración de todos los sitios (Registro-1 ... Registro-17). Todos cargan este mismo archivo desde Registro-1:
+// para cambiar un teléfono, precio o partido suspendido se edita aquí y se hace push de Registro-1 (llega en unos minutos).
+//
+// global:
+//   price / pricem            precio de la quiniela / de media semana
+//   suspIndex / suspIndexm    partidos suspendidos, contando desde 0 (partido 1 = 0). Ej. [0, 4] = partidos 1 y 5
+//   sendBlockFrom / To        horario sin envíos a WhatsApp (hora de México), para los vendedores con sendBlock
+// vendors (la clave es el N de Registro-N):
+//   tel / telm                WhatsApp de la quiniela / de media semana, con lada de país (52...)
+//   min2 / min2m              pedir mínimo 2 quinielas
+//   sendBlock                 aplicar el horario sin envíos
+//   disableRedirect, hideBottomInfo
+//   price / pricem            opcional: precio distinto al global solo para ese vendedor
+var QJ_CONFIG = {
+    "global": {"price":25,"pricem":20,"suspIndex":[],"suspIndexm":[],"sendBlockFrom":2,"sendBlockTo":7},
+    "vendors": {
+        "1": {"tel":"5213330335106","telm":"5213313265676","min2":true,"min2m":true,"sendBlock":true,"disableRedirect":false,"hideBottomInfo":false},
+        "2": {"tel":"5213314457066","telm":"5213317917329","min2":true,"min2m":true,"sendBlock":false,"disableRedirect":true,"hideBottomInfo":false},
+        "3": {"tel":"5213318920664","telm":"5213333059683","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "4": {"tel":"5213314444345","telm":"5213319128966","min2":true,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "5": {"tel":"5213317816346","telm":"5213313265676","min2":false,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "6": {"tel":"5213326253916","telm":"5213131913863","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "7": {"tel":"5217353896464","telm":"5217351815573","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "8": {"tel":"5213151159505","telm":"5213151143524","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "9": {"tel":"5213337713027","telm":"5213336263393","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "10": {"tel":"5213122982947","telm":"5213313265676","min2":false,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "11": {"tel":"5218120030657","telm":"5218115912541","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "12": {"tel":"523317160015","telm":"523317160015","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "13": {"tel":"524777869030","telm":"524777869030","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "14": {"tel":"523339459207","telm":"523325365796","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "15": {"tel":"523881016980","telm":"523881016980","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "16": {"tel":"528132768851","telm":"528132768851","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "17": {"tel":"527555577360","telm":"527555577360","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false}
+    }
+};
 
-var min2telsm = ["5213325365796","5213317917329","5213319128966", "5213313265676"]
-var min2tels = ["5213330335106","5213314457066","5213332241042","5213314444345"]
+// Vendedor según la URL:
+//   ?registro=N                          -> "N" (para pruebas, también en local)
+//   registro-N.pages.dev (y sus previews abc123.registro-N.pages.dev) -> "N"
+//   quinielajal.github.io/Registro-N/   -> "N"
+// Cualquier otra URL (local, otro dominio) usa Registro-1.
+var vendorSlug = (function () {
+    try {
+        var m = /[?&]registro=(\d+)/i.exec(location.search)
+             || /(?:^|\.)registro-(\d+)\.pages\.dev$/i.exec(location.hostname)
+             || /^\/Registro-(\d+)(\/|$)/i.exec(location.pathname);
+        if (m) return m[1];
+    } catch (e) {}
+    return "1";
+})();
+
+// Variables que usan main11.js, mainm.js, whatsapp-utils.js y las páginas de contacto
+var tel, telm, price, pricem, suspIndex, suspIndexm, min2tels, min2telsm, hideBottomInfo, disableRedirect;
+
+(function () {
+    var g = QJ_CONFIG.global;
+    var v = QJ_CONFIG.vendors[vendorSlug] || {};   // Vendedor que no está en la lista: queda sin teléfono
+    function pick(key) { return v[key] !== undefined && v[key] !== null ? v[key] : g[key]; }
+
+    tel = String(v.tel || "");
+    telm = String(v.telm || "");
+    price = Number(pick("price"));
+    pricem = Number(pick("pricem"));
+    suspIndex = g.suspIndex || [];
+    suspIndexm = g.suspIndexm || [];
+    min2tels = v.min2 ? [tel] : [];
+    min2telsm = v.min2m ? [telm] : [];
+    hideBottomInfo = !!v.hideBottomInfo;
+    disableRedirect = !!v.disableRedirect;
+    if (typeof setSendBlock === "function") setSendBlock(!!v.sendBlock, g.sendBlockFrom, g.sendBlockTo);
+})();

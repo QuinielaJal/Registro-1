@@ -36,7 +36,7 @@ function whatsAppUrl(phone, message, userAgent) {
 // Abre WhatsApp; en WebViews de Android, si la app no tomó el control, cae a wa.me
 function openWhatsApp(phone, message) {
     if (isSendBlocked()) {
-        alert("Los envíos están desactivados de 2:00 am a 7:00 am (hora de México).");
+        alert("Los envíos están desactivados de " + formatHour(sendBlockFrom) + " a " + formatHour(sendBlockTo) + " (hora de México).");
         updateSendButton();
         return;
     }
@@ -51,26 +51,55 @@ function openWhatsApp(phone, message) {
     }
 }
 
-// Bloqueo de envíos de 2am a 7am. Todo va en try/catch: si algo falla, solo se pierde el bloqueo y la página sigue normal.
+// Bloqueo de envíos en un horario (por defecto 2am a 7am). Todo va en try/catch: si algo falla, solo se pierde el bloqueo y la página sigue normal.
 
 // Diferencia entre la hora del servidor y el reloj del dispositivo (0 si no se pudo obtener)
 var serverOffset = 0;
+var serverTimeRequested = false;
 
-// Solo aplica en el sitio de 1Joel (quinielajal.github.io/Registro-1/); los demás sitios cargan este mismo archivo
+// Lo activa la configuración de cada vendedor (var.js llama a setSendBlock); los demás sitios cargan este mismo archivo
 var sendBlockEnabled = false;
-try {
-    sendBlockEnabled = /^\/Registro-1(\/|$)/i.test(location.pathname);
-} catch (e) {}
+var sendBlockFrom = 2;
+var sendBlockTo = 7;
 
-// Envíos desactivados de 2am a 7am hora de México (UTC-6 fijo: México no tiene horario de verano desde 2022)
+function setSendBlock(enabled, from, to) {
+    try {
+        sendBlockEnabled = !!enabled;
+        if (from >= 0 && from <= 23) sendBlockFrom = from;
+        if (to >= 0 && to <= 23) sendBlockTo = to;
+        requestServerTime();
+        updateSendButton();
+    } catch (e) {}
+}
+
+// Envíos desactivados de sendBlockFrom a sendBlockTo hora de México (UTC-6 fijo: México no tiene horario de verano desde 2022).
+// Si "desde" es mayor que "hasta" el horario cruza la medianoche (ej. 23 a 7).
 function isSendBlocked() {
     try {
         if (!sendBlockEnabled) return false;
         var h = (new Date(Date.now() + serverOffset).getUTCHours() + 18) % 24;
-        return h >= 2 && h < 7;
+        if (sendBlockFrom <= sendBlockTo) return h >= sendBlockFrom && h < sendBlockTo;
+        return h >= sendBlockFrom || h < sendBlockTo;
     } catch (e) {
         return false;
     }
+}
+
+function formatHour(h) {
+    return (h % 12 || 12) + ":00 " + (h < 12 ? "am" : "pm");
+}
+
+// Toma la hora del servidor (encabezado Date) para no depender del reloj del dispositivo. Una sola vez y solo si hay bloqueo.
+function requestServerTime() {
+    if (serverTimeRequested || !sendBlockEnabled || !window.fetch) return;
+    serverTimeRequested = true;
+    fetch(location.href, { method: "HEAD", cache: "no-store" }).then(function (r) {
+        var t = Date.parse(r.headers.get("Date"));
+        if (!isNaN(t)) {
+            serverOffset = t - Date.now();
+            updateSendButton();
+        }
+    }).catch(function () {});
 }
 
 // Pone el botón de enviar en gris mientras los envíos están desactivados
@@ -89,15 +118,4 @@ function updateSendButton() {
 try {
     document.addEventListener("DOMContentLoaded", updateSendButton);
     setInterval(updateSendButton, 60000);
-
-    // Toma la hora del servidor (encabezado Date) para no depender del reloj del dispositivo
-    if (sendBlockEnabled && window.fetch) {
-        fetch(location.href, { method: "HEAD", cache: "no-store" }).then(function (r) {
-            var t = Date.parse(r.headers.get("Date"));
-            if (!isNaN(t)) {
-                serverOffset = t - Date.now();
-                updateSendButton();
-            }
-        }).catch(function () {});
-    }
 } catch (e) {}
