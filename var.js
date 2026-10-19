@@ -11,10 +11,25 @@
 //   sendBlock                 aplicar el horario sin envíos
 //   disableRedirect, hideBottomInfo
 //   price / pricem            opcional: precio distinto al global solo para ese vendedor
+//   cuentas / cuentasm        opcional: cuentas para pagar de la quiniela / de media semana (sección "Cuentas para pagar").
+//                             Lista de {banco, num, uso, titular, aviso}; solo banco y num son obligatorios.
+//                             num con o sin espacios (se copia sin ellos). Sin cuentas, la sección no aparece.
 var QJ_CONFIG = {
     "global": {"price":25,"pricem":20,"suspIndex":[],"suspIndexm":[],"sendBlockFrom":2,"sendBlockTo":7},
     "vendors": {
-        "1": {"tel":"5213330335106","telm":"5213313265676","min2":true,"min2m":true,"sendBlock":true,"disableRedirect":false,"hideBottomInfo":false},
+        "1": {"tel":"5213330335106","telm":"5213313265676","min2":true,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false,
+            "cuentas": [
+                {"banco":"BBVA","num":"4152 3145 2178 7229","uso":"Solo transferencias","titular":"Eduardo Garcia Valenzuela"},
+                {"banco":"Spin OXXO","num":"4217 4702 7189 4913","uso":"Solo depósitos en OXXO"},
+                {"banco":"Spin OXXO","num":"4217 4701 6624 5981","uso":"Solo depósitos en OXXO"},
+                {"banco":"BanCoppel","num":"4169 1606 5032 3992","uso":"Depósito en sucursal o transferencia BanCoppel","titular":"Eduardo Garcia Valenzuela","aviso":"No depositar en OXXO a esta cuenta"}
+            ],
+            "cuentasm": [
+                {"banco":"HSBC","num":"4213 1661 8559 8962","uso":"Transferencias o depósitos","titular":"Luis Angel Romero Garcia"},
+                {"banco":"Spin OXXO","num":"4217 4701 6624 5981","uso":"Solo depósitos en OXXO"},
+                {"banco":"Spin OXXO","num":"4217 4701 8488 5602","uso":"Solo depósitos en OXXO"},
+                {"banco":"BanCoppel","num":"4169 1604 8119 3747","uso":"Depósito en sucursal o transferencia BanCoppel","aviso":"No depositar en OXXO a esta cuenta"}
+            ]},
         "2": {"tel":"5213314457066","telm":"5213317917329","min2":true,"min2m":true,"sendBlock":false,"disableRedirect":true,"hideBottomInfo":false},
         "3": {"tel":"5213318920664","telm":"5213333059683","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
         "4": {"tel":"5213314444345","telm":"5213319128966","min2":true,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
@@ -49,8 +64,8 @@ var vendorSlug = (function () {
     return "1";
 })();
 
-// Variables que usan main11.js, mainm.js, whatsapp-utils.js y las páginas de contacto
-var tel, telm, price, pricem, suspIndex, suspIndexm, min2tels, min2telsm, hideBottomInfo, disableRedirect;
+// Variables que usan main11.js, mainm.js, whatsapp-utils.js, pagos.js y las páginas de contacto
+var tel, telm, price, pricem, suspIndex, suspIndexm, min2tels, min2telsm, hideBottomInfo, disableRedirect, cuentas, cuentasm;
 
 (function () {
     var g = QJ_CONFIG.global;
@@ -67,5 +82,7 @@ var tel, telm, price, pricem, suspIndex, suspIndexm, min2tels, min2telsm, hideBo
     min2telsm = v.min2m ? [telm] : [];
     hideBottomInfo = !!v.hideBottomInfo;
     disableRedirect = !!v.disableRedirect;
+    cuentas = v.cuentas || [];
+    cuentasm = v.cuentasm || [];
     if (typeof setSendBlock === "function") setSendBlock(!!v.sendBlock, g.sendBlockFrom, g.sendBlockTo);
 })();

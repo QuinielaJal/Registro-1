@@ -299,7 +299,7 @@ h6{
     // background: -webkit-linear-gradient(0.49turn, rgb(0,115,0) -7%, rgb(125,0,0) 110%);
     // background: linear-gradient(0.49turn, rgb(0,115,0) -7%, rgb(125,0,0) 110%);
     color: #ffffff;
-    padding: 6px 14px;
+    padding: 9px 14px 3px;   /* más arriba que abajo: los #sub vacíos (vertical-align: sub) alargan la línea hacia abajo */
     text-align: center;
     font-weight: bolder;
     margin: 0px auto;

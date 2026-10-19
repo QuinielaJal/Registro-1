@@ -11,7 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="11/styles11.css?v=1.0.5">
+    <link rel="stylesheet" href="11/styles11.css?v=1.0.6">
+    <link rel="stylesheet" href="pagos.css?v=1.0.0">
     <link rel="icon" href="icon.jpg">
     <link rel="apple-touch-icon" href="icon.jpg">
     <link rel="shortcut icon" href="icon.jpg" type="image/x-icon">
@@ -19,7 +20,8 @@
     <script src="https://js.sentry-cdn.com/dd4a3e2df576b29604a973a4602b5948.min.js" crossorigin="anonymous" async></script>
     <script src="whatsapp-utils.js?v=1.0.1" defer></script>
     <script src="11/main11.js?v=1.0.7" defer></script>
-    <script src="var.js?v=1.0.6" defer></script>
+    <script src="var.js?v=1.0.7" defer></script>
+    <script src="pagos.js?v=1.0.0" defer></script>
     <!-- <script src="lights.js"></script> -->
     <!-- <script src='./snow.js' defer></script> -->
 </head>
@@ -174,20 +176,16 @@
 
 
     </div>  
-    <br>
-
     <!-- Lista -->
-    <div>
-        <span id="costo">Costo: <span id="costoSpan">$0</span></span>
-        <span id="total">Total: $0</span><br>
+    <!-- Costo y Quiniela(s) | botón "Cuentas para pagar" (lo llena pagos.js con las cuentas del vendedor de var.js) | Total -->
+    <div class="pg-fila">
+        <div class="pg-izq">
+            <span id="costo">Costo: <span id="costoSpan">$0</span></span>
+            <span id="numquinielas">0 Quiniela(s)</span>
+        </div>
+        <section id="pagos" data-tipo="fin" hidden></section>
+        <span id="total">Total: $0</span>
     </div>
-
-    <div>
-        <span id="numquinielas">0 Quiniela(s)</span>
-    </div>
-
-    <br>
-
     <div id="listaContainer" translate="no">
         <table id="lista">
         </table>
