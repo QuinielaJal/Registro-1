@@ -281,8 +281,9 @@ body.pg-sin-scroll{ overflow: hidden; }
     margin: 9px 9px 10px;
     padding: 7px 10px;
     border-radius: 8px;
-    background: #e3f5e8;
-    color: #1d3b26;
+    background: #e7f8ec;
+    color: #14532d;
+    box-shadow: 0 0 0 1px rgba(20,120,50,.15);
 }
 .pg-confirma img{ flex: none; width: 20px; height: 20px; }
 .pg-confirma p{
@@ -290,4 +291,3 @@ body.pg-sin-scroll{ overflow: hidden; }
     font-size: 11px;
     line-height: 1.35;
 }
-.pg-confirma b{ color: #0d7a2f; }

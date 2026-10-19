@@ -196,7 +196,7 @@ body{
 #random{
     background:  linear-gradient(0,  rgb(250, 250, 200) 20%, rgb(255, 255, 255) 90%);
     border-radius: 4px;
-    font-size: small;
+    font-size: 12px;
     box-shadow: 1px 1px 3px black;
     font-weight: bold;
     height: 20px;
