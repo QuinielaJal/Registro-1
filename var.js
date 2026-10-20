@@ -43,7 +43,19 @@ var QJ_CONFIG = {
                 {"banco":"Spin OXXO","num":"4217 4700 7638 8954","uso":"Solo depósitos en OXXO","aviso":"No transferencias"}
             ]},
         "3": {"tel":"5213318920664","telm":"5213333059683","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "4": {"tel":"5213314444345","telm":"5213319128966","min2":true,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "4": {"tel":"5213314444345","telm":"5213319128966","min2":true,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false,
+            "cuentas": [
+                {"banco":"BBVA","num":"4152 3139 8638 9133","uso":"Solo transferencias y practicaja"},
+                {"banco":"Scotiabank","num":"4043 1300 2648 1347","uso":"Solo depósitos en OXXO","aviso":"No transferencias"},
+                {"banco":"Spin OXXO","num":"4217 4700 6139 6806","uso":"Solo depósitos en OXXO","aviso":"No transferencias"},
+                {"banco":"BanCoppel","num":"4169 1604 7415 2031","uso":"Transferencias desde BanCoppel y pagos en sucursal"}
+            ],
+            "cuentasm": [
+                {"banco":"BBVA","num":"4152 3139 7513 8558","uso":"Solo transferencias, practicaja y sucursal"},
+                {"banco":"Scotiabank","num":"5579 2091 4869 6062","uso":"Solo depósitos en OXXO","aviso":"No transferencias"},
+                {"banco":"Spin OXXO","num":"4217 4700 8275 2441","uso":"Solo depósitos en OXXO","aviso":"No transferencias"},
+                {"banco":"BanCoppel","num":"4169 1604 7415 2031","uso":"Depósitos únicamente en sucursal"}
+            ]},
         "5": {"tel":"5213317816346","telm":"5213313265676","min2":false,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
         "6": {"tel":"5213326253916","telm":"5213131913863","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
         "7": {"tel":"5217353896464","telm":"5217351815573","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
