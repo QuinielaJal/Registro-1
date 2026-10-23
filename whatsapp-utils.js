@@ -36,7 +36,7 @@ function whatsAppUrl(phone, message, userAgent) {
 // Abre WhatsApp; en WebViews de Android, si la app no tomó el control, cae a wa.me
 function openWhatsApp(phone, message) {
     if (isSendBlocked()) {
-        alert("Los envíos están desactivados de " + formatHour(sendBlockFrom) + " a " + formatHour(sendBlockTo) + " (hora de México).");
+        alert("El registro virtual se encuentra en mantenimiento de " + formatHour(sendBlockFrom) + " a " + formatHour(sendBlockTo) + " (hora de México).");
         updateSendButton();
         return;
     }
