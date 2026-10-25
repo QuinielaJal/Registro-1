@@ -4,7 +4,7 @@
   // Todo va dentro de try/catch: si algo falla aquí, la página sigue funcionando igual
   try {
     // ======== CONFIGURACIÓN ========
-    const onlyRegistros = ['14']; // N de Registro-N donde se muestra (vacío = en todos)
+    const onlyRegistros = ['1','14']; // N de Registro-N donde se muestra (vacío = en todos)
     const showPumpkins = false; // guirnalda de calabazas arriba
     const showWebs = true;      // telarañas en las esquinas (y la araña)
     const numberOfBats = 6;
@@ -12,6 +12,7 @@
     const pumpkinSize = 20;    // px de ancho de cada calabaza
     const pumpkinSpacing = 46; // px aprox. entre calabazas
     const spiderDrop = 55;     // px que baja la araña desde arriba
+    const spiderDelay = 5;     // segundos que espera la araña en su telaraña antes de bajar
     // ===============================
 
     // vendorSlug viene de var.js (se carga antes que este archivo); localmente se prueba con ?registro=14
@@ -34,11 +35,12 @@
       .hw-web.left { left: 0; }
       .hw-web.right { right: 0; transform: scaleX(-1); }
 
-      .hw-spider { position: absolute; top: 0; right: min(7vw, 28px); z-index: 9999; pointer-events: none;
+      /* La araña empieza escondida arriba de la pantalla (top negativo) y el hilo la baja después de spiderDelay */
+      .hw-spider { position: absolute; top: -24px; right: min(7vw, 28px); z-index: 9999; pointer-events: none;
         display: flex; flex-direction: column; align-items: center; transform-origin: 50% 0;
-        animation: hw-swing 3.2s 3s infinite; }
-      .hw-spider .hw-thread { width: 1px; height: ${spiderDrop}px; background: rgba(255, 255, 255, .55);
-        animation: hw-drop 2.4s cubic-bezier(.3, 1.4, .5, 1) .6s both; }
+        animation: hw-swing 3.2s ${spiderDelay + 2.4}s infinite; }
+      .hw-spider .hw-thread { width: 1px; height: ${spiderDrop + 24}px; background: rgba(255, 255, 255, .55);
+        animation: hw-drop 2.4s cubic-bezier(.3, 1.4, .5, 1) ${spiderDelay}s both; }
       .hw-spider svg { width: 22px; height: auto; margin-top: -3px; }
 
       /* Escena 3D: los murciélagos se mueven en x, y, z y la perspectiva los hace crecer al acercarse */
@@ -61,7 +63,7 @@
         75%  { transform: rotate(-5deg); animation-timing-function: ease-in; }
         100% { transform: rotate(0); }
       }
-      @keyframes hw-drop { from { height: 0; } to { height: ${spiderDrop}px; } }
+      @keyframes hw-drop { from { height: 0; } to { height: ${spiderDrop + 24}px; } }
       /* Aleteo en 3D: el ala sube y baja (rotateZ) y a la vez se pliega hacia el fondo (rotateY) */
       @keyframes hw-flap-l {
         from { transform: rotateZ(-38deg) rotateY(-5deg); }
