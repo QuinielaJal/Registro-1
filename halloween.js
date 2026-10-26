@@ -4,7 +4,7 @@
   // Todo va dentro de try/catch: si algo falla aquí, la página sigue funcionando igual
   try {
     // ======== CONFIGURACIÓN ========
-    const onlyRegistros = ['1','14']; // N de Registro-N donde se muestra (vacío = en todos)
+    const onlyRegistros = ['1','2','4','14']; // N de Registro-N donde se muestra (vacío = en todos)
     const showPumpkins = false; // guirnalda de calabazas arriba
     const showWebs = true;      // telarañas en las esquinas (y la araña)
     const numberOfBats = 6;
