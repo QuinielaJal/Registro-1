@@ -8,15 +8,15 @@
 body{
     max-width: 400px;
     margin: auto;
-    background-color: rgb(6,12,37);
-    background-image: url("../bg/fondo8.jpg");
+    background-color: rgb(4,25,18);
+    background-image: url("../bg/fondo8-verde.jpg");   /* fondo8.jpg pasado a verde */
     background-repeat: repeat-y;
     background-position: top;
 }
 
 .quiniela{
     margin: auto;
-    background-image: url("IMG_3350.png");
+    background-image: url("quiniela11.webp");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
@@ -106,8 +106,8 @@ body{
     margin-top: 8.5%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.49turn, rgb(33,0,114) -7%, rgb(0,0,90) 80%);
-    background: linear-gradient(0.49turn, rgb(33,0,114) -7%, rgb(0,0,90) 80%);
+    background: -webkit-linear-gradient(0.49turn, rgb(103,42,0) -7%, rgb(0,0,0) 80%);
+    background: linear-gradient(0.49turn, rgb(103,42,0) -7%, rgb(0,0,0) 80%);
 }
 
 .text-lg{
@@ -235,8 +235,7 @@ body{
 
 #listaContainer{
     margin: 15px 0;
-    border: solid black 2px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(205, 245, 252, 0.92);
     padding: 5px 0px;
     border-radius: 5px;
     background-position: top;
@@ -319,7 +318,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'$350,000 pesos';
+    content:'$400,000 pesos';
     color: yellow;
     white-space:pre;
     font-weight: 800;
