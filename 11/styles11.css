@@ -130,6 +130,8 @@ body{
     justify-content: center;
     align-items: center;
     box-shadow: 1px 1px 6px black;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 #botonenviar{
