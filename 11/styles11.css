@@ -127,8 +127,9 @@ body{
 }
 
 .text-lg{
-    padding: 20px;
+    padding: 18px 20px 22px;
     font-size: x-large;
+    line-height: 23px;
 }
 
 .text-sm{
@@ -439,6 +440,7 @@ h6{
     .text-lg {
         font-size: min(6vw, 30px);
         padding: min(4vw,18px);
+        line-height: 7.25vw;
     }
     .text-sm {
         font-size: min(5vw, 20px);

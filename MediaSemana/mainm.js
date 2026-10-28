@@ -318,9 +318,7 @@ function actualizarBanda(){     //Costo de la franja de banda.js; vacía muestra
 
 function mostrarTexto(){
     var container = document.getElementById("text");
-    var texto = res.join(SEP);
-    container.innerHTML = texto;
-    container.className = texto.length > 35 ? "text-sm" : "text-lg";
+    container.innerHTML = res.join(SEP);
     container.style.fontSize = "";
     var estilo = getComputedStyle(container);
     var disponible = container.clientWidth - parseFloat(estilo.paddingLeft) - parseFloat(estilo.paddingRight);
