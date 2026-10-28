@@ -105,8 +105,22 @@ body{
     margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.49turn, rgb(0,55,32) -7%, rgb(0 6 82) 80%);
-    background: linear-gradient(0.49turn, rgb(0,55,32) -7%, rgb(0 6 82) 80%);
+    background-image: -webkit-linear-gradient(90deg, rgb(0,0,68), rgb(0,62,26));
+    background-image: linear-gradient(0deg, rgb(0,0,68), rgb(0,62,26));
+}
+
+/* Franja de costo y cierre: tapa ese renglón de la imagen con su mismo degradado */
+#banda{
+    display: block;
+    width: 100%;
+    height: 9%;
+    background-image: -webkit-linear-gradient(-90deg, rgb(0,0,68), rgb(0,62,26));
+    background-image: linear-gradient(180deg, rgb(0,0,68), rgb(0,62,26));
+}
+
+/* Con la franja, #text va pegado a ella (sin la franja, p. ej. un HTML de antes, se queda el margen de siempre) */
+#banda + #text{
+    margin-top: 0;
 }
 
 .text-lg{

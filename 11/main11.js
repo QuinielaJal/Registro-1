@@ -57,6 +57,10 @@ function start(){
     var container = document.getElementById("text");
     container.innerHTML = res.join(SEP);
 
+    // Franja de costo y cierre antes de #text; si falla o hay hideBottomInfo, queda el renglón de la imagen.
+    try { if (!hideBottomInfo) Banda.iniciar(cierre, {ancho: 903, letra: 41.34, precio: 1.34, espacio: 1.075, base: 58.4, centro: 0.0108}); } catch (e) {}
+    actualizarBanda();
+
     if (hideBottomInfo) {
         container.style.marginTop = '0'
         document.getElementsByClassName('controles')[0].style.marginTop = '0'
@@ -242,6 +246,7 @@ function clean(){               //Boton para limpiar la quinela
         spans[i].className = "opcion";
     document.getElementById("costo").innerHTML = "Costo: $0";
     document.getElementById("numquinielas").innerHTML = "0 Quiniela(s)";
+    actualizarBanda();
     container.className = "text-lg";
 
     //Se actualizan los iconos de ayuda
@@ -315,6 +320,11 @@ function costoactual(){
     var count = combinationsOf(res);
     document.getElementById("costo").innerHTML = "Costo: $" + count*price;
     document.getElementById("numquinielas").innerHTML = count + " Quiniela(s)";
+    actualizarBanda();
+}
+
+function actualizarBanda(){     //Costo de la franja de banda.js; vacía muestra el precio de una
+    if (window.Banda) Banda.precio(combinationsOf(res) * price);
 }
 
 function remove(index){

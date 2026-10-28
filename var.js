@@ -3,6 +3,7 @@
 //
 // global:
 //   price / pricem            precio de la quiniela / de media semana
+//   cierre / cierrem          día y hora de cierre que se muestra sobre la imagen ("CIERRE: ..."). Vacío = no se muestra
 //   suspIndex / suspIndexm    partidos suspendidos, contando desde 0 (partido 1 = 0). Ej. [0, 4] = partidos 1 y 5
 //   sendBlockFrom / To        horario sin envíos a WhatsApp (hora de México), para los vendedores con sendBlock
 // vendors (la clave es el N de Registro-N):
@@ -11,11 +12,12 @@
 //   sendBlock                 aplicar el horario sin envíos
 //   disableRedirect, hideBottomInfo
 //   price / pricem            opcional: precio distinto al global solo para ese vendedor
+//   cierre / cierrem          opcional: cierre distinto al global solo para ese vendedor
 //   cuentas / cuentasm        opcional: cuentas para pagar de la quiniela / de media semana (sección "Cuentas para pagar").
 //                             Lista de {banco, num, uso, titular, aviso}; solo banco y num son obligatorios.
 //                             num con o sin espacios (se copia sin ellos). Sin cuentas, la sección no aparece.
 var QJ_CONFIG = {
-    "global": {"price":25,"pricem":20,"suspIndex":[],"suspIndexm":[],"sendBlockFrom":3,"sendBlockTo":7},
+    "global": {"price":25,"pricem":20,"cierre":"JUEVES 11 PM","cierrem":"LUNES 11 PM","suspIndex":[],"suspIndexm":[],"sendBlockFrom":3,"sendBlockTo":7},
     "vendors": {
         "1": {"tel":"5213330335106","telm":"5213313265676","min2":true,"min2m":true,"sendBlock":true,"disableRedirect":false,"hideBottomInfo":false,
             "cuentas": [
@@ -65,7 +67,7 @@ var QJ_CONFIG = {
         "11": {"tel":"5218120030657","telm":"5218115912541","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
         "12": {"tel":"523317160015","telm":"523317160015","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
         "13": {"tel":"524777869030","telm":"524777869030","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "14": {"tel":"523339459207","telm":"523325365796","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
+        "14": {"tel":"523339459207","telm":"523325365796","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":true},
         "15": {"tel":"523881016980","telm":"523881016980","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
         "16": {"tel":"528132768851","telm":"528132768851","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
         "17": {"tel":"527555577360","telm":"527555577360","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false}
@@ -88,7 +90,7 @@ var vendorSlug = (function () {
 })();
 
 // Variables que usan main11.js, mainm.js, whatsapp-utils.js, pagos.js y las páginas de contacto
-var tel, telm, price, pricem, suspIndex, suspIndexm, min2tels, min2telsm, hideBottomInfo, disableRedirect, cuentas, cuentasm;
+var tel, telm, price, pricem, cierre, cierrem, suspIndex, suspIndexm, min2tels, min2telsm, hideBottomInfo, disableRedirect, cuentas, cuentasm;
 
 (function () {
     var g = QJ_CONFIG.global;
@@ -99,6 +101,8 @@ var tel, telm, price, pricem, suspIndex, suspIndexm, min2tels, min2telsm, hideBo
     telm = String(v.telm || "");
     price = Number(pick("price"));
     pricem = Number(pick("pricem"));
+    cierre = String(pick("cierre") || "");
+    cierrem = String(pick("cierrem") || "");
     suspIndex = g.suspIndex || [];
     suspIndexm = g.suspIndexm || [];
     min2tels = v.min2 ? [tel] : [];

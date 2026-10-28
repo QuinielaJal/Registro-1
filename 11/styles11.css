@@ -106,8 +106,26 @@ body{
     margin-top: 8.5%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background: -webkit-linear-gradient(0.49turn, rgb(103,42,0) -7%, rgb(0,0,0) 80%);
-    background: linear-gradient(0.49turn, rgb(103,42,0) -7%, rgb(0,0,0) 80%);
+    background-image: -webkit-linear-gradient(90deg, #000, rgb(233,95,0) 160%);
+    background-image: linear-gradient(0deg, #000, rgb(233,95,0) 160%);
+}
+
+/* Franja de costo y cierre: tapa ese renglón de la imagen */
+#banda{
+    display: block;
+    width: 100%;
+    margin-top: 0.12%;
+    height: 8.38%;
+    background-image: -webkit-linear-gradient(-90deg, #000, rgb(233,95,0) 160%);
+    background-image: linear-gradient(180deg, #000, rgb(233,95,0) 160%);
+    background-position: 1px 0;
+    background-size: calc(100% - 2px) 100%;
+    background-repeat: no-repeat;
+}
+
+/* Con la franja, #text va pegado a ella (sin la franja, p. ej. un HTML de antes, se queda el margen de siempre) */
+#banda + #text{
+    margin-top: 0;
 }
 
 .text-lg{
