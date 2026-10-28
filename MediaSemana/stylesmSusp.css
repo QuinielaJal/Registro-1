@@ -21,12 +21,10 @@ body{
     background-repeat: no-repeat;
     max-width: 400px;
     border-radius: 20px;
-    max-height: 400px;
-    height: 100vw;
 }
 
 .controles{
-    margin-top: 8%;
+    margin-top: 12px;
     width: 100%;
     -webkit-user-select: none;
     -ms-user-select: none; 
@@ -36,7 +34,7 @@ body{
 .aux{
     background-color: rgba(165, 42, 42, 0);
     width: 100%;
-    height: 11.8%;
+    height: 11.8vw;
     padding-top: 2.5%;
 }
 
@@ -84,7 +82,7 @@ body{
 
 .partido{
     display: flex;
-    height: 5.6%;
+    height: 5.6vw;
     width: 100%;
     padding: 0 1.2% 0 1.35%;
 }
@@ -113,7 +111,7 @@ body{
 #banda{
     display: block;
     width: 100%;
-    height: 9%;
+    height: 9vw;
     background-image: -webkit-linear-gradient(-90deg, rgb(0,0,68), rgb(0,62,26));
     background-image: linear-gradient(180deg, rgb(0,0,68), rgb(0,62,26));
 }
@@ -205,8 +203,16 @@ body{
     background:transparent;
     border: none;
     text-align: center;
-    font-size: 19px;
+    font-size: 21px;
     width: inherit;
+    position: relative;
+    top: 1px;
+}
+
+#borrarnombre{
+    display: flex;
+    position: relative;
+    top: 1px;
 }
 
 #random{
@@ -304,7 +310,7 @@ h6{
 }
 
 .aux2{
-    height: 8.6%;
+    height: 8.6vw;
 }
 
 #bolsa{
@@ -421,8 +427,11 @@ h6{
     #checkcombinaciones, #nombretext{
         font-size:max(3.3vw, 8px);
     }
-    #nombre, #bolsa{
+    #bolsa{
         font-size:min(6vw, 16px);
+    }
+    #nombre{
+        font-size:min(6.6vw, 18px);
     }
 }
 
@@ -445,4 +454,19 @@ label#botonborrar {
     width: 100%;
     height: 46px;
     max-height: 46px;
+}
+
+@media (min-width: 400px){
+    .aux{
+        height: 47.2px;
+    }
+    .partido{
+        height: 22.4px;
+    }
+    .aux2{
+        height: 34.4px;
+    }
+    #banda{
+        height: 36px;
+    }
 }

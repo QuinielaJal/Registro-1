@@ -55,7 +55,7 @@ function start(){
     res = emptyQuiniela();
 
     var container = document.getElementById("text");
-    container.innerHTML = res.join(SEP);
+    mostrarTexto();
 
     // Franja de costo y cierre antes de #text; si falla o hay hideBottomInfo, queda el renglón de la imagen.
     try { if (!hideBottomInfo) Banda.iniciar(cierre, {ancho: 903, letra: 41.34, precio: 1.34, espacio: 1.075, base: 58.4, centro: 0.0108}); } catch (e) {}
@@ -63,7 +63,6 @@ function start(){
 
     if (hideBottomInfo) {
         container.style.marginTop = '0'
-        document.getElementsByClassName('controles')[0].style.marginTop = '0'
     }
 
     renderList();
@@ -152,7 +151,6 @@ function renderList(){              //Dibuja la tabla y actualiza el total y el 
 function selection(element){        //Pinta la casilla y actualiza el texto de la quiniela.
     var index = parseInt(element.id.slice(1)) - 1;
     if (suspIndex.includes(index)) return;
-    var container = document.getElementById("text");
     if (element.className != "opcion-active"){
         if (!combinations){
             validation(element);
@@ -174,13 +172,7 @@ function selection(element){        //Pinta la casilla y actualiza el texto de l
         }
     }
     costoactual();
-    container.innerHTML = res.join(SEP);
-    if (res.join(SEP).length>35){
-        container.className = "text-sm";
-    }
-    else{
-        container.className = "text-lg";
-    }
+    mostrarTexto();
 
     //Se actualizan los iconos de ayuda
     nombre = nameInput.value.trim();
@@ -239,15 +231,13 @@ function save(){                //Se añade la quiniela actual a la lista
 
 function clean(){               //Boton para limpiar la quinela
     res = emptyQuiniela();
-    var container = document.getElementById("text");
-    container.innerHTML = res.join(SEP);
+    mostrarTexto();
     spans = document.querySelectorAll(".quiniela span");
     for (var i=0; i<nPartidos*3;i++)
         spans[i].className = "opcion";
     document.getElementById("costo").innerHTML = "Costo: $0";
     document.getElementById("numquinielas").innerHTML = "0 Quiniela(s)";
     actualizarBanda();
-    container.className = "text-lg";
 
     //Se actualizan los iconos de ayuda
     nombre = nameInput.value.trim();
@@ -298,7 +288,6 @@ function random(){
         document.getElementById("touchIconDiv").style.display = "none";
     }
 
-    var container = document.getElementById("text");
     var partidos = document.getElementsByClassName("partido");
     for (var i = 0; i < nPartidos; i++){
         if(suspIndex.includes(i)) continue;
@@ -306,7 +295,7 @@ function random(){
         partidos[i].getElementsByTagName("span")[r].className = "opcion-active";
         res[i] = ["L","E","V"][r];
         }
-    container.innerHTML = res.join(SEP);
+    mostrarTexto();
     costoactual();
 }
 
@@ -325,6 +314,22 @@ function costoactual(){
 
 function actualizarBanda(){     //Costo de la franja de banda.js; vacía muestra el precio de una
     if (window.Banda) Banda.precio(combinationsOf(res) * price);
+}
+
+function mostrarTexto(){
+    var container = document.getElementById("text");
+    var texto = res.join(SEP);
+    container.innerHTML = texto;
+    container.className = texto.length > 35 ? "text-sm" : "text-lg";
+    container.style.fontSize = "";
+    var estilo = getComputedStyle(container);
+    var disponible = container.clientWidth - parseFloat(estilo.paddingLeft) - parseFloat(estilo.paddingRight);
+    var rango = document.createRange();
+    rango.selectNodeContents(container);
+    var ancho = rango.getBoundingClientRect().width;
+    if (disponible > 0 && ancho > disponible) {
+        container.style.fontSize = Math.floor(parseFloat(estilo.fontSize) * disponible / ancho) + "px";
+    }
 }
 
 function remove(index){
@@ -384,6 +389,7 @@ function nameOut(element){
 // DOMContentLoaded (no "load"): no espera imágenes ni fuentes, así los botones funcionan aunque la red sea lenta.
 // Los scripts son defer, así que var.js ya se ejecutó cuando se dispara este evento.
 document.addEventListener("DOMContentLoaded",start,false);
+window.addEventListener("resize", mostrarTexto);
 
 // Si la pestaña estuvo oculta más de 5 min, al volver se recarga para traer var.js actualizado
 // (teléfonos, suspendidos). No recarga si hay una quiniela a medio llenar; la lista guardada sobrevive porque está en store.
