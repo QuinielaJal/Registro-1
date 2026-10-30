@@ -389,8 +389,9 @@ function nameOut(element){
 document.addEventListener("DOMContentLoaded",start,false);
 window.addEventListener("resize", mostrarTexto);
 
-// Al volver, recarga si lleva más de 1 min cargada (para traer var.js actualizado)
+// Al volver, recarga si lleva más de 5 min cargada y no hay quiniela a medio llenar (para traer var.js actualizado)
 var loadedAt = Date.now();
 document.addEventListener("visibilitychange", function(){
-    if (!document.hidden && Date.now() - loadedAt > 60 * 1000) location.reload();
+    if (document.hidden || Date.now() - loadedAt <= 5 * 60 * 1000) return;
+    if (res.join("") === emptyQuiniela().join("")) location.reload();
 });
