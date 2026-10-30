@@ -36,7 +36,8 @@ function whatsAppUrl(phone, message, userAgent) {
 // Abre WhatsApp; en WebViews de Android, si la app no tomó el control, cae a wa.me
 function openWhatsApp(phone, message) {
     if (isSendBlocked()) {
-        alert("El registro virtual se encuentra en mantenimiento de " + formatHour(sendBlockFrom) + " a " + formatHour(sendBlockTo) + " (hora de México).");
+        if (sendBlockFrom === sendBlockTo) alert("La quiniela está cerrada.\r\nEspera la próxima jornada.");
+        else alert("El registro virtual se encuentra en mantenimiento de " + formatHour(sendBlockFrom) + " a " + formatHour(sendBlockTo) + " (hora de México).");
         updateSendButton();
         return;
     }
@@ -77,6 +78,7 @@ function setSendBlock(enabled, from, to) {
 function isSendBlocked() {
     try {
         if (!sendBlockEnabled) return false;
+        if (sendBlockFrom === sendBlockTo) return true;
         var h = (new Date(Date.now() + serverOffset).getUTCHours() + 18) % 24;
         if (sendBlockFrom <= sendBlockTo) return h >= sendBlockFrom && h < sendBlockTo;
         return h >= sendBlockFrom || h < sendBlockTo;

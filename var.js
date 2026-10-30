@@ -5,11 +5,11 @@
 //   price / pricem            precio de la quiniela / de media semana
 //   cierre / cierrem          día y hora de cierre que se muestra sobre la imagen ("CIERRE: ..."). Vacío = no se muestra
 //   suspIndex / suspIndexm    partidos suspendidos, contando desde 0 (partido 1 = 0). Ej. [0, 4] = partidos 1 y 5
-//   sendBlockFrom / To        horario sin envíos a WhatsApp (hora de México), para los vendedores con sendBlock
+//   sendBlockFrom / To, sendBlockFromm / Tom   horario sin envíos a WhatsApp de la quiniela / de media semana (hora de México). Iguales (0 y 0) = cerrado
 // vendors (la clave es el N de Registro-N):
 //   tel / telm                WhatsApp de la quiniela / de media semana, con lada de país (52...)
 //   min2 / min2m              pedir mínimo 2 quinielas
-//   sendBlock                 aplicar el horario sin envíos
+//   sendBlock / sendBlockm    aplicar el horario sin envíos de la quiniela / de media semana (las horas también se pueden poner aquí)
 //   disableRedirect, hideBottomInfo
 //   price / pricem            opcional: precio distinto al global solo para ese vendedor
 //   cierre / cierrem          opcional: cierre distinto al global solo para ese vendedor
@@ -17,9 +17,20 @@
 //                             Lista de {banco, num, uso, titular, aviso}; solo banco y num son obligatorios.
 //                             num con o sin espacios (se copia sin ellos). Sin cuentas, la sección no aparece.
 var QJ_CONFIG = {
-    "global": {"price":25,"pricem":20,"cierre":"JUEVES 11 PM","cierrem":"LUNES 11 PM","suspIndex":[],"suspIndexm":[],"sendBlockFrom":3,"sendBlockTo":7},
+    "global": {
+        "price":25,
+        "pricem":20,
+        "cierre":"JUEVES 11 PM",
+        "cierrem":"LUNES 11 PM",
+        "suspIndex":[],
+        "suspIndexm":[],
+        "sendBlockFrom":0,
+        "sendBlockTo":0,
+        "sendBlockFromm":0,
+        "sendBlockTom":0
+    },
     "vendors": {
-        "1": {"tel":"5213330335106","telm":"5213313265676","min2":true,"min2m":true,"sendBlock":true,"disableRedirect":false,"hideBottomInfo":false,
+        "1": {"tel":"5213330335106","telm":"5213313265676","min2":true,"min2m":true,"sendBlock":true,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false,
             "cuentas": [
                 {"banco":"BBVA","num":"4152 3145 2178 7229","uso":"Solo transferencias","titular":"Eduardo Garcia Valenzuela"},
                 // {"banco":"Spin OXXO","num":"4217 4702 7189 4913","uso":"Solo depósitos en OXXO"},
@@ -33,7 +44,7 @@ var QJ_CONFIG = {
                 {"banco":"Spin OXXO","num":"4217 4701 8488 5602","uso":"Solo depósitos en OXXO"},
                 {"banco":"BanCoppel","num":"4169 1604 8119 3747","uso":"Depósito en sucursal o transferencia BanCoppel","titular":"Jorge Salvador Becerra","aviso":"No depositar en OXXO a esta cuenta"}
             ]},
-        "2": {"tel":"5213314457066","telm":"5213317917329","min2":true,"min2m":true,"sendBlock":false,"disableRedirect":true,"hideBottomInfo":false,
+        "2": {"tel":"5213314457066","telm":"5213317917329","min2":true,"min2m":true,"sendBlock":false,"sendBlockm":false,"disableRedirect":true,"hideBottomInfo":false,
             "cuentas": [
                 {"banco":"BBVA","num":"4152 3139 4305 8227","uso":"Solo transferencias, practicaja y sucursal","titular":"Jessica Jesus Garcia"},
                 {"banco":"Scotiabank","num":"4043 1300 1149 8421","uso":"Solo depósitos en OXXO","aviso":"No transferencias"},
@@ -45,8 +56,8 @@ var QJ_CONFIG = {
                 {"banco":"HSBC","num":"4213 1693 0981 9702","uso":"Solo depósitos en OXXO","aviso":"No transferencias"},
                 {"banco":"Spin OXXO","num":"4217 4700 7638 8954","uso":"Solo depósitos en OXXO","aviso":"No transferencias"}
             ]},
-        "3": {"tel":"5213318920664","telm":"5213333059683","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "4": {"tel":"5213314444345","telm":"5213319128966","min2":true,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false,
+        "3": {"tel":"5213318920664","telm":"5213333059683","min2":false,"min2m":false,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false},
+        "4": {"tel":"5213314444345","telm":"5213319128966","min2":true,"min2m":true,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false,
             "cuentas": [
                 {"banco":"BBVA","num":"4152 3139 8638 9133","uso":"Solo transferencias y practicaja"},
                 {"banco":"Scotiabank","num":"4043 1300 2648 1347","uso":"Solo depósitos en OXXO","aviso":"No transferencias"},
@@ -59,19 +70,19 @@ var QJ_CONFIG = {
                 {"banco":"Spin OXXO","num":"4217 4700 8275 2441","uso":"Solo depósitos en OXXO","aviso":"No transferencias"},
                 {"banco":"BanCoppel","num":"4169 1604 7415 2031","uso":"Depósitos únicamente en sucursal"}
             ]},
-        "5": {"tel":"5213317816346","telm":"5213313265676","min2":false,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "6": {"tel":"5213326253916","telm":"5213131913863","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "7": {"tel":"5217353896464","telm":"5217351815573","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "8": {"tel":"5213151159505","telm":"5213151143524","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "9": {"tel":"5213337713027","telm":"5213336263393","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "10": {"tel":"5213122982947","telm":"5213313265676","min2":false,"min2m":true,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "11": {"tel":"5218120030657","telm":"5218115912541","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "12": {"tel":"523317160015","telm":"523317160015","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "13": {"tel":"524777869030","telm":"524777869030","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "14": {"tel":"523339459207","telm":"523325365796","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":true},
-        "15": {"tel":"523881016980","telm":"523881016980","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "16": {"tel":"528132768851","telm":"528132768851","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false},
-        "17": {"tel":"527555577360","telm":"527555577360","min2":false,"min2m":false,"sendBlock":false,"disableRedirect":false,"hideBottomInfo":false}
+        "5": {"tel":"5213317816346","telm":"5213313265676","min2":false,"min2m":true,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false},
+        "6": {"tel":"5213326253916","telm":"5213131913863","min2":false,"min2m":false,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false},
+        "7": {"tel":"5217353896464","telm":"5217351815573","min2":false,"min2m":false,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false},
+        "8": {"tel":"5213151159505","telm":"5213151143524","min2":false,"min2m":false,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false},
+        "9": {"tel":"5213337713027","telm":"5213336263393","min2":false,"min2m":false,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false},
+        "10": {"tel":"5213122982947","telm":"5213313265676","min2":false,"min2m":true,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false},
+        "11": {"tel":"5218120030657","telm":"5218115912541","min2":false,"min2m":false,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false},
+        "12": {"tel":"523317160015","telm":"523317160015","min2":false,"min2m":false,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false},
+        "13": {"tel":"524777869030","telm":"524777869030","min2":false,"min2m":false,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false},
+        "14": {"tel":"523339459207","telm":"523325365796","min2":false,"min2m":false,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":true},
+        "15": {"tel":"523881016980","telm":"523881016980","min2":false,"min2m":false,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false},
+        "16": {"tel":"528132768851","telm":"528132768851","min2":false,"min2m":false,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false},
+        "17": {"tel":"527555577360","telm":"527555577360","min2":false,"min2m":false,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false}
     }
 };
 
@@ -91,7 +102,7 @@ var vendorSlug = (function () {
 })();
 
 // Variables que usan main11.js, mainm.js, whatsapp-utils.js, pagos.js y las páginas de contacto
-var tel, telm, price, pricem, cierre, cierrem, suspIndex, suspIndexm, min2tels, min2telsm, hideBottomInfo, disableRedirect, cuentas, cuentasm;
+var tel, telm, price, pricem, cierre, cierrem, suspIndex, suspIndexm, min2tels, min2telsm, hideBottomInfo, disableRedirect, cuentas, cuentasm, sendBlock, sendBlockm;
 
 (function () {
     var g = QJ_CONFIG.global;
@@ -112,5 +123,6 @@ var tel, telm, price, pricem, cierre, cierrem, suspIndex, suspIndexm, min2tels, 
     disableRedirect = !!v.disableRedirect;
     cuentas = v.cuentas || [];
     cuentasm = v.cuentasm || [];
-    if (typeof setSendBlock === "function") setSendBlock(!!v.sendBlock, g.sendBlockFrom, g.sendBlockTo);
+    sendBlock = {on: !!v.sendBlock, from: pick("sendBlockFrom"), to: pick("sendBlockTo")};
+    sendBlockm = {on: !!v.sendBlockm, from: pick("sendBlockFromm"), to: pick("sendBlockTom")};
 })();

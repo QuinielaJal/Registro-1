@@ -66,6 +66,7 @@ function start(){
     }
 
     renderList();
+    if (window.sendBlockm && typeof setSendBlock === "function") setSendBlock(sendBlockm.on, sendBlockm.from, sendBlockm.to);
     // Si la lista cambia en otra pestaña, se vuelve a dibujar para no quedar desincronizada.
     window.addEventListener("storage", function(e){ if (e.key === resultStorage) renderList(); });
 }
