@@ -389,12 +389,11 @@ function nameOut(element){
 document.addEventListener("DOMContentLoaded",start,false);
 window.addEventListener("resize", mostrarTexto);
 
-// Si la pestaña estuvo oculta más de 5 min, al volver se recarga para traer var.js actualizado
-// (teléfonos, suspendidos). No recarga si hay una quiniela a medio llenar; la lista guardada sobrevive porque está en store.
+// Si la pestaña estuvo oculta más de 1 min, al volver se recarga para traer var.js actualizado
+// (teléfonos, suspendidos). La lista guardada sobrevive porque está en store.
 var hiddenSince = null;
 document.addEventListener("visibilitychange", function(){
     if (document.hidden) { hiddenSince = Date.now(); return; }
-    var midFill = res.join("") !== emptyQuiniela().join("");
-    if (hiddenSince && Date.now() - hiddenSince > 5 * 60 * 1000 && !midFill) location.reload();
+    if (hiddenSince && Date.now() - hiddenSince > 60 * 1000) location.reload();
     hiddenSince = null;
 });
