@@ -389,11 +389,8 @@ function nameOut(element){
 document.addEventListener("DOMContentLoaded",start,false);
 window.addEventListener("resize", mostrarTexto);
 
-// Si la pestaña estuvo oculta más de 1 min, al volver se recarga para traer var.js actualizado
-// (teléfonos, suspendidos). La lista guardada sobrevive porque está en store.
-var hiddenSince = null;
+// Al volver, recarga si lleva más de 1 min cargada (para traer var.js actualizado)
+var loadedAt = Date.now();
 document.addEventListener("visibilitychange", function(){
-    if (document.hidden) { hiddenSince = Date.now(); return; }
-    if (hiddenSince && Date.now() - hiddenSince > 60 * 1000) location.reload();
-    hiddenSince = null;
+    if (!document.hidden && Date.now() - loadedAt > 60 * 1000) location.reload();
 });
