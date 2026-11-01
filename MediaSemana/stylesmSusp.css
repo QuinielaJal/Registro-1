@@ -9,8 +9,9 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: url("../bg/fondom8-naranja.jpg");
-    background-repeat: repeat-y;
+    background-image: -webkit-linear-gradient(-90deg, rgba(0,0,0,0.85), rgba(0,0,0,0) 380px), url("../bg/fondom8-naranja.jpg");
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0) 380px), url("../bg/fondom8-naranja.jpg");
+    background-repeat: no-repeat, repeat-y;
     background-position: top;
 }
 
@@ -319,7 +320,7 @@ h6{
     padding: 1px 5px;
     margin-top: 5px;
     width: fit-content;
-    background: #000000e3;
+    background: #00000091;
     border-radius: 4px;
     text-align: center;
     font-weight: bolder;
