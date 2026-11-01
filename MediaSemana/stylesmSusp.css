@@ -9,7 +9,7 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: url("../bg/fondom8.jpg");
+    background-image: url("../bg/fondom8-naranja.jpg");
     background-repeat: repeat-y;
     background-position: top;
 }
@@ -103,8 +103,8 @@ body{
     margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background-image: -webkit-linear-gradient(90deg, rgb(0,0,68), rgb(0,62,26));
-    background-image: linear-gradient(0deg, rgb(0,0,68), rgb(0,62,26));
+    background-image: -webkit-linear-gradient(90deg, rgb(0, 0, 68), rgb(87 38 119));
+    background-image: linear-gradient(0deg, rgb(0, 0, 68), rgb(87 38 119));
 }
 
 /* Franja de costo y cierre: tapa ese renglón de la imagen con su mismo degradado */
@@ -112,8 +112,8 @@ body{
     display: block;
     width: 100%;
     height: 9vw;
-    background-image: -webkit-linear-gradient(-90deg, rgb(0,0,68), rgb(0,62,26));
-    background-image: linear-gradient(180deg, rgb(0,0,68), rgb(0,62,26));
+    background-image: -webkit-linear-gradient(-90deg, rgb(0, 0, 68), rgb(92 40 122));
+    background-image: linear-gradient(180deg, rgb(0, 0, 68), rgb(92 40 122));
 }
 
 /* Con la franja, #text va pegado a ella (sin la franja, p. ej. un HTML de antes, se queda el margen de siempre) */

@@ -353,6 +353,7 @@ function deleteall(){
 }
 
 function send(){                //Envia la quiniela al whatsapp
+    if (typeof alertSendBlocked === "function" && alertSendBlocked()) return;
     var entries = renderList();     //Se relee lo guardado para enviar exactamente lo que se ve
     if (quantity < 1){
         alert("La lista está vacía\r\nPresiona [AGREGAR] para añadir una quiniela");
