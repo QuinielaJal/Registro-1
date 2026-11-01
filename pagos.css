@@ -1,14 +1,14 @@
 /* "Cuentas para pagar" (pagos.js): botón en la página + modal con las cuentas.
-   --pg-fondo / --pg-tinta cambian por página: azul en fin de semana, verde en media semana */
+   --pg-fondo / --pg-tinta cambian por página: azul en fin de semana, morado en media semana */
 .pg-modal{
     --pg-fondo: linear-gradient(135deg, rgb(40,10,140), rgb(1,4,96));
     --pg-tinta: rgb(30,0,113);
     --pg-suave: #eef0fb;
 }
 .pg-modal[data-tipo="media"]{
-    --pg-fondo: linear-gradient(135deg, #14532d, #062612);
-    --pg-tinta: #0f4d27;
-    --pg-suave: #eaf5ee;
+    --pg-fondo: linear-gradient(180deg, rgb(92,40,122), rgb(0,0,68));
+    --pg-tinta: rgb(92,40,122);
+    --pg-suave: #f1ebf6;
 }
 #pagos[hidden]{ display: none; }
 

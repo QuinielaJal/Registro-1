@@ -13,8 +13,8 @@
 
     const style = document.createElement('style');
     style.textContent = `
-      .dm-corner { position: absolute; top: 0; overflow: hidden; pointer-events: none; z-index: 9998; }
-      #bolsa { position: relative; z-index: 9999; }
+      .dm-corner { position: absolute; top: 0; overflow: hidden; pointer-events: none; z-index: 998; }
+      #bolsa { position: relative; z-index: 999; }
       .dm-corner.right { transform: scaleX(-1); }
       .dm-corner > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
       .dm-flag { position: absolute; transform-origin: 50% 0;
