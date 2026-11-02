@@ -33,9 +33,9 @@ var QJ_CONFIG = {
         "1": {"tel":"5213330335106","telm":"5213313265676","min2":true,"min2m":true,"sendBlock":false,"sendBlockm":false,"disableRedirect":false,"hideBottomInfo":false,
             "cuentas": [
                 {"banco":"BBVA","num":"4152 3145 2178 7229","uso":"Solo transferencias","titular":"Eduardo Garcia Valenzuela"},
-                // {"banco":"Spin OXXO","num":"4217 4702 7189 4913","uso":"Solo depósitos en OXXO"},
-                // {"banco":"Spin OXXO","num":"4217 4701 6624 5981","uso":"Solo depósitos en OXXO"},
-                {"banco":"Spin OXXO","num":"4217 4702 8982 6030","uso":"Solo depósitos en OXXO"},
+                {"banco":"Spin OXXO","num":"4217 4702 7189 4913","uso":"Solo depósitos en OXXO"},
+                {"banco":"Spin OXXO","num":"4217 4701 6624 5981","uso":"Solo depósitos en OXXO"},
+                // {"banco":"Spin OXXO","num":"4217 4702 8982 6030","uso":"Solo depósitos en OXXO"},
                 {"banco":"BanCoppel","num":"4169 1606 5032 3992","uso":"Depósito en sucursal o transferencia BanCoppel","titular":"Eduardo Garcia Valenzuela","aviso":"No depositar en OXXO a esta cuenta"}
             ],
             "cuentasm": [
