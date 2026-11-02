@@ -9,7 +9,7 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(48,38,26);
-    background-image: url("../bg/fondo8-arena.jpg");   /* fondo8.jpg pasado a arena oscura */
+    background-image: url("../bg/fondo8.jpg"); 
     background-repeat: repeat-y;
     background-position: top;
 }
