@@ -1,7 +1,7 @@
 /* "Cuentas para pagar" (pagos.js): botón en la página + modal con las cuentas.
    --pg-fondo / --pg-tinta cambian por página: azul en fin de semana, morado en media semana */
 .pg-modal{
-    --pg-fondo: linear-gradient(135deg, rgb(40,10,140), rgb(1,4,96));
+    --pg-fondo: linear-gradient(135deg, #155165, rgb(84 5 92) 160%);
     --pg-tinta: rgb(30,0,113);
     --pg-suave: #eef0fb;
 }

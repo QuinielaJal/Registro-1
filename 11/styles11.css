@@ -8,8 +8,8 @@
 body{
     max-width: 400px;
     margin: auto;
-    background-color: rgb(4,25,18);
-    background-image: url("../bg/fondo8-verde.jpg");   /* fondo8.jpg pasado a verde */
+    background-color: rgb(222,204,168);
+    background-image: url("../bg/fondo8-crema.jpg");   /* fondo8.jpg pasado a crema */
     background-repeat: repeat-y;
     background-position: top;
 }
@@ -104,8 +104,8 @@ body{
     margin-top: 8.5%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background-image: -webkit-linear-gradient(90deg, #000, rgb(233,95,0) 160%);
-    background-image: linear-gradient(0deg, #000, rgb(233,95,0) 160%);
+    background-image: -webkit-linear-gradient(90deg, #155165, rgb(84 5 92) 160%);
+    background-image: linear-gradient(0deg, #155165, rgb(84 5 92) 160%);
 }
 
 /* Franja de costo y cierre: tapa ese renglón de la imagen */
@@ -114,8 +114,8 @@ body{
     width: 100%;
     margin-top: 0.12%;
     height: 8.38vw;
-    background-image: -webkit-linear-gradient(-90deg, #000, rgb(233,95,0) 160%);
-    background-image: linear-gradient(180deg, #000, rgb(233,95,0) 160%);
+    background-image: -webkit-linear-gradient(-90deg, #115766, rgb(84 5 92) 160%);
+    background-image: linear-gradient(180deg, #115766, rgb(84 5 92) 160%);
     background-position: 1px 0;
     background-size: calc(100% - 2px) 100%;
     background-repeat: no-repeat;
@@ -262,9 +262,10 @@ body{
 
 #listaContainer{
     margin: 15px 0;
-    background-color: rgba(205, 245, 252, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: rgba(255, 255, 240, 0.8);
     padding: 5px 0px;
-    border-radius: 5px;
+    border-radius: 8px;
     background-position: top;
 }
 
@@ -324,24 +325,22 @@ h6{
 #bolsa{
     // background: -webkit-linear-gradient(0.49turn, rgb(0,115,0) -7%, rgb(125,0,0) 110%);
     // background: linear-gradient(0.49turn, rgb(0,115,0) -7%, rgb(125,0,0) 110%);
-    color: #ffffff;
-    padding: 9px 14px 3px;   /* más arriba que abajo: los #sub vacíos (vertical-align: sub) alargan la línea hacia abajo */
+    color: whitesmoke;
+    padding: 1px 5px;
     text-align: center;
     font-weight: bolder;
-    margin: 0px auto;
+    margin: 5px auto;
     width: fit-content;
     max-width: 92%;
-    border-radius: 6px;
+    background: #00000091;
+    border-radius: 4px;
     // box-shadow: 1px 1px 6px black;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    font-size: 18px;
-    line-height: normal;
+    text-shadow: 0px 0px 7px black;
 }
 
 #bolsatxt:before{
     content:'Bolsa estimada: ';
     white-space:pre;
-    font-weight: 600;
 }
 
 #cantidad:before{
@@ -367,14 +366,12 @@ h6{
     content:'';
     color: white;
     white-space:pre;
-    vertical-align: sub;
 }
 
 #sub4:before{
     content:'';
     color: yellow;
     white-space:pre;
-    vertical-align: sub;
 }
 
 #imgwsp{
