@@ -8,8 +8,8 @@
 body{
     max-width: 400px;
     margin: auto;
-    background-color: rgb(222,204,168);
-    background-image: url("../bg/fondo8-crema.jpg");   /* fondo8.jpg pasado a crema */
+    background-color: rgb(48,38,26);
+    background-image: url("../bg/fondo8-arena.jpg");   /* fondo8.jpg pasado a arena oscura */
     background-repeat: repeat-y;
     background-position: top;
 }
