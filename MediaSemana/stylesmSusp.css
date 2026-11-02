@@ -40,15 +40,22 @@ body{
 }
 
 .aux h3{
-    width: 9%;
+    position: relative;
+    top: -4px;
+    width: 8.5%;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-left: 4px;
+    margin-left: 8px;
     background-color: rgba(255, 255, 255, 0.288);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.288);
     box-shadow: 2px 2px 4px black;
     font-size: large;
+    transition: transform .1s ease;
+}
+
+.aux h3:active{
+    transform: scale(.92);
 }
 
 .ico{
@@ -61,8 +68,8 @@ body{
 
 .aux h3 .ico{
     display: block;
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
 }
 
 .quiniela span{
