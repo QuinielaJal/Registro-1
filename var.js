@@ -24,8 +24,8 @@ var QJ_CONFIG = {
         "cierrem":"LUNES 11 PM",
         "suspIndex":[],
         "suspIndexm":[],
-        "sendBlockFrom":3,
-        "sendBlockTo":7,
+        "sendBlockFrom":0,
+        "sendBlockTo":0,
         "sendBlockFromm":0,
         "sendBlockTom":0
     },
