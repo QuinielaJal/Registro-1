@@ -17,7 +17,7 @@ body{
 
 .quiniela{
     margin: auto;
-    background-image: url("quinielamSusp.webp");
+    background-image: url("IMG_3930.png");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
@@ -111,8 +111,8 @@ body{
     margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background-image: -webkit-linear-gradient(90deg, rgb(0, 0, 68), rgb(87 38 119));
-    background-image: linear-gradient(0deg, rgb(0, 0, 68), rgb(87 38 119));
+    background-image: -webkit-linear-gradient(90deg, rgb(0, 0, 68), rgb(0 25 112));
+    background-image: linear-gradient(0deg, rgb(0, 0, 68), rgb(0 25 112));
 }
 
 /* Franja de costo y cierre: tapa ese renglón de la imagen con su mismo degradado */
@@ -120,8 +120,8 @@ body{
     display: block;
     width: 100%;
     height: 9vw;
-    background-image: -webkit-linear-gradient(-90deg, rgb(0, 0, 68), rgb(92 40 122));
-    background-image: linear-gradient(180deg, rgb(0, 0, 68), rgb(92 40 122));
+    background-image: -webkit-linear-gradient(-90deg, rgb(0, 0, 68), rgb(0 25 112));
+    background-image: linear-gradient(180deg, rgb(0, 0, 68), rgb(0 25 112));
 }
 
 /* Con la franja, #text va pegado a ella (sin la franja, p. ej. un HTML de antes, se queda el margen de siempre) */
@@ -341,7 +341,7 @@ h6{
 }
 
 #cantidad:before{
-    content:' +$250,000 pesos';
+    content:' +$300,000 pesos';
     color: yellow;
     white-space:pre;
 }
