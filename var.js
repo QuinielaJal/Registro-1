@@ -21,7 +21,7 @@ var QJ_CONFIG = {
         "price":25,
         "pricem":20,
         "cierre":"JUEVES 11 PM",
-        "cierrem":"LUNES 11 PM",
+        "cierrem":"MARTES 11 PM",
         "suspIndex":[],
         "suspIndexm":[],
         "sendBlockFrom":0,
