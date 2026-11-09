@@ -9,7 +9,7 @@ body{
     max-width: 400px;
     margin: auto;
     background-color: rgb(6,12,37);
-    background-image: -webkit-linear-gradient(-90deg, rgba(0,0,0,0.85), rgba(0,0,0,0) 380px), url("../bg/fondom8-naranja.jpg");
+    background-image: -webkit-linear-gradient(-90deg, rgba(0,0,0,0.85), rgba(0,0,0,0) 380px), url("../bg/fondom8.jpg");
     background-image: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0) 380px), url("../bg/fondom8-naranja.jpg");
     background-repeat: no-repeat, repeat-y;
     background-position: top;
