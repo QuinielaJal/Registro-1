@@ -20,7 +20,7 @@ var QJ_CONFIG = {
     "global": {
         "price":25,
         "pricem":20,
-        "cierre":"JUEVES 11 PM",
+        "cierre":"VIERNES 11 PM",
         "cierrem":"LUNES 11 PM",
         "suspIndex":[],
         "suspIndexm":[],
@@ -30,7 +30,7 @@ var QJ_CONFIG = {
         "sendBlockTom":0
     },
     "vendors": {
-        "1": {"tel":"5213330335106","telm":"5213313265676","min2":true,"min2m":true,"sendBlock":true,"sendBlockm":true,"disableRedirect":false,"hideBottomInfo":false,
+        "1": {"tel":"5213330335106","telm":"5213313265676","min2":true,"min2m":true,"sendBlock":false,"sendBlockm":true,"disableRedirect":false,"hideBottomInfo":false,
             "cuentas": [
                 {"banco":"BBVA","num":"4152 3145 2178 7229","uso":"Solo transferencias","titular":"Eduardo Garcia Valenzuela"},
                 {"banco":"Spin OXXO","num":"4217 4702 7189 4913","uso":"Solo depósitos en OXXO"},
