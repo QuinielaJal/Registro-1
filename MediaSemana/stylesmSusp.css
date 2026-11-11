@@ -111,8 +111,8 @@ body{
     margin-top: 9%;
     border: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background-image: -webkit-linear-gradient(90deg, rgb(0, 0, 68), rgb(0 25 112));
-    background-image: linear-gradient(0deg, rgb(0, 0, 68), rgb(0 25 112));
+    background-image: -webkit-linear-gradient(90deg, #0b1030, #141c40);
+    background-image: linear-gradient(0deg, #0b1030, #141c40);
 }
 
 /* Franja de costo y cierre: tapa ese renglón de la imagen con su mismo degradado */
@@ -120,8 +120,8 @@ body{
     display: block;
     width: 100%;
     height: 9vw;
-    background-image: -webkit-linear-gradient(-90deg, rgb(0, 0, 68), rgb(0 25 112));
-    background-image: linear-gradient(180deg, rgb(0, 0, 68), rgb(0 25 112));
+    background-image: -webkit-linear-gradient(-90deg, #0b1030, #141c40);
+    background-image: linear-gradient(180deg, #0b1030, #141c40);
 }
 
 /* Con la franja, #text va pegado a ella (sin la franja, p. ej. un HTML de antes, se queda el margen de siempre) */
@@ -336,12 +336,12 @@ h6{
 }
 
 #bolsatxt:before{
-    content:'Bolsa estimada:';
+    content:'Bolsa estimada: ';
     white-space: pre;
 }
 
 #cantidad:before{
-    content:' +$300,000 pesos';
+    content: attr(data-bolsa);
     color: yellow;
     white-space:pre;
 }

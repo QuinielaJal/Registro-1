@@ -56,6 +56,7 @@ function start(){
 
     var container = document.getElementById("text");
     mostrarTexto();
+    document.getElementById("cantidad").setAttribute("data-bolsa", bolsa);
 
     // Franja de costo y cierre antes de #text; si falla o hay hideBottomInfo, queda el renglón de la imagen.
     try { if (!hideBottomInfo) Banda.iniciar(cierre, {ancho: 903, letra: 41.34, precio: 1.34, espacio: 1.075, base: 58.4, centro: 0.0108}); } catch (e) {}

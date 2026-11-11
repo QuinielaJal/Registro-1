@@ -111,8 +111,8 @@ body{
     margin-top: 8.5%;
     border-top: solid 1px black;
     border-radius: 0 0 14px 14px;
-    background-image: -webkit-linear-gradient(90deg, #025617, rgb(0 8 87) 160%);
-    background-image: linear-gradient(0deg, #025617, rgb(0 8 87) 160%);
+    background-image: -webkit-linear-gradient(90deg, #0b1030, #141c40);
+    background-image: linear-gradient(0deg, #0b1030, #141c40);
 }
 
 /* Franja de costo y cierre: tapa ese renglón de la imagen */
@@ -121,8 +121,8 @@ body{
     width: 100%;
     margin-top: 0.12%;
     height: 8.38vw;
-    background-image: -webkit-linear-gradient(-90deg, #026809, rgb(2 4 85) 160%);
-    background-image: linear-gradient(180deg, #026809, rgb(2 4 85) 160%);
+    background-image: -webkit-linear-gradient(-90deg, #0b1030, #141c40);
+    background-image: linear-gradient(180deg, #0b1030, #141c40);
     background-position: 1px 0;
     background-size: calc(100% - 2px) 100%;
     background-repeat: no-repeat;
@@ -351,7 +351,7 @@ h6{
 }
 
 #cantidad:before{
-    content:'+$350,000 pesos';
+    content: attr(data-bolsa);
     color: yellow;
     white-space:pre;
     font-weight: 800;

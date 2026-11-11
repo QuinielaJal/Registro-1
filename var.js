@@ -22,6 +22,8 @@ var QJ_CONFIG = {
         "pricem":20,
         "cierre":"VIERNES 11 PM",
         "cierrem":"MARTES 11 PM",
+        "bolsa":"+$350,000 pesos.",
+        "bolsam":"+$300,000 pesos.",
         "suspIndex":[],
         "suspIndexm":[],
         "sendBlockFrom":0,
@@ -102,7 +104,7 @@ var vendorSlug = (function () {
 })();
 
 // Variables que usan main11.js, mainm.js, whatsapp-utils.js, pagos.js y las páginas de contacto
-var tel, telm, price, pricem, cierre, cierrem, suspIndex, suspIndexm, min2tels, min2telsm, hideBottomInfo, disableRedirect, cuentas, cuentasm, sendBlock, sendBlockm;
+var tel, telm, price, pricem, cierre, cierrem, bolsa, bolsam, suspIndex, suspIndexm, min2tels, min2telsm, hideBottomInfo, disableRedirect, cuentas, cuentasm, sendBlock, sendBlockm;
 
 (function () {
     var g = QJ_CONFIG.global;
@@ -115,6 +117,8 @@ var tel, telm, price, pricem, cierre, cierrem, suspIndex, suspIndexm, min2tels, 
     pricem = Number(pick("pricem"));
     cierre = String(pick("cierre") || "");
     cierrem = String(pick("cierrem") || "");
+    bolsa = String(pick("bolsa") || "");
+    bolsam = String(pick("bolsam") || "");
     suspIndex = g.suspIndex || [];
     suspIndexm = g.suspIndexm || [];
     min2tels = v.min2 ? [tel] : [];

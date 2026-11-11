@@ -66,3 +66,24 @@ var Banda = (function () {
         }
     };
 })();
+
+window.addEventListener("load", function () {
+    var texto = document.getElementById("text"), caja = texto.parentNode, img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = function () {
+        var c = document.createElement("canvas").getContext("2d"), k = img.width / caja.offsetWidth;
+        c.canvas.width = 1;
+        c.canvas.height = img.height;
+        c.drawImage(img, -Math.round(img.width * 0.02), 0);
+        function color(y) {
+            var p = c.getImageData(0, Math.min(y * k, img.height * 0.99) | 0, 1, 1).data;
+            return "rgb(" + p[0] + "," + p[1] + "," + p[2] + ")";
+        }
+        try { [document.getElementById("banda"), texto].forEach(function (el) {
+            if (!el) return;
+            var y = el.getBoundingClientRect().top - caja.getBoundingClientRect().top;
+            el.style.backgroundImage = "linear-gradient(180deg," + color(y + 3) + "," + color(y + el.offsetHeight) + ")";
+        }); } catch (e) {}
+    };
+    img.src = (/url\(["']?([^"')]+)/.exec(getComputedStyle(caja).backgroundImage) || [])[1] || "";
+});
