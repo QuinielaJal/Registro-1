@@ -71,19 +71,25 @@ window.addEventListener("load", function () {
     var texto = document.getElementById("text"), caja = texto.parentNode, img = new Image();
     img.crossOrigin = "anonymous";
     img.onload = function () {
-        var c = document.createElement("canvas").getContext("2d"), k = img.width / caja.offsetWidth;
-        c.canvas.width = 1;
-        c.canvas.height = img.height;
-        c.drawImage(img, -Math.round(img.width * 0.02), 0);
+        var c = document.createElement("canvas").getContext("2d"), w = caja.offsetWidth, h = Math.round(img.height * w / img.width);
+        c.canvas.width = w;
+        c.canvas.height = h;
+        c.drawImage(img, 0, 0, w, h);
         function color(y) {
-            var p = c.getImageData(0, Math.min(y * k, img.height * 0.99) | 0, 1, 1).data;
-            return "rgb(" + p[0] + "," + p[1] + "," + p[2] + ")";
+            var d = c.getImageData(Math.round(w * 0.02), Math.max(0, Math.min(Math.round(y), h - 1)), Math.max(1, Math.round(w * 0.04)), 1).data, canal = [[], [], []], i, j;
+            for (i = 0; i < d.length; i += 4) for (j = 0; j < 3; j++) canal[j].push(d[i + j]);
+            return canal.map(function (v) { v.sort(function (a, b) { return a - b; }); return v[v.length >> 1]; });
         }
-        try { [document.getElementById("banda"), texto].forEach(function (el) {
-            if (!el) return;
-            var y = el.getBoundingClientRect().top - caja.getBoundingClientRect().top;
-            el.style.backgroundImage = "linear-gradient(180deg," + color(y + 3) + "," + color(y + el.offsetHeight) + ")";
-        }); } catch (e) {}
+        function luz(p) { return 0.299 * p[0] + 0.587 * p[1] + 0.114 * p[2]; }
+        function degradado(arriba, abajo) { return "linear-gradient(180deg,rgb(" + arriba + "),rgb(" + abajo + "))"; }
+        try {
+            var banda = document.getElementById("banda"), base = banda || texto, y = base.getBoundingClientRect().top - caja.getBoundingClientRect().top;
+            var a = color(y + 3), b = color(y + base.offsetHeight - 3);
+            if (!banda) { texto.style.backgroundImage = degradado(a, b); return; }
+            banda.style.backgroundImage = degradado(a, b);
+            var fin = color(h - 5), abajo = luz(fin) < luz(a) ? fin : a;
+            texto.style.backgroundImage = degradado(b, luz(abajo) <= luz(b) ? abajo : b);
+        } catch (e) {}
     };
     img.src = (/url\(["']?([^"')]+)/.exec(getComputedStyle(caja).backgroundImage) || [])[1] || "";
 });
