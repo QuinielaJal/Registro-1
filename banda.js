@@ -87,6 +87,10 @@ window.addEventListener("load", function () {
             var a = color(y + 3), b = color(y + base.offsetHeight - 3);
             if (!banda) { texto.style.backgroundImage = degradado(a, b); return; }
             banda.style.backgroundImage = degradado(a, b);
+            var raiz = document.documentElement.style, tinta = luz(a) <= luz(b) ? a : b;
+            raiz.setProperty("--pg-auto", degradado(a, b));
+            raiz.setProperty("--pg-tinta", "rgb(" + tinta + ")");
+            raiz.setProperty("--pg-suave", "rgb(" + tinta.map(function (v) { return Math.round(v * 0.08 + 255 * 0.92); }) + ")");
             var fin = color(h - 5), abajo = luz(fin) < luz(a) ? fin : a;
             texto.style.backgroundImage = degradado(b, luz(abajo) <= luz(b) ? abajo : b);
         } catch (e) {}

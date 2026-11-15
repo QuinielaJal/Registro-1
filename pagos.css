@@ -1,14 +1,9 @@
 /* "Cuentas para pagar" (pagos.js): botón en la página + modal con las cuentas.
-   --pg-fondo / --pg-tinta cambian por página: azul en fin de semana, morado en media semana */
-.pg-modal{
-    --pg-fondo: linear-gradient(135deg, #155165, rgb(84 5 92) 160%);
-    --pg-tinta: rgb(30,0,113);
+   Valores por defecto; banda.js los reemplaza con los colores de la imagen */
+:root{
+    --pg-auto: linear-gradient(180deg, #0b1030, #141c40);
+    --pg-tinta: #0b1030;
     --pg-suave: #eef0fb;
-}
-.pg-modal[data-tipo="media"]{
-    --pg-fondo: linear-gradient(180deg, rgb(92,40,122), rgb(0,0,68));
-    --pg-tinta: rgb(92,40,122);
-    --pg-suave: #f1ebf6;
 }
 #pagos[hidden]{ display: none; }
 
@@ -128,7 +123,7 @@ body.pg-sin-scroll{ overflow: hidden; }
     align-items: center;
     gap: 10px;
     padding: 9px 10px 9px 15px;
-    background: var(--pg-fondo);
+    background: var(--pg-auto);
     color: white;
 }
 .pg-head > div{ flex: 1; }
