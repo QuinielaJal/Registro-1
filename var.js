@@ -29,8 +29,8 @@ var QJ_CONFIG = {
         "cierrem":"LUNES 11 PM",
         "bolsam":"+$400,000 pesos\n¡Se reparte todo el acumulado!",
         "suspIndexm":[],
-        "sendBlockFromm":3,
-        "sendBlockTom":7
+        "sendBlockFromm":0,
+        "sendBlockTom":0
     },
     "vendors": {
         "1": {"tel":"5213330335106","telm":"5213313265676","min2":true,"min2m":true,"sendBlock":false,"sendBlockm":true,"disableRedirect":false,"hideBottomInfo":false,
