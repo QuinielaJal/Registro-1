@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "include": ["/SimuladorQJ", "/SimuladorQJ/*", "/SimuladorQJMS", "/SimuladorQJMS/*"],
+  "exclude": []
+}
