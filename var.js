@@ -26,8 +26,8 @@ var QJ_CONFIG = {
         "sendBlockTo":0,
 
         "pricem":20,
-        "cierrem":"LUNES 11 PM",
-        "bolsam":"+$400,000 pesos\n¡Se reparte todo el acumulado!",
+        "cierrem":"MARTES 11 PM",
+        "bolsam":"$300,000 pesos",
         "suspIndexm":[],
         "sendBlockFromm":0,
         "sendBlockTom":0
