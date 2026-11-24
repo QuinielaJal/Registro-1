@@ -43,8 +43,8 @@ var QJ_CONFIG = {
             ],
             "cuentasm": [
                 {"banco":"HSBC","num":"4213 1661 8559 8962","uso":"Transferencias o depósitos","titular":"Luis Angel Romero Garcia"},
-                {"banco":"Spin OXXO","num":"4217 4701 6624 5981","uso":"Solo depósitos en OXXO"},
                 {"banco":"Spin OXXO","num":"4217 4701 8488 5602","uso":"Solo depósitos en OXXO"},
+                {"banco":"Spin OXXO","num":"4217 4701 6624 5981","uso":"Solo depósitos en OXXO"},
                 {"banco":"BanCoppel","num":"4169 1604 8119 3747","uso":"Depósito en sucursal o transferencia BanCoppel","titular":"Jorge Salvador Becerra","aviso":"No depositar en OXXO a esta cuenta"}
             ]},
         "2": {"tel":"5213314457066","telm":"5213317917329","min2":true,"min2m":true,"sendBlock":false,"sendBlockm":false,"disableRedirect":true,"hideBottomInfo":false,
