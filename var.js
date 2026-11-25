@@ -29,8 +29,8 @@ var QJ_CONFIG = {
         "cierrem":"MARTES 11 PM",
         "bolsam":"$300,000 pesos",
         "suspIndexm":[],
-        "sendBlockFromm":2,
-        "sendBlockTom":7
+        "sendBlockFromm":0,
+        "sendBlockTom":0
     },
     "vendors": {
         "1": {"tel":"5213330335106","telm":"5213313265676","min2":true,"min2m":true,"sendBlock":false,"sendBlockm":true,"disableRedirect":false,"hideBottomInfo":false,
