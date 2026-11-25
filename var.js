@@ -19,8 +19,8 @@
 var QJ_CONFIG = {
     "global": {
         "price":25,
-        "cierre":"JUEVES 11 PM",
-        "bolsa":"$500,000 pesos.",
+        "cierre":"VIERNES 11 PM",
+        "bolsa":"+$400,000 pesos.",
         "suspIndex":[],
         "sendBlockFrom":0,
         "sendBlockTo":0,
