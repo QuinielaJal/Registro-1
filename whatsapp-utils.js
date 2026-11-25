@@ -85,7 +85,7 @@ function isSendBlocked() {
 function alertSendBlocked() {
     if (!isSendBlocked()) return false;
     if (sendBlockFrom === sendBlockTo) alert("La quiniela está cerrada.\r\nEspera la próxima jornada.");
-    else alert("El registro virtual se encuentra en mantenimiento.");
+    else alert("El registro de quinielas no se encuentra disponible en este momento.");
     // else alert("El registro virtual se encuentra en mantenimiento de " + formatHour(sendBlockFrom) + " a " + formatHour(sendBlockTo) + " (hora de México).");
     updateSendButton();
     return true;
