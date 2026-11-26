@@ -139,10 +139,10 @@
         const width = out + Math.floor(Math.min(maxCornerWidth, space[side] + reach));
         const extra = outward - out;
         const span = width + extra;
-        const near = Math.min(out + space[side] - gap, .8 * span - extra);
+        const size = maxH * .96;
+        const near = Math.min(out + space[side] - gap + size * .6, .86 * span - extra);
         const far = Math.max(2, .2 * span - extra);
         const avail = near - far;
-        const size = maxH * .96;
         const step = items.length > 1 ? Math.max(size * .85, Math.min(size * 2.2, (avail - size) / (items.length - 1))) : 0;
         const x = side === 'left' ? space.start - out : space.end + out - width;
         return { side, items, width, extra, span, near, size, step, x };
