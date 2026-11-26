@@ -6,8 +6,8 @@
     const onlyRegistros = ['1','2','4','14']; // N de Registro-N donde se muestra (vacío = en todos)
     const showGuirnalda = true;
     const maxCornerWidth = 180; // px; en celular se ajusta al espacio libre junto a "Bolsa estimada"
-    const leftItems = ['pachuca', 'atlas', 'america', 'estrella', 'toluca']; // de izquierda a derecha en pantalla
-    const rightItems = ['leon', 'chivas', 'cruzazul', 'monterrey', 'estrella'];
+    const leftItems = ['pachuca', 'toluca', 'america', 'estrella', 'cruzazul']; // de izquierda a derecha en pantalla
+    const rightItems = ['leon', 'chivas', 'atlas', 'monterrey', 'estrella'];
     // ===============================
 
     const slug = typeof vendorSlug !== 'undefined' ? vendorSlug : '1';
