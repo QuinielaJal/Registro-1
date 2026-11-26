@@ -53,12 +53,11 @@
     };
     const star = (cx, cy, r) => 'M' + Array.from({ length: 10 }, (_, k) => polar(cx, cy, k % 2 ? r * .45 : r, -90 + k * 36)).join('L') + 'Z';
 
-    const stripes = (a, b, w) => `<rect x="3" y="-7" width="14" height="14" fill="${b}"/>` +
-      Array.from({ length: Math.ceil(14 / (2 * w)) }, (_, k) => `<rect x="${(3 + k * 2 * w).toFixed(2)}" y="-7" width="${w}" height="14" fill="${a}"/>`).join('');
 
     const teams = {
       pachuca: { name: 'Pachuca', fill: `<rect x="3" y="-7" width="7" height="14" fill="#0b3d91"/><rect x="10" y="-7" width="7" height="14" fill="#fff"/>` },
-      atlas: { name: 'Atlas', fill: stripes('#d0102b', '#111', 2.8) },
+      atlas: { name: 'Atlas', fill: `<rect x="3" y="-7" width="7" height="14" fill="#d0102b"/><rect x="10" y="-7" width="7" height="14" fill="#111"/>` +
+        `<path fill="#e8c34a" d="${star(8.5, -5, .95)}${star(11.5, -5, .95)}"/>` },
       america: { name: 'América', fill: `<rect x="3" y="-7" width="14" height="14" fill="#ffd200"/>` +
         `<ellipse cx="10" cy="0" rx="4.3" ry="6.3" fill="none" stroke="#14213d" stroke-width=".45"/>` +
         `<path d="M3.9 -2.6Q10 -4.2 16.1 -2.6" fill="none" stroke="#14213d" stroke-width=".45"/>` +
@@ -80,12 +79,31 @@
         `<path fill="#a07843" d="M8.6 -2.6L9.4 -3.2L10.6 -3.1L11.2 -2L11 -.6L12.2 -2.4L12.7 -2.6L12.4 -2L11.6 .2L11.8 1.6L12.4 3H11.6L11 2H10.2L9.2 3H8.5L9.4 1.4L9.2 .2L7.8 .6L7.6 .1L8.8 -.6L7.6 -1.2L7.5 -1.7L8.9 -1.4L8.7 -2.1Z"/>` +
         `<path fill="#a07843" d="M7.7 -4.5L7.4 -6Q8.7 -6.7 10 -5.9Q11.3 -6.7 12.6 -6L12.3 -4.5Z"/>` +
         `<circle cx="10" cy="-5.05" r=".38" fill="#1b7a52"/><circle cx="8.6" cy="-4.95" r=".26" fill="#1b7a52"/><circle cx="11.4" cy="-4.95" r=".26" fill="#1b7a52"/>` },
-      chivas: { name: 'Guadalajara', fill: stripes('#d4002a', '#fff', 2.8) },
+      chivas: { name: 'Guadalajara', fill: `<rect x="3" y="-7" width="14" height="14" fill="#fff"/>` +
+        Array.from({ length: 5 }, (_, k) => `<rect x="${(3 + (2 * k + 1) * 14 / 11).toFixed(2)}" y="-7" width="${(14 / 11).toFixed(2)}" height="14" fill="#d4002a"/>`).join('') +
+        `<circle cx="10" cy="0" r="6.5" fill="none" stroke="#0a3a7a" stroke-width="1"/>` +
+        `<circle cx="10" cy="0" r="5.9" fill="none" stroke="#e8c34a" stroke-width=".25"/>` +
+        `<g transform="translate(10 -1.1) scale(1.22) translate(-10 -.55)">` +
+        `<path fill="none" stroke="#e8c34a" stroke-width=".35" stroke-linecap="round" d="M9.4 -2.5C8.4 -2.6 7.5 -2 7.5 -.9C7.5 .2 7.9 1 8.4 1.5M7.5 -.9C6.9 -.6 6.9 .2 7.4 .3` +
+        `M10.6 -2.5C11.6 -2.6 12.5 -2 12.5 -.9C12.5 .2 12.1 1 11.6 1.5M12.5 -.9C13.1 -.6 13.1 .2 12.6 .3"/>` +
+        `<path fill="#e8c34a" stroke="#7a560c" stroke-width=".1" d="M9.35 -1.9Q9.35 -3 10 -3Q10.65 -3 10.65 -1.9Z"/>` +
+        `<path fill="none" stroke="#7a560c" stroke-width=".12" d="M9.5 -2.35H10.5M9.75 -2.6V-2.1M10.25 -2.6V-2.1"/>` +
+        `<path fill="#e8c34a" stroke="#7a560c" stroke-width=".12" d="M8.3 -1.9H11.7V.6Q11.7 2.3 10 3Q8.3 2.3 8.3 .6Z"/>` +
+        `<path fill="#0a3a7a" d="M8.75 -1.45H11.25V.55Q11.25 1.95 10 2.5Q8.75 1.95 8.75 .55Z"/>` +
+        `<path fill="none" stroke="#c8102e" stroke-width=".12" d="${[[8.52, -1.2], [8.52, .1], [8.6, 1.4], [10, 2.73], [11.4, 1.4], [11.48, .1], [11.48, -1.2]]
+          .map(([x, y]) => `M${x - .14} ${y - .14}L${x + .14} ${y + .14}M${x + .14} ${y - .14}L${x - .14} ${y + .14}`).join('')}"/>` +
+        `<path fill="#a0782a" d="M9.88 -.1H10.12V1.9H9.88Z"/><circle cx="10" cy="-.55" r=".72" fill="#3f9b4a"/>` +
+        `<ellipse cx="9.2" cy=".8" rx=".28" ry=".72" fill="#e8c34a" transform="rotate(18 9.2 .8)"/><circle cx="9.4" cy="-.05" r=".26" fill="#e8c34a"/>` +
+        `<ellipse cx="10.8" cy=".8" rx=".28" ry=".72" fill="#e8c34a" transform="rotate(-18 10.8 .8)"/><circle cx="10.6" cy="-.05" r=".26" fill="#e8c34a"/></g>` },
       cruzazul: { name: 'Cruz Azul', fill: `<rect x="3" y="-7" width="14" height="14" fill="#00449e"/>` +
         `<circle cx="10" cy="0" r="5.9" fill="none" stroke="#fff" stroke-width=".7" stroke-dasharray=".7 .45" opacity=".85"/>` +
         `<circle cx="10" cy="0" r="4.7" fill="#fff" stroke="#d0102b" stroke-width=".6"/>` +
         `<path fill="#00449e" stroke="#d0102b" stroke-width=".35" paint-order="stroke" d="M8.95 -3.5H11.05V3.5H8.95Z M6.5 -1.05H13.5V1.05H6.5Z"/>` },
-      monterrey: { name: 'Monterrey', fill: stripes('#0b1f4f', '#fff', 1.4) }
+      monterrey: { name: 'Monterrey', fill: `<rect x="3" y="-7" width="14" height="14" fill="#fff"/>` +
+        `<path fill="#0d2240" d="M4.91 -7H6.75V7H4.91Z M8.64 -7H11.32V7H8.64Z M13.22 -7H15.08V7H13.22Z"/>` +
+        `<path fill="#0d2240" stroke="#fff" stroke-width=".55" stroke-linejoin="miter" paint-order="stroke" d="M7 -3.23H9.17L9.98 -1.77L10.81 -3.23H13L14.33 .66L12.34 1.22L11.89 -.02L11.54 1.19H8.45L8.1 -.02L7.66 1.22L5.67 .66Z"/>` +
+        `<circle cx="10" cy="0" r="6.55" fill="none" stroke="#0d2240" stroke-width=".7"/>` +
+        `<circle cx="10" cy="0" r="6.05" fill="none" stroke="#fff" stroke-width=".3"/>` }
     };
 
     function ornamentSVG(id, len) {
