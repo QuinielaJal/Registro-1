@@ -8,8 +8,8 @@
 body{
     max-width: 400px;
     margin: auto;
-    background-color: rgb(48,38,26);
-    background-image: url("../bg/fondo8.jpg"); 
+    background-color: #3a0710;
+    background-image: url("../bg/fondo8-rojo.jpg");
     background-repeat: repeat-y;
     background-position: top;
 }
