@@ -22,8 +22,8 @@ var QJ_CONFIG = {
         "cierre":"VIERNES 11 PM",
         "bolsa":"+$400,000 pesos.",
         "suspIndex":[],
-        "sendBlockFrom":2,
-        "sendBlockTo":8,
+        "sendBlockFrom":0,
+        "sendBlockTo":0,
 
         "pricem":20,
         "cierrem":"MARTES 11 PM",
